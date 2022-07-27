@@ -1,0 +1,23 @@
+{
+    "name": "com.vrchat.sdk3a.UPMImporter",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "!SDK3ABURST"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.burst",
+            "expression": "1.4.11",
+            "define": "SDK3ABURST"
+        }
+    ],
+    "noEngineReferences": false
+}
