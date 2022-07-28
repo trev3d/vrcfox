@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18036175, g: 0.22580841, b: 0.30696774, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,22 +260,37 @@ PrefabInstance:
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6424064
+      value: 0.6140412
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.76636416
+      value: 0.789274
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000045748865
+      value: -0.00000048262604
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000069787853
+      value: -0.00000068073666
+      objectReference: {fileID: 0}
+    - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 104.234985
+      objectReference: {fileID: 0}
+    - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: -731351438863934623, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -377,6 +392,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4bf82d2ccd2e46e2b24a85ff543f3af, type: 3}
 --- !u!1 &91381789 stripped
@@ -459,11 +489,11 @@ MonoBehaviour:
       linked: 1
       left: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
       right: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
-    eyelidType: 1
-    upperLeftEyelid: {fileID: 91381811}
-    upperRightEyelid: {fileID: 91381810}
-    lowerLeftEyelid: {fileID: 1316361893}
-    lowerRightEyelid: {fileID: 601514298}
+    eyelidType: 2
+    upperLeftEyelid: {fileID: 0}
+    upperRightEyelid: {fileID: 0}
+    lowerLeftEyelid: {fileID: 0}
+    lowerRightEyelid: {fileID: 0}
     eyelidsDefault:
       upper:
         linked: 1
@@ -500,8 +530,8 @@ MonoBehaviour:
         linked: 1
         left: {x: 0, y: 0, z: 0, w: 0}
         right: {x: 0, y: 0, z: 0, w: 0}
-    eyelidsSkinnedMesh: {fileID: 0}
-    eyelidsBlendshapes: 
+    eyelidsSkinnedMesh: {fileID: 91381810}
+    eyelidsBlendshapes: 02000000ffffffff03000000
   customizeAnimationLayers: 1
   baseAnimationLayers:
   - isEnabled: 0
@@ -605,13 +635,13 @@ MonoBehaviour:
     transform: {fileID: 91381809}
     radius: 0.0011368472
     height: 0
-    position: {x: -1.1275703e-16, y: 0.0007751434, z: 7.421478e-10}
+    position: {x: -1.1275703e-16, y: 0.0007751435, z: 7.385098e-10}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_torso:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381808}
-    radius: 0.0017224955
+    radius: 0.0017224957
     height: 0.0047411392
     position: {x: -3.362866e-11, y: -0.00041031116, z: -0.00014104843}
     rotation: {x: 0.029763093, y: 0, z: -0.0000000070960513, w: 0.999557}
@@ -635,80 +665,80 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381805}
-    radius: 0.00018989803
-    height: 0.0007595921
-    position: {x: -0.000009562649, y: 0.0006453556, z: 0.000017130327}
-    rotation: {x: -0.6786353, y: 0, z: 0.16840391, w: 0.7149086}
+    radius: 0.00020219122
+    height: 0.0008087649
+    position: {x: -0.0000033927065, y: 0.0006873802, z: 0.000009195539}
+    rotation: {x: -0.68210506, y: 0, z: 0.16982147, w: 0.7112618}
   collider_handL:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381804}
-    radius: 0.00018989832
-    height: 0.00075959327
-    position: {x: 0.000009563847, y: 0.0006453568, z: 0.00001712972}
-    rotation: {x: -0.6786353, y: 0, z: -0.16840395, w: 0.7149086}
+    radius: 0.00020219144
+    height: 0.00080876576
+    position: {x: 0.0000033921901, y: 0.000687382, z: 0.000009195081}
+    rotation: {x: -0.6821049, y: 0, z: -0.16982119, w: 0.71126205}
   collider_fingerIndexL:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381803}
-    radius: 0.00008377327
-    height: 0.00041886637
+    radius: 0.00008377193
+    height: 0.00041885962
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381802}
-    radius: 0.00009945036
-    height: 0.0004972518
+    radius: 0.000099450226
+    height: 0.0004972511
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingL:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381801}
-    radius: 0.00008054158
-    height: 0.0004027079
+    radius: 0.000080541824
+    height: 0.00040270912
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381800}
-    radius: 0.00006427845
-    height: 0.00032139226
+    radius: 0.00006427911
+    height: 0.00032139555
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerIndexR:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381799}
-    radius: 0.00008377199
-    height: 0.00041885994
+    radius: 0.0000837727
+    height: 0.00041886346
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381798}
-    radius: 0.000099450335
-    height: 0.0004972517
+    radius: 0.00009944944
+    height: 0.0004972472
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingR:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381797}
-    radius: 0.000080541526
-    height: 0.0004027076
+    radius: 0.00008054148
+    height: 0.0004027074
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 91381796}
-    radius: 0.000064278924
-    height: 0.0003213946
+    radius: 0.00006427873
+    height: 0.00032139363
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &91381792 stripped
@@ -832,19 +862,13 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 91381788}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &91381810 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -731351438863934623, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+--- !u!137 &91381810 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
     type: 3}
   m_PrefabInstance: {fileID: 91381788}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &91381811 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4153956588470712263, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-    type: 3}
-  m_PrefabInstance: {fileID: 91381788}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &91381812
+--- !u!114 &91381811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1151,12 +1175,6 @@ MonoBehaviour:
   position: {x: 0, y: 0.003, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   bonesAsSpheres: 0
---- !u!4 &601514298 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7687404110672936616, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-    type: 3}
-  m_PrefabInstance: {fileID: 91381788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,12 +1598,6 @@ MonoBehaviour:
   showGizmos: 1
   boneOpacity: 0.5
   limitOpacity: 0.5
---- !u!4 &1316361893 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3738691061165675348, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-    type: 3}
-  m_PrefabInstance: {fileID: 91381788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1510072065
 GameObject:
   m_ObjectHideFlags: 0
