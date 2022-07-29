@@ -1,4 +1,4 @@
-modelFilepath = "D:/jtriveri/repos/trevvr/project/Assets"
+relativePath = "//project/Assets"
 modelName = "trev avatar.fbx"
 
 import bpy
@@ -17,7 +17,7 @@ for vCol in colors:
 	
 bpy.ops.export_scene.fbx(
 
-	filepath=modelFilepath + "/" + modelName,
+	filepath=bpy.path.abspath(relativePath + "/" + modelName),
 	check_existing=False,
 	use_active_collection=True,
 	bake_space_transform=True, 
