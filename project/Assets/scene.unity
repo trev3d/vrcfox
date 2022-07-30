@@ -395,11 +395,16 @@ PrefabInstance:
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -410,6 +415,11 @@ PrefabInstance:
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[4]
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -537,7 +547,7 @@ MonoBehaviour:
         left: {x: 0, y: 0, z: 0, w: 0}
         right: {x: 0, y: 0, z: 0, w: 0}
     eyelidsSkinnedMesh: {fileID: 91381810}
-    eyelidsBlendshapes: 00000000ffffffffffffffff
+    eyelidsBlendshapes: 000000000200000001000000
   customizeAnimationLayers: 1
   baseAnimationLayers:
   - isEnabled: 0
@@ -623,20 +633,20 @@ MonoBehaviour:
     name: rig|tail wag
   - hash: 1520967710
     name: Idle
-  - hash: -1987367616
-    name: Left Hand.Peace
-  - hash: 926663203
-    name: Left Hand.Point
-  - hash: -937741052
-    name: Left Hand.Gun
-  - hash: 1596346161
-    name: Left Hand.Open
-  - hash: -802958103
-    name: Left Hand.Fist
-  - hash: 1477369067
-    name: Left Hand.Thumbs up
-  - hash: 469685093
-    name: Left Hand.RockNRoll
+  - hash: -649937567
+    name: RockNRoll
+  - hash: -1699564817
+    name: Thumbs up
+  - hash: -1376154249
+    name: Fist
+  - hash: 586946223
+    name: Open
+  - hash: 366746251
+    name: Gun
+  - hash: 552707641
+    name: Point
+  - hash: -1639888550
+    name: Peace
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:
@@ -779,7 +789,7 @@ Animator:
   m_GameObject: {fileID: 91381789}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d4bf82d2ccd2e46e2b24a85ff543f3af, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4800888771a7599449be65ed0bfad736, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
