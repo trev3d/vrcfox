@@ -1,0 +1,84 @@
+diff --git a/README.md b/README.md
+index 7fe5f5e..e2a515f 100644
+--- a/README.md
++++ b/README.md
+@@ -6,6 +6,18 @@
+
+ * Unity Package support
+
++### **New features in v 2.9.9 (3.0 rc6):**
++
++2.9.9:
++
++* **Only compatible with the latest SDK VRCSDK3-AVATAR-2022.06.02.12.22** Please update the SDK.
++* Added support for the new Copy parameters feature.
++* Bifurcate exported and internal float values to avoid pollution from AAPs. This should match game better, as you cannot sync an AAP value over the network.
++You will not see `exportedValue` and `value` sliders for floats. Value will represent what the Animator sees, while Exported represents the value which is synced (and used for parameter Copy).
++* Please let me know if there are bugs related to the bifurcated float parameters.
++* Make buttons compact by default to avoid issue with huge buttons.
++* Remove use of Reflection, as we are breaking compatibility with older VRCSDK versions.
++
+ ### **New features in v 2.9.8 (3.0 rc5):**
+
+ 2.9.8:
+diff --git a/Scripts/LyumaAv3Runtime.cs b/Scripts/LyumaAv3Runtime.cs
+index acb8393..9df659a 100644
+--- a/Scripts/LyumaAv3Runtime.cs
++++ b/Scripts/LyumaAv3Runtime.cs
+@@ -464,6 +464,26 @@ public class LyumaAv3Runtime : MonoBehaviour
+         return false;
+     }
+
++    float getAdjustedParameterAsFloat(string paramName, bool convertRange=false, float srcMin=0.0f, float srcMax=0.0f, float dstMin=0.0f, float dstMax=0.0f) {
++        float newValue = 0;
++        int idx;
++        if (FloatToIndex.TryGetValue(paramName, out idx)) {
++            newValue = Floats[idx].exportedValue;
++        } else if (IntToIndex.TryGetValue(paramName, out idx)) {
++            newValue = (float)Ints[idx].value;
++        } else if (BoolToIndex.TryGetValue(paramName, out idx)) {
++            newValue = Bools[idx].value ? 1.0f : 0.0f;
++        }
++        if (convertRange) {
++            if (dstMax != dstMin) {
++                newValue = Mathf.Lerp(dstMin, dstMax, Mathf.Clamp01(Mathf.InverseLerp(srcMin, srcMax, newValue)));
++            } else {
++                newValue = dstMin;
++            }
++        }
++        return newValue;
++    }
++
+     static LyumaAv3Runtime() {
+         VRCAvatarParameterDriver.OnApplySettings += (behaviour, animator) =>
+             {
+@@ -512,6 +532,9 @@ public class LyumaAv3Runtime : MonoBehaviour
+                             case VRC.SDKBase.VRC_AvatarParameterDriver.ChangeType.Random:
+                                 runtime.Ints[idx].value = UnityEngine.Random.Range((int)parameter.valueMin, (int)parameter.valueMax + 1);
+                                 break;
++                            case VRC.SDKBase.VRC_AvatarParameterDriver.ChangeType.Copy:
++                                runtime.Ints[idx].value = (int)runtime.getAdjustedParameterAsFloat(parameter.source, parameter.convertRange, parameter.sourceMin, parameter.sourceMax, parameter.destMin, parameter.destMax);
++                                break;
+                         }
+                     }
+                     if (runtime.FloatToIndex.TryGetValue(actualName, out idx)) {
+@@ -525,6 +548,9 @@ public class LyumaAv3Runtime : MonoBehaviour
+                             case VRC.SDKBase.VRC_AvatarParameterDriver.ChangeType.Random:
+                                 runtime.Floats[idx].exportedValue = UnityEngine.Random.Range(parameter.valueMin, parameter.valueMax);
+                                 break;
++                            case VRC.SDKBase.VRC_AvatarParameterDriver.ChangeType.Copy:
++                                runtime.Floats[idx].value = runtime.getAdjustedParameterAsFloat(parameter.source, parameter.convertRange, parameter.sourceMin, parameter.sourceMax, parameter.destMin, parameter.destMax);
++                                break;
+                         }
+                         runtime.Floats[idx].value = runtime.Floats[idx].exportedValue;
+                     }
+@@ -546,6 +572,9 @@ public class LyumaAv3Runtime : MonoBehaviour
+                                 // random is *not* idempotent.
+                                 newValue = UnityEngine.Random.Range(0.0f, 1.0f) < parameter.chance;
+                                 break;
++                            case VRC.SDKBase.VRC_AvatarParameterDriver.ChangeType.Copy:
++                                newValue = runtime.getAdjustedParameterAsFloat(parameter.source, parameter.convertRange, parameter.sourceMin, parameter.sourceMax, parameter.destMin, parameter.destMax) > 0.0f;
++                                break;
+                             default:
+                                 continue;
+                         }

@@ -10,10 +10,10 @@ gamma = 2.2
 mesh = bpy.context.object.data
 colors = mesh.vertex_colors[0].data
 
-for vCol in colors:
-	vCol.color[0] = pow(vCol.color[0], gamma)
-	vCol.color[1] = pow(vCol.color[1], gamma)
-	vCol.color[2] = pow(vCol.color[2], gamma)
+for v_col in colors:
+	v_col.color[0] = pow(v_col.color[0], gamma)
+	v_col.color[1] = pow(v_col.color[1], gamma)
+	v_col.color[2] = pow(v_col.color[2], gamma)
 	
 bpy.ops.export_scene.fbx(
 
