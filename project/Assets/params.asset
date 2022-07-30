@@ -25,7 +25,7 @@ MonoBehaviour:
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: Tail Strength
+  - name: tail
     valueType: 1
     saved: 1
     defaultValue: 0.5

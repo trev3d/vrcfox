@@ -464,9 +464,10 @@ MonoBehaviour:
   unityVersion: 2019.4.31f1
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  customExpressions: 0
-  expressionsMenu: {fileID: 0}
-  expressionParameters: {fileID: 0}
+  customExpressions: 1
+  expressionsMenu: {fileID: 11400000, guid: f01c13e840b714f8288e053a90b13b50, type: 2}
+  expressionParameters: {fileID: 11400000, guid: 9765ee41bce474b45a4a3d7a0e334283,
+    type: 2}
   enableEyeLook: 1
   customEyeLookSettings:
     eyeMovement:
@@ -616,6 +617,10 @@ MonoBehaviour:
     name: Point
   - hash: -1662960351
     name: Peace
+  - hash: 551890433
+    name: rig|tail still
+  - hash: 2090661079
+    name: rig|tail wag
   - hash: 1520967710
     name: Idle
   - hash: -1987367616
@@ -873,6 +878,19 @@ SkinnedMeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 91381788}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &91381812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91381789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentType: 0
 --- !u!1 &366935207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3528165565139742168, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -1041,7 +1059,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravity: 1
+  gravity: 0
   gravityCurve:
     serializedVersion: 2
     m_Curve: []

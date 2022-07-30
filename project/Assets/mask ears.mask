@@ -6,7 +6,7 @@ AvatarMask:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: tail
+  m_Name: mask ears
   m_Mask: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_Elements:
   - m_Path: 
@@ -26,13 +26,13 @@ AvatarMask:
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head
     m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-ear.L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-ear.L/DEF-ear.L_end
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-ear.R
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-ear.R/DEF-ear.R_end
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-eye.L
     m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-eye.L/DEF-eye.L_end
@@ -154,15 +154,15 @@ AvatarMask:
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-forearm.R/DEF-hand.R/DEF-thumb.01.R/DEF-thumb.02.R/DEF-thumb.03.R/DEF-thumb.03.R_end
     m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-tail
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-tail/DEF-tail.001
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003/DEF-tail.003_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-thigh.L
     m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-thigh.L/DEF-shin.L
