@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
-  ViewPosition: {x: 0, y: 1.6883851, z: 0.056114435}
+  ViewPosition: {x: 0, y: 1.776559, z: 0.056114435}
   Animations: 0
   ScaleIPD: 1
   lipSync: 1
