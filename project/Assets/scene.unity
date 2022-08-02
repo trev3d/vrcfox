@@ -159,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6107049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.668, z: 0}
+  m_LocalPosition: {x: 0, y: 1.806, z: 0}
   m_LocalScale: {x: 0.23675343, y: 0.23675343, z: 0.23675343}
   m_Children: []
   m_Father: {fileID: 0}
@@ -888,7 +888,7 @@ SkinnedMeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 91381788}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &91381812
+--- !u!114 &91381811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
