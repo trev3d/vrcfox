@@ -41,14 +41,6 @@ AvatarMask:
     m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-eye.R/DEF-eye.R_end
     m_Weight: 0
-  - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-eyelid.L
-    m_Weight: 0
-  - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-eyelid.L/DEF-eyelid.L_end
-    m_Weight: 0
-  - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-eyelid.R
-    m_Weight: 0
-  - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-eyelid.R/DEF-eyelid.R_end
-    m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-hair
     m_Weight: 0
   - m_Path: rig/DEF-spine/DEF-spine.002/DEF-spine.003/DEF-neck/DEF-head/DEF-hair/DEF-hair_end

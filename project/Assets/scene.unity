@@ -163,7 +163,7 @@ Transform:
   m_LocalScale: {x: 0.23675343, y: 0.23675343, z: 0.23675343}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &91381788
 PrefabInstance:
@@ -260,27 +260,27 @@ PrefabInstance:
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6140412
+      value: 0.59635115
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.789274
+      value: 0.8027237
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000048262604
+      value: -0.0000004976333
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000068073666
+      value: -0.00000066984364
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 104.234985
+      value: 101.3
       objectReference: {fileID: 0}
     - target: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -336,6 +336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -2.2234619e-21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221439984669046203, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_Name
+      value: fox
       objectReference: {fileID: 0}
     - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -395,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
-      value: 5
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -404,23 +409,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[3]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[4]
-      value: 0
+      propertyPath: m_BlendShapeWeights.Array.data[8]
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4bf82d2ccd2e46e2b24a85ff543f3af, type: 3}
@@ -464,13 +454,28 @@ MonoBehaviour:
   ViewPosition: {x: 0, y: 1.776559, z: 0.056114435}
   Animations: 0
   ScaleIPD: 1
-  lipSync: 1
-  lipSyncJawBone: {fileID: 91381794}
-  lipSyncJawClosed: {x: 0.77328724, y: 0, z: 0, w: 0.6340559}
-  lipSyncJawOpen: {x: 0.8668967, y: 0, z: 0, w: 0.4984878}
-  VisemeSkinnedMesh: {fileID: 0}
+  lipSync: 3
+  lipSyncJawBone: {fileID: 0}
+  lipSyncJawClosed: {x: 0.80272377, y: 0, z: 0, w: 0.596351}
+  lipSyncJawOpen: {x: 0.80272377, y: 0, z: 0, w: 0.596351}
+  VisemeSkinnedMesh: {fileID: 91381810}
   MouthOpenBlendShapeName: Facial_Blends.Jaw_Down
-  VisemeBlendShapes: []
+  VisemeBlendShapes:
+  - viseme sil
+  - viseme PP
+  - viseme FF
+  - viseme TH
+  - viseme DD
+  - viseme kk
+  - viseme CH
+  - viseme DD
+  - viseme nn
+  - viseme RR
+  - viseme aa
+  - viseme E
+  - viseme I
+  - viseme O
+  - viseme U
   unityVersion: 2019.4.31f1
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
@@ -482,7 +487,7 @@ MonoBehaviour:
   customEyeLookSettings:
     eyeMovement:
       confidence: 1
-      excitement: 0.8
+      excitement: 1
     leftEye: {fileID: 91381793}
     rightEye: {fileID: 91381792}
     eyesLookingStraight:
@@ -499,12 +504,12 @@ MonoBehaviour:
       right: {x: 0.043619715, y: 0, z: 0, w: 0.99904823}
     eyesLookingLeft:
       linked: 1
-      left: {x: 0, y: -0.08715574, z: 0, w: 0.9961947}
-      right: {x: 0, y: -0.08715574, z: 0, w: 0.9961947}
+      left: {x: 0, y: -0.043619387, z: 0, w: 0.99904823}
+      right: {x: 0, y: -0.043619387, z: 0, w: 0.99904823}
     eyesLookingRight:
       linked: 1
-      left: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
-      right: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
+      left: {x: 0, y: 0.043619387, z: 0, w: 0.99904823}
+      right: {x: 0, y: 0.043619387, z: 0, w: 0.99904823}
     eyelidType: 2
     upperLeftEyelid: {fileID: 0}
     upperRightEyelid: {fileID: 0}
@@ -773,31 +778,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 91381788}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &91381794 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2855985211007852750, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-    type: 3}
-  m_PrefabInstance: {fileID: 91381788}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &91381795
-Animator:
-  serializedVersion: 3
+--- !u!114 &91381794
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91381789}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d4bf82d2ccd2e46e2b24a85ff543f3af, type: 3}
-  m_Controller: {fileID: 9100000, guid: 4800888771a7599449be65ed0bfad736, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentType: 0
 --- !u!4 &91381796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5784507617199893521, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -888,19 +881,6 @@ SkinnedMeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 91381788}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &91381811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91381789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contentType: 0
 --- !u!1 &366935207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3528165565139742168, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -1618,120 +1598,6 @@ MonoBehaviour:
   showGizmos: 1
   boneOpacity: 0.5
   limitOpacity: 0.5
---- !u!1 &1510072065
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1510072069}
-  - component: {fileID: 1510072068}
-  - component: {fileID: 1510072067}
-  - component: {fileID: 1510072066}
-  m_Layer: 0
-  m_Name: Avatars 3.0 Emulator Control
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1510072066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510072065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 784aa748a7308b94a8f15dcd76531956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openSocket: 0
-  disableOSC: 0
-  resendAllParameters: 0
-  udpPort: 9000
-  outgoingUdpIp: 127.0.0.1
-  outgoingUdpPort: 9001
-  commandLine: 
-  localPort: 0
-  localIp: 
-  numberOfOSCMessages: 0
-  avatarDescriptor: {fileID: 0}
-  forwardToAllAvatarsInScene: 0
-  alwaysShowOSCGizmos: 1
-  clearGizmos: 0
-  GizmoFilledColor: {r: 1, g: 0, b: 1, a: 0.1}
-  GizmoBackgroundColor: {r: 0.75, g: 0, b: 0.6, a: 0.05}
-  GizmoOutlineColor: {r: 0.9, g: 0.7, b: 0.8, a: 0.5}
-  GizmoTextColor: {r: 1, g: 0.8, b: 1, a: 0.9}
-  GizmoShowSenderIP: 0
-  sendLoopbackOSCReplies: 0
-  debugPrintReceivedMessages: 0
---- !u!114 &1510072067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510072065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226ca8e52c3922d4a85b20831b97caf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultToVR: 0
-  DefaultTestInStation: 0
-  DefaultTrackingType: 3
-  DefaultAnimatorToDebug: 0
-  RestartEmulator: 0
-  CreateNonLocalClone: 0
-  CreateNonLocalCloneCount: 0
-  legacySubAnimatorParameterDriverMode: 0
-  legacyMenuGUI: 1
-  DisableAvatarDynamicsIntegration: 0
-  WorkaroundPlayModeScriptCompile: 1
-  DisableMirrorClone: 0
-  DisableShadowClone: 0
-  EnableHeadScaling: 0
-  ViewMirrorReflection: 0
-  ViewBothRealAndMirror: 0
-  runtimes: []
---- !u!95 &1510072068
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510072065}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &1510072069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510072065}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1573598336 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 124717453916922126, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,

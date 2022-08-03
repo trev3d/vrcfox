@@ -24,5 +24,7 @@ bpy.ops.export_scene.fbx(
 	object_types={'ARMATURE', 'MESH'}, 
 	use_mesh_modifiers=False, 
 	use_mesh_modifiers_render=False, 
+	bake_anim_use_all_bones=False,
+	bake_anim_simplify_factor=0.0
 	
 	)
