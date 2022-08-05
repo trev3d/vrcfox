@@ -1326,7 +1326,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-eye.L
       parentName: DEF-head
-      position: {x: -0.00027402086, y: 0.00067709445, z: 0.00046134158}
+      position: {x: -0.00025928827, y: 0.00067709445, z: 0.0004613415}
       rotation: {x: 0.000000065900174, y: -0.000000032950158, z: -0.000000032950087,
         w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -1337,7 +1337,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-eye.R
       parentName: DEF-head
-      position: {x: 0.00027402086, y: 0.00067709445, z: 0.00046134158}
+      position: {x: 0.0002592883, y: 0.00067709445, z: 0.0004613415}
       rotation: {x: 0.000000065900174, y: 0.00000003295013, z: 0.000000032950094,
         w: 1}
       scale: {x: 1, y: 1, z: 1}
