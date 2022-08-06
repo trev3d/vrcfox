@@ -284,13 +284,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1239827171551801986, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7017646
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239827171551801986, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.010535257
+      value: 0.0105429785
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239827171551801986, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.71227384
       objectReference: {fileID: 0}
     - target: {fileID: 1239827171551801986, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.009008972
+      value: 0.009015575
       objectReference: {fileID: 0}
     - target: {fileID: 3221439984669046203, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -324,13 +334,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6430817635602781608, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7017646
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430817635602781608, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.010535301
+      value: 0.010543022
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430817635602781608, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.71227384
       objectReference: {fileID: 0}
     - target: {fileID: 6430817635602781608, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009009017
+      value: -0.00901562
       objectReference: {fileID: 0}
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
