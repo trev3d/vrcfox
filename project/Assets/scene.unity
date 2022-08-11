@@ -310,17 +310,17 @@ PrefabInstance:
     - target: {fileID: 3035349166015446930, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000065900174
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3035349166015446930, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000003295016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3035349166015446930, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000032950087
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3221439984669046203, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -335,17 +335,17 @@ PrefabInstance:
     - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000065900174
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000032950133
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000032950094
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4153956588470712263, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -371,7 +371,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 602d22f249ffc426da94c3a129bab71b, type: 2}
     - target: {fileID: 6430817635602781608, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -440,7 +440,7 @@ PrefabInstance:
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[22]
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4bf82d2ccd2e46e2b24a85ff543f3af, type: 3}
@@ -526,8 +526,8 @@ MonoBehaviour:
       right: {x: 0, y: 0, z: 0, w: 1}
     eyesLookingUp:
       linked: 1
-      left: {x: -0.043619387, y: 0, z: 0, w: 0.99904823}
-      right: {x: -0.043619387, y: 0, z: 0, w: 0.99904823}
+      left: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
+      right: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
     eyesLookingDown:
       linked: 1
       left: {x: 0.043619715, y: 0, z: 0, w: 0.99904823}
