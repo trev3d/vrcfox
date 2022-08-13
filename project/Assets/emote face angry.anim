@@ -32,7 +32,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.face happy
+    attribute: blendShape.emote happy
     path: fox
     classID: 137
     script: {fileID: 0}
@@ -51,7 +51,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.face angry
+    attribute: blendShape.emote angry
     path: fox
     classID: 137
     script: {fileID: 0}
@@ -70,7 +70,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.emote slight smile
+    attribute: blendShape.emote neutral happy
     path: fox
     classID: 137
     script: {fileID: 0}
@@ -84,21 +84,21 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 262201574
-      attribute: 2363636830
+      attribute: 1664141289
       script: {fileID: 0}
       typeID: 137
       customType: 20
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 262201574
-      attribute: 4073625870
+      attribute: 488399545
       script: {fileID: 0}
       typeID: 137
       customType: 20
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 262201574
-      attribute: 1094534939
+      attribute: 1557252871
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -140,7 +140,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.face happy
+    attribute: blendShape.emote happy
     path: fox
     classID: 137
     script: {fileID: 0}
@@ -159,7 +159,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.face angry
+    attribute: blendShape.emote angry
     path: fox
     classID: 137
     script: {fileID: 0}
@@ -178,7 +178,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.emote slight smile
+    attribute: blendShape.emote neutral happy
     path: fox
     classID: 137
     script: {fileID: 0}
