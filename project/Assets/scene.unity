@@ -342,16 +342,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
-    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[7]
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4bf82d2ccd2e46e2b24a85ff543f3af, type: 3}
 --- !u!1 &91381789 stripped
@@ -582,12 +572,16 @@ MonoBehaviour:
     name: emote neutral
   - hash: 886685096
     name: emote confused
-  - hash: 1932469430
-    name: emote brows up
   - hash: -957605067
     name: brows down.emote brows furrowed
   - hash: -655067862
     name: brows down.emote angry
+  - hash: 811576365
+    name: brows up.emote happy
+  - hash: -463921185
+    name: brows up.emote brows up
+  - hash: 965359133
+    name: brows up.emote unamused
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:
