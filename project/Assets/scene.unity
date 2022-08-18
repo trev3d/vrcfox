@@ -282,10 +282,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: trev avatar
       objectReference: {fileID: 0}
+    - target: {fileID: 3035349166015446930, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035349166015446930, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035349166015446930, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035349166015446930, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3221439984669046203, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_Name
       value: fox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323639261430962092, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4153956588470712263, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -307,6 +347,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 602d22f249ffc426da94c3a129bab71b, type: 2}
     - target: {fileID: 6430817635602781608, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -342,6 +387,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[5]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[8]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4bf82d2ccd2e46e2b24a85ff543f3af, type: 3}
 --- !u!1 &91381789 stripped
@@ -566,22 +636,32 @@ MonoBehaviour:
     name: rig|tail still
   - hash: 2090661079
     name: rig|tail wag
-  - hash: 371470144
-    name: emote happy
-  - hash: -1861910024
+  - hash: -573505691
     name: emote neutral
-  - hash: 886685096
-    name: emote confused
-  - hash: -957605067
-    name: brows down.emote brows furrowed
-  - hash: -655067862
-    name: brows down.emote angry
-  - hash: 811576365
-    name: brows up.emote happy
-  - hash: -463921185
-    name: brows up.emote brows up
-  - hash: 965359133
-    name: brows up.emote unamused
+  - hash: -506964260
+    name: positive.emote happy
+  - hash: -798553799
+    name: positive.emote brows up
+  - hash: 1571804698
+    name: positive.emote smile
+  - hash: 2108724883
+    name: positive.emote laugh
+  - hash: -1302284146
+    name: negative.emote unamused
+  - hash: 1814605140
+    name: negative.emote brows furrowed
+  - hash: -657142726
+    name: negative.emote angry
+  - hash: -152834940
+    name: negative.emote furious
+  - hash: -1547768978
+    name: neutral.emote worried 0
+  - hash: 2127177002
+    name: neutral.emote confused
+  - hash: -479577460
+    name: neutral.emote worried
+  - hash: -1578348350
+    name: neutral.emote confused 1
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:

@@ -1779,9 +1779,8 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-eye.L
       parentName: DEF-head
-      position: {x: -0.00025928827, y: 0.00067709445, z: 0.0004613415}
-      rotation: {x: 0.000000065900174, y: -0.000000032950158, z: -0.000000032950087,
-        w: 1}
+      position: {x: -0.00024576127, y: 0.00067709445, z: 0.00046587075}
+      rotation: {x: 0.00000013180035, y: -1.421086e-14, z: -1.9915924e-21, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-eye.L_end
       parentName: DEF-eye.L
@@ -1790,9 +1789,8 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-eye.R
       parentName: DEF-head
-      position: {x: 0.0002592883, y: 0.00067709445, z: 0.0004613415}
-      rotation: {x: 0.000000065900174, y: 0.00000003295013, z: 0.000000032950094,
-        w: 1}
+      position: {x: 0.0002457613, y: 0.00067709445, z: 0.00046587075}
+      rotation: {x: 0.00000013180035, y: -1.4210856e-14, z: -1.9915922e-21, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-eye.R_end
       parentName: DEF-eye.R
@@ -2092,18 +2090,18 @@ ModelImporter:
     - name: DEF-shin.L
       parentName: DEF-thigh.L
       position: {x: -4.642956e-11, y: 0.004843286, z: -5.4426862e-12}
-      rotation: {x: 0.013954773, y: 0.00019539404, z: 0.0000027264564, w: 0.9999026}
-      scale: {x: 1, y: 1, z: 1}
+      rotation: {x: 0.014340625, y: 0.00019538625, z: 0.000002808713, w: 0.9998972}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: DEF-foot.L
       parentName: DEF-shin.L
-      position: {x: -6.632831e-11, y: 0.0053619132, z: -5.0567905e-12}
-      rotation: {x: -0.4988453, y: -0.00016969572, z: -0.00009716513, w: 0.86669105}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 1.8098945e-12, y: 0.00528494, z: 2.6229827e-11}
+      rotation: {x: -0.50007635, y: -0.00016959703, z: -0.00009740467, w: 0.8659813}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
     - name: DEF-toe.L
       parentName: DEF-foot.L
-      position: {x: -4.7954567e-11, y: 0.0015317262, z: -2.7341684e-12}
-      rotation: {x: -0.000000104638346, y: 0.9583575, z: -0.28557113, w: -0.00000066354005}
-      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+      position: {x: 2.1361364e-11, y: 0.0016778687, z: 6.547509e-12}
+      rotation: {x: -0.00000012084033, y: 0.9586526, z: -0.284579, w: -0.00000079753573}
+      scale: {x: 1, y: 1.0000001, z: 1}
     - name: DEF-toe.L_end
       parentName: DEF-toe.L
       position: {x: -0, y: 0.0007107037, z: 0}
@@ -2117,18 +2115,18 @@ ModelImporter:
     - name: DEF-shin.R
       parentName: DEF-thigh.R
       position: {x: 4.577264e-11, y: 0.004843286, z: -5.442633e-12}
-      rotation: {x: 0.013954773, y: -0.00019539394, z: -0.0000027204912, w: 0.9999026}
-      scale: {x: 1, y: 1, z: 1}
+      rotation: {x: 0.014340625, y: -0.00019538616, z: -0.000002802747, w: 0.9998972}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: DEF-foot.R
       parentName: DEF-shin.R
-      position: {x: 6.633059e-11, y: 0.0053619132, z: -5.0567905e-12}
-      rotation: {x: -0.4988453, y: 0.00016969572, z: 0.00009716513, w: 0.86669105}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: -1.8098945e-12, y: 0.00528494, z: 2.6229827e-11}
+      rotation: {x: -0.50007635, y: 0.00016959703, z: 0.00009740467, w: 0.8659813}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
     - name: DEF-toe.R
       parentName: DEF-foot.R
-      position: {x: 4.7954567e-11, y: 0.0015317262, z: -2.7326052e-12}
-      rotation: {x: 0.000000104638346, y: 0.9583575, z: -0.28557113, w: 0.00000066354005}
-      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+      position: {x: -2.1361364e-11, y: 0.0016778687, z: 6.547509e-12}
+      rotation: {x: 0.00000012084033, y: 0.9586526, z: -0.284579, w: 0.00000079753573}
+      scale: {x: 1, y: 1.0000001, z: 1}
     - name: DEF-toe.R_end
       parentName: DEF-toe.R
       position: {x: -0, y: 0.0007107037, z: 0}
