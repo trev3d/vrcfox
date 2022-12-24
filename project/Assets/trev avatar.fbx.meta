@@ -1760,7 +1760,7 @@ ModelImporter:
     - name: DEF-ear.L
       parentName: DEF-head
       position: {x: -0.00049613643, y: 0.0008697867, z: -0.00030051538}
-      rotation: {x: -0.029523805, y: 0.20023853, z: 0.20023854, w: 0.9586122}
+      rotation: {x: -0.029523807, y: 0.20023853, z: 0.20023856, w: 0.9586122}
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-ear.L_end
       parentName: DEF-ear.L
@@ -1770,7 +1770,7 @@ ModelImporter:
     - name: DEF-ear.R
       parentName: DEF-head
       position: {x: 0.00049613643, y: 0.0008697867, z: -0.00030051538}
-      rotation: {x: -0.029523805, y: -0.20023853, z: -0.20023854, w: 0.9586122}
+      rotation: {x: -0.029523807, y: -0.20023853, z: -0.20023856, w: 0.9586122}
       scale: {x: 1, y: 1, z: 1}
     - name: DEF-ear.R_end
       parentName: DEF-ear.R
@@ -1835,7 +1835,7 @@ ModelImporter:
     - name: DEF-hand.L
       parentName: DEF-forearm.L
       position: {x: -1.0659277e-11, y: 0.0027476265, z: -0.00000000150525}
-      rotation: {x: 0.010535204, y: 0.71225864, z: 0.009008919, w: 0.7017802}
+      rotation: {x: 0.010535205, y: 0.71225864, z: 0.00900892, w: 0.7017802}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: DEF-f_index.01.L
       parentName: DEF-hand.L
