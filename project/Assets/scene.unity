@@ -555,7 +555,7 @@ MonoBehaviour:
     type: 5
     animatorController: {fileID: 9100000, guid: 602d22f249ffc426da94c3a129bab71b,
       type: 2}
-    mask: {fileID: 0}
+    mask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
     isDefault: 0
   specialAnimationLayers:
   - isEnabled: 0
