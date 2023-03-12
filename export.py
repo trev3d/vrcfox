@@ -1,5 +1,5 @@
 relative_export_path = "//trevvr unity/Assets"
-file_name = "trev avatar.fbx"
+file_name = "trev model.fbx"
 desired_model_name = "fox"
 export_collection_name="master"
 
@@ -54,7 +54,8 @@ bpy.ops.export_scene.fbx(
 	bake_anim_use_all_bones=False,
 	bake_anim_force_startend_keying=False,
 	bake_anim_simplify_factor=0.0,
-	colors_type="LINEAR"
+	colors_type="LINEAR",
+	use_armature_deform_only=True,
 	
 	)
 	
