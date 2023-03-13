@@ -1,14 +1,5 @@
 {
   "dependencies": {
-    "com.siccity.gltfutility": {
-      "version": "https://github.com/siccity/gltfutility.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.0"
-      },
-      "hash": "96619fcd48ffe5c4ad122837a21601a6f7c20080"
-    },
     "com.unity.burst": {
       "version": "1.4.11",
       "depth": 1,
@@ -149,12 +140,6 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "2.0.2"
       }
-    },
-    "dev.vrlabs.av3manager": {
-      "version": "file:dev.vrlabs.av3manager",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
     },
     "vrchat.blackstartx.gesture-manager": {
       "version": "file:vrchat.blackstartx.gesture-manager",

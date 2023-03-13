@@ -6,12 +6,6 @@
     "com.vrchat.core.vpm-resolver": {
       "version": "0.1.17"
     },
-    "dev.vrlabs.av3manager": {
-      "version": "2.0.17"
-    },
-    "vrchat.jordo.easyquestswitch": {
-      "version": "1.2.1"
-    },
     "vrchat.blackstartx.gesture-manager": {
       "version": "3.8.2"
     }
@@ -29,16 +23,6 @@
     },
     "com.vrchat.core.vpm-resolver": {
       "version": "0.1.17",
-      "dependencies": {}
-    },
-    "dev.vrlabs.av3manager": {
-      "version": "2.0.17",
-      "dependencies": {
-        "com.vrchat.avatars": ">=3.1.2"
-      }
-    },
-    "vrchat.jordo.easyquestswitch": {
-      "version": "1.2.1",
       "dependencies": {}
     },
     "vrchat.blackstartx.gesture-manager": {
