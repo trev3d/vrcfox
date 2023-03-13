@@ -2614,7 +2614,7 @@ MonoBehaviour:
   VisemeSkinnedMesh: {fileID: 448325044592206471}
   MouthOpenBlendShapeName: Facial_Blends.Jaw_Down
   VisemeBlendShapes:
-  - -none-
+  - viseme sil
   - viseme PP
   - viseme FF
   - viseme TH
@@ -2705,7 +2705,7 @@ MonoBehaviour:
         left: {x: 0, y: 0, z: 0, w: 0}
         right: {x: 0, y: 0, z: 0, w: 0}
     eyelidsSkinnedMesh: {fileID: 448325044592206471}
-    eyelidsBlendshapes: 000000000200000001000000
+    eyelidsBlendshapes: 010000000300000002000000
   customizeAnimationLayers: 1
   baseAnimationLayers:
   - isEnabled: 0
@@ -2971,7 +2971,7 @@ MonoBehaviour:
   - name: frown
     brow: {fileID: 7400000, guid: 6d79df2248cee7b459016b9790efd3f0, type: 2}
     mouth: {fileID: 7400000, guid: 8a3c1e711b8c0804f985ee869b73457c, type: 2}
-    gestureTriggers: 0100000007000000
+    gestureTriggers: 01000000
   - name: smile
     brow: {fileID: 7400000, guid: 3783e60753a9b3944aab06019777de2c, type: 2}
     mouth: {fileID: 7400000, guid: 0e6523451026292459c087105a82dfb1, type: 2}

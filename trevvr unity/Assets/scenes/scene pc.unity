@@ -165,19 +165,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &614518866 stripped
+--- !u!1 &606199060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7175552621804398584, guid: ef6e457c371919146a63f8ee7cdd1846,
     type: 3}
   m_PrefabInstance: {fileID: 1053583177}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &614518867
+--- !u!114 &606199061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614518866}
+  m_GameObject: {fileID: 606199060}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
@@ -621,6 +621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: animationHashSet.Array.data[23].name
       value: smile mouth 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040363, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: blueprintId
+      value: avtr_2f9f22cf-6a2e-4e3a-b43b-7dff30ee3aac
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040363, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
