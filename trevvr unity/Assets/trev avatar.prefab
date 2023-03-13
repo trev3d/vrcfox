@@ -1473,7 +1473,7 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
-  - 100
+  - 0
   - 0
   - 0
   - 0
@@ -2614,7 +2614,7 @@ MonoBehaviour:
   VisemeSkinnedMesh: {fileID: 448325044592206471}
   MouthOpenBlendShapeName: Facial_Blends.Jaw_Down
   VisemeBlendShapes:
-  - viseme sil
+  - -none-
   - viseme PP
   - viseme FF
   - viseme TH
