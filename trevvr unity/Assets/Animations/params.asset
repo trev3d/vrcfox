@@ -25,3 +25,11 @@ MonoBehaviour:
     valueType: 1
     saved: 1
     defaultValue: 0
+  - name: pcol
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+  - name: scol
+    valueType: 1
+    saved: 1
+    defaultValue: 0

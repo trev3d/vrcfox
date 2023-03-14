@@ -171,7 +171,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1053583177}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &606199061
+--- !u!114 &606199065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.size
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
@@ -621,6 +621,26 @@ PrefabInstance:
         type: 3}
       propertyPath: animationHashSet.Array.data[23].name
       value: smile mouth 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[24].hash
+      value: 989689992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[24].name
+      value: secondary color
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[25].hash
+      value: 966406238
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[25].name
+      value: primary color
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040363, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}

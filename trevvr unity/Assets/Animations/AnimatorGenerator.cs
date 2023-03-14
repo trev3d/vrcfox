@@ -112,9 +112,6 @@ namespace Animations
                 var bExit = bState.Exits().WithTransitionDurationSeconds(TransitionSpeed).WhenConditions();
                 var mExit = mState.Exits().WithTransitionDurationSeconds(TransitionSpeed).WhenConditions();
 
-                AacFlNewTransitionContinuation bOr;
-                AacFlNewTransitionContinuation mOr;
-                
                 foreach (int expressionIndex in exp.gestureTriggers)
                 {
                     bLayer.EntryTransitionsTo(bState).When(bGesture.IsEqualTo(expressionIndex));
