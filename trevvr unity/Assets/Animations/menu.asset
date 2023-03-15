@@ -13,19 +13,8 @@ MonoBehaviour:
   m_Name: menu
   m_EditorClassIdentifier: 
   controls:
-  - name: Primary Color
-    icon: {fileID: 2800000, guid: 30891e000b76dfc4db977fc2238911a0, type: 3}
-    type: 203
-    parameter:
-      name: 
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters:
-    - name: pcol
-    labels: []
   - name: Secondary Color
-    icon: {fileID: 2800000, guid: 30891e000b76dfc4db977fc2238911a0, type: 3}
+    icon: {fileID: 2800000, guid: 8e38f5daf78623549984d4e2f6cc5dd8, type: 3}
     type: 203
     parameter:
       name: 
@@ -34,4 +23,15 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters:
     - name: scol
+    labels: []
+  - name: Primary Color
+    icon: {fileID: 2800000, guid: 8e38f5daf78623549984d4e2f6cc5dd8, type: 3}
+    type: 203
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: pcol
     labels: []
