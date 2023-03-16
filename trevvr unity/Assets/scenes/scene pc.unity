@@ -361,7 +361,7 @@ PrefabInstance:
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.size
-      value: 26
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
@@ -546,82 +546,102 @@ PrefabInstance:
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[18].hash
-      value: 821337495
+      value: 702018085
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[18].name
-      value: frown brow 2
+      value: curious brow 2
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[19].hash
-      value: -1868056739
+      value: 1207151873
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[19].name
-      value: smile brow 3
+      value: frown brow 3
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[20].hash
-      value: 1466159579
+      value: 247669502
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[20].name
-      value: neutral mouth 0
+      value: smile brow 4
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[21].hash
-      value: 1844007331
+      value: 1466159579
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[21].name
-      value: worried mouth 1
+      value: neutral mouth 0
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[22].hash
-      value: 1049242509
+      value: 1844007331
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[22].name
-      value: frown mouth 2
+      value: worried mouth 1
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[23].hash
-      value: 730288862
+      value: -196398813
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[23].name
-      value: smile mouth 3
+      value: curious mouth 2
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[24].hash
-      value: 989689992
+      value: 1233984283
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[24].name
-      value: secondary color
+      value: frown mouth 3
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[25].hash
-      value: 966406238
+      value: -1243363459
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
       propertyPath: animationHashSet.Array.data[25].name
+      value: smile mouth 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[26].hash
+      value: 966406238
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[26].name
       value: primary color
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[27].hash
+      value: 989689992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022536866644040362, guid: ef6e457c371919146a63f8ee7cdd1846,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[27].name
+      value: secondary color
       objectReference: {fileID: 0}
     - target: {fileID: 8022536866644040363, guid: ef6e457c371919146a63f8ee7cdd1846,
         type: 3}
@@ -772,3 +792,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
+--- !u!1 &1989117018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7175552621804398584, guid: ef6e457c371919146a63f8ee7cdd1846,
+    type: 3}
+  m_PrefabInstance: {fileID: 1053583177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1989117019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989117018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentType: 0

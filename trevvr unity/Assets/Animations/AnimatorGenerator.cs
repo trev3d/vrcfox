@@ -120,10 +120,6 @@ namespace Animations
                     mlayer.EntryTransitionsTo(mState).When(mGesture.IsEqualTo(expressionIndex));
                     mExit.And(mGesture.IsNotEqualTo(expressionIndex));
                 }
-
-                // use thumb-s up to grab objects without changing expression
-                bExit.And(bGesture.IsNotEqualTo(7));
-                mExit.And(bGesture.IsNotEqualTo(7));
             }
         }
     }

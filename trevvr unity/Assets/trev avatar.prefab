@@ -2967,11 +2967,15 @@ MonoBehaviour:
   - name: worried
     brow: {fileID: 7400000, guid: 6837ac94b4a041d43ae1f8b577eb3827, type: 2}
     mouth: {fileID: 7400000, guid: 9633edcd89defff4d80e792539128c25, type: 2}
-    gestureTriggers: 030000000500000006000000
+    gestureTriggers: 0300000006000000
+  - name: curious
+    brow: {fileID: 7400000, guid: 5ccf7cb3db46ab34686d67636465181b, type: 2}
+    mouth: {fileID: 7400000, guid: 9633edcd89defff4d80e792539128c25, type: 2}
+    gestureTriggers: 05000000
   - name: frown
     brow: {fileID: 7400000, guid: 6d79df2248cee7b459016b9790efd3f0, type: 2}
     mouth: {fileID: 7400000, guid: 8a3c1e711b8c0804f985ee869b73457c, type: 2}
-    gestureTriggers: 01000000
+    gestureTriggers: 0100000007000000
   - name: smile
     brow: {fileID: 7400000, guid: 3783e60753a9b3944aab06019777de2c, type: 2}
     mouth: {fileID: 7400000, guid: 0e6523451026292459c087105a82dfb1, type: 2}

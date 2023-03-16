@@ -70,7 +70,26 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.brows odd
+    attribute: blendShape.brows worried
+    path: fox
+    classID: 137
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: blendShape.brows curious
     path: fox
     classID: 137
     script: {fileID: 0}
@@ -98,7 +117,14 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 262201574
-      attribute: 129341642
+      attribute: 3377534267
+      script: {fileID: 0}
+      typeID: 137
+      customType: 20
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 262201574
+      attribute: 2986981281
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -178,7 +204,26 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.brows odd
+    attribute: blendShape.brows worried
+    path: fox
+    classID: 137
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: blendShape.brows curious
     path: fox
     classID: 137
     script: {fileID: 0}
