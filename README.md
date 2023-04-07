@@ -1,5 +1,7 @@
 # vrcfox
 a barebones furry avatar for VRChat
+
+
 Features customizable primary and secondary colors with a single material and limited color palette on both PC and Quest
 
 TODO:
