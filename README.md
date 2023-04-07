@@ -7,10 +7,10 @@ Features customizable primary and secondary colors with a single material and li
 
 ## TODO:
 - [ ] Better screenshots
-- [ ] Face tracking support
-- [ ] Revise visemes and expressions. They're a little scuffed.
-- [ ] Limited outfit customization (something better than that drab grey coat!)
 - [ ] Add body geometry. Right now the only thing under the coat is air!
+- [ ] Revise visemes and expression
+- [ ] Face tracking support
+- [ ] Limited outfit customization (something better than that drab grey coat!)
 
 ## Some notes:
 ⚠️ The blender file contains an export script for easy exporting. ⚠️ It merges all the meshes in a way that *preserves blendshapes on only the head.* ⚠️ It also *doesn't undo the mesh merge automatically, so you need to undo every time you export!!*
