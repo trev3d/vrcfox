@@ -1,5 +1,5 @@
-relative_export_path = "//trevvr unity/Assets"
-file_name = "trev model.fbx"
+relative_export_path = "//vrcfox unity project/Assets"
+file_name = "vrcfox model.fbx"
 desired_model_name = "fox"
 export_collection_name="master"
 
@@ -28,18 +28,9 @@ bpy.ops.object.join()
 # rename object
 bpy.context.active_object.name = desired_model_name
 
-# gamma correct vertex colors
-# fbx exporter actually takes care of this oops.
-
-#mesh = bpy.context.object.data
-#colors = mesh.vertex_colors[0].data
-
-#for v_col in colors:
-#	
-#	for i, item in enumerate(v_col.color):
-
-#		v_col.color[i] = pow((v_col.color[i] + 0.055) / 1.055, 2.4)
-
+# set master collection to active collection
+export_layer_collection = bpy.context.view_layer.layer_collection.children[export_collection_name]
+bpy.context.view_layer.active_layer_collection = export_layer_collection
 
 # export
 bpy.ops.export_scene.fbx(
@@ -56,6 +47,7 @@ bpy.ops.export_scene.fbx(
 	bake_anim_simplify_factor=0.0,
 	colors_type="LINEAR",
 	use_armature_deform_only=True,
+	use_triangles=False,
 	
 	)
 	
