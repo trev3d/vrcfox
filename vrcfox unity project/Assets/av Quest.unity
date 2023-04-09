@@ -121,25 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1346030047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3635577836961582874, guid: 4660207665e831c499dc076459e49c32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4518591563714526480}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1346030049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346030047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contentType: 0
 --- !u!1001 &4518591563714526480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 4518591562910165925, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: m_Name
-      value: PC avatar
+      value: Android avatar
       objectReference: {fileID: 0}
     - target: {fileID: 4518591562910165926, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
@@ -295,57 +276,34 @@ PrefabInstance:
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[28].hash
-      value: 1931256157
+      value: -1078898725
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[28].name
-      value: breasts
+      value: morphs
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: animationHashSet.Array.data[29].hash
-      value: -1097295289
+      propertyPath: customEyeLookSettings.eyesLookingRight.left.w
+      value: 0.9961947
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: animationHashSet.Array.data[29].name
-      value: fluff
+      propertyPath: customEyeLookSettings.eyesLookingRight.left.y
+      value: 0.08715569
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: animationHashSet.Array.data[30].hash
-      value: 356677514
+      propertyPath: customEyeLookSettings.eyesLookingRight.right.w
+      value: 0.9961947
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: animationHashSet.Array.data[30].name
-      value: lashes
+      propertyPath: customEyeLookSettings.eyesLookingRight.right.y
+      value: 0.08715569
       objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: animationHashSet.Array.data[32].hash
-      value: 1227977781
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: animationHashSet.Array.data[32].name
-      value: thighs
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: animationHashSet.Array.data[33].hash
-      value: -830197779
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: animationHashSet.Array.data[33].name
-      value: ears
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: customEyeLookSettings.eyelidsBlendshapes.Array.data[0]
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4518591563733791378, guid: 4660207665e831c499dc076459e49c32, type: 3}
+    - {fileID: 4518591563733791379, guid: 4660207665e831c499dc076459e49c32, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4660207665e831c499dc076459e49c32, type: 3}

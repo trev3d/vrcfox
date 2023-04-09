@@ -13,7 +13,18 @@ MonoBehaviour:
   m_Name: menu body
   m_EditorClassIdentifier: 
   controls:
-  - name: Cheek fluff size
+  - name: Ear size
+    icon: {fileID: 0}
+    type: 203
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: ears
+    labels: []
+  - name: Cheek fluff
     icon: {fileID: 0}
     type: 203
     parameter:
@@ -23,17 +34,6 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters:
     - name: fluff
-    labels: []
-  - name: Breast size
-    icon: {fileID: 0}
-    type: 203
-    parameter:
-      name: 
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters:
-    - name: breasts
     labels: []
   - name: Lash size
     icon: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
     subParameters:
     - name: lashes
     labels: []
-  - name: Ear size
+  - name: Breast size
     icon: {fileID: 0}
     type: 203
     parameter:
@@ -55,9 +55,9 @@ MonoBehaviour:
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: ears
+    - name: breasts
     labels: []
-  - name: Thigh fat
+  - name: Thigh size
     icon: {fileID: 0}
     type: 203
     parameter:
@@ -68,7 +68,7 @@ MonoBehaviour:
     subParameters:
     - name: thighs
     labels: []
-  - name: Belly fat
+  - name: Belly size
     icon: {fileID: 0}
     type: 203
     parameter:
