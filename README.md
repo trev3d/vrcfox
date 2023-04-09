@@ -1,12 +1,9 @@
 # vrcfox
-a barebones furry avatar for VRChat
+a simple optimized furry avatar for VRChat featuring basic body and color customization 
 
-![editor screenshot](https://repository-images.githubusercontent.com/518617115/83ffac45-41f4-4e1d-89a4-059d3c88be09)
-
-Features customizable primary and secondary colors with a single material and limited color palette on both PC and Quest
+https://user-images.githubusercontent.com/32079637/230791446-6b2fad96-d1c2-4f23-8242-158fa15bed21.mp4
 
 ## TODO:
-- [ ] Better screenshots
 - [ ] Add body geometry. Right now the only thing under the coat is air!
 - [ ] Revise visemes and expression
 - [ ] Face tracking support
@@ -18,8 +15,6 @@ Features customizable primary and secondary colors with a single material and li
 ## Attribution
 - I'm using [hai-vr's av3-animator-as-code package](https://github.com/hai-vr/av3-animator-as-code) to set up animators
 - The skybox used in the thumbnail comes from [here @ polyhaven.com](https://polyhaven.com/a/kiara_1_dawn)
-
-![in-game screenshot](https://raw.githubusercontent.com/cellomonster/vrcfox/master/screenshot.png)
 
 ## Requests
 
