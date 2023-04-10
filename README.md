@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/32079637/230791446-6b2fad96-d1c2-4f23-
 - [ ] Limited outfit customization (something better than that drab grey coat!)
 
 ## Some notes:
-⚠️ The blender file contains an export script for easy exporting. ⚠️ It merges all the meshes in a way that *preserves blendshapes on only the head.* ⚠️ It also *doesn't undo the mesh merge automatically, so you need to undo every time you export!!*
+⚠️ The blender file contains an export script for easy exporting. ⚠️ It merges all the meshes, but meshes with modifiers cannot have blendshapes! ⚠️ It also *doesn't undo the mesh merge automatically, so you need to undo every time you export!!*
 
 ## Attribution
 - I'm using [hai-vr's av3-animator-as-code package](https://github.com/hai-vr/av3-animator-as-code) to set up animators
