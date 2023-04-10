@@ -1,5 +1,5 @@
-﻿using UnityEditor;
-using UnityEditor.SceneManagement;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,3 +27,4 @@ public class SceneLabel
 		Handles.EndGUI();
 	}
 }
+#endif
