@@ -57,3 +57,67 @@ MonoBehaviour:
     valueType: 1
     saved: 1
     defaultValue: 0
+  - name: v2/BrowDownRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/BrowDownLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/BrowInnerUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/BrowInnerUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthSmileRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthSmileLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthSadRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthSadLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/JawOpen
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthUpperUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthUpperUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthUpperUp
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthLowerDownRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthLowerDownLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthLowerDown
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+  - name: v2/MouthClosed
+    valueType: 1
+    saved: 0
+    defaultValue: 0

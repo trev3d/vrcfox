@@ -115,6 +115,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: fox
+    second: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: vertex shaded
     second: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
   materials:

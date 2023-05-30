@@ -33,7 +33,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.body thighs
-    path: fox
+    path: Body
     classID: 137
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -45,7 +45,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 262201574
+      path: 2073732236
       attribute: 1754363193
       script: {fileID: 0}
       typeID: 137
@@ -89,7 +89,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.body thighs
-    path: fox
+    path: Body
     classID: 137
     script: {fileID: 0}
   m_EulerEditorCurves: []

@@ -1,6 +1,6 @@
 relative_export_path = "//vrcfox unity project/Assets"
 file_name = "vrcfox model.fbx"
-desired_model_name = "fox"
+desired_model_name = "Body"
 export_collection_name="master"
 
 import bpy
