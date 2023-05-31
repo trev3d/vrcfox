@@ -121,6 +121,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &259094888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4518591562910165925, guid: 4660207665e831c499dc076459e49c32,
+    type: 3}
+  m_PrefabInstance: {fileID: 4518591563714526480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &259094889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259094888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3632b8ba260d47442841fd25a3678d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar: {fileID: 896512367}
+  assetContainer: {fileID: 9100000, guid: e670d4102b561d543b6c3c18b8cf1e77, type: 2}
+  assetKey: 00e0098b879bbe645a0b870e29748208
+  writeDefaults: 1
+  useImplicitParameterCasting: 0
+  singleLayer: 0
+  removeAnimatorParams: 1
+  manageExpressionParameters: 1
+  blendshapeTargetMeshRenderers:
+  - {fileID: 4518591563714526481}
+  remoteSmoothingTimeConstant: 0.7
+  paramsToAnimate: []
+--- !u!114 &896512367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+    type: 3}
+  m_PrefabInstance: {fileID: 4518591563714526480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 542108242, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4518591563714526480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,6 +170,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2888210841022967577, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 94
+      objectReference: {fileID: 0}
     - target: {fileID: 4518591562910165925, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: m_Name
@@ -153,6 +200,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791310, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: blueprintId
+      value: avtr_83719901-ed19-4bb6-bacf-9276d5d4de31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791310, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: fallbackStatus
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791310, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: completedSDKPipeline
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: unityVersion
@@ -160,8 +222,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
+      propertyPath: VisemeSkinnedMesh
+      value: 
+      objectReference: {fileID: 4518591563714526481}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
       propertyPath: collider_head.radius
-      value: 0.0011289816
+      value: 0.001084186
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
@@ -171,187 +238,187 @@ PrefabInstance:
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_footR.radius
-      value: 0.0009342604
+      value: 0.00093426066
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.height
-      value: 0.0008616659
+      value: 0.0008616642
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.radius
-      value: 0.00021541647
+      value: 0.00021541605
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.height
-      value: 0.00086166675
+      value: 0.0008616654
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.radius
-      value: 0.00021541669
+      value: 0.00021541635
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_head.position.x
-      value: -4.6837534e-17
+      value: 0.0000009698219
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_head.position.y
-      value: 0.00054481486
+      value: 0.0005652601
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_head.position.z
-      value: -5.857146e-10
+      value: 0.00003685333
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.position.x
-      value: -0.0000056113063
+      value: -0.000005612383
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.position.y
-      value: 0.00073234184
+      value: 0.0007323432
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.position.z
-      value: -0.00000880912
+      value: -0.000008808993
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.rotation.w
-      value: 0.7105514
+      value: 0.7072284
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.rotation.x
-      value: 0.6819247
+      value: 0.39411634
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handL.rotation.z
-      value: 0.17348059
+      value: 0.5869415
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.position.x
-      value: 0.0000056119043
+      value: 0.0000056117087
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.position.y
-      value: 0.00073234143
+      value: 0.0007323409
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.position.z
-      value: -0.000008808743
+      value: -0.0000088090455
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.rotation.w
-      value: 0.7105515
+      value: 0.7079342
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.rotation.x
-      value: 0.6819245
+      value: 0.47214288
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_handR.rotation.z
-      value: -0.1734806
+      value: -0.52527165
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.size
-      value: 27
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerRingL.height
-      value: 0.00042904794
+      value: 0.00042905018
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerRingL.radius
-      value: 0.00008580959
+      value: 0.00008581004
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerRingR.height
-      value: 0.0004290508
+      value: 0.000429048
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerRingR.radius
-      value: 0.000085810156
+      value: 0.0000858096
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerIndexL.height
-      value: 0.00044625523
+      value: 0.00044625733
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerIndexL.radius
-      value: 0.00008925104
+      value: 0.000089251465
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerIndexR.height
-      value: 0.00044625616
+      value: 0.00044625773
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerIndexR.radius
-      value: 0.00008925123
+      value: 0.00008925155
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerLittleL.height
-      value: 0.0003424133
+      value: 0.0003424144
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerLittleL.radius
-      value: 0.00006848266
+      value: 0.00006848288
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerLittleR.height
-      value: 0.00034241405
+      value: 0.00034240968
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerLittleR.radius
-      value: 0.00006848281
+      value: 0.00006848193
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerMiddleL.height
-      value: 0.0005297764
+      value: 0.000529775
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerMiddleL.radius
-      value: 0.000105955274
+      value: 0.000105955
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerMiddleR.height
-      value: 0.00052977115
+      value: 0.00052977557
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: collider_fingerMiddleR.radius
-      value: 0.000105954234
+      value: 0.000105955114
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
@@ -465,58 +532,274 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
+      propertyPath: animationHashSet.Array.data[27].hash
+      value: 1824843603
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[27].name
+      value: New State
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
       propertyPath: animationHashSet.Array.data[28].hash
-      value: 1931256157
+      value: -366624624
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[28].name
-      value: breasts
+      value: Visemes Enabled
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[29].hash
-      value: -1097295289
+      value: -1633786139
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[29].name
-      value: fluff
+      value: Visemes Disabled
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[30].hash
-      value: 356677514
+      value: -1195092665
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[30].name
-      value: lashes
+      value: New State
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[31].hash
+      value: 506850734
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[31].name
+      value: Controlled Eye Tracking
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[32].hash
-      value: 1227977781
+      value: 1459561969
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[32].name
-      value: thighs
+      value: VRC Eye Tracking
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[33].hash
-      value: -830197779
+      value: 904443154
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: animationHashSet.Array.data[33].name
-      value: ears
+      value: Face Tracking Disabled
       objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[34].hash
+      value: 1305177791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[34].name
+      value: Face Tracking Enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[35].hash
+      value: -630857207
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[35].name
+      value: Face_Tracking_BlendTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[36].hash
+      value: -390240051
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[36].name
+      value: Binary_Parameters_Blendtree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[37].hash
+      value: -1178290839
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[37].name
+      value: OSCmooth_Local
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[38].hash
+      value: 424325902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[38].name
+      value: OSCmooth_Net
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[39].hash
+      value: 679466682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[39].name
+      value: New State
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[40].hash
+      value: -87034005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[40].name
+      value: Visemes Enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[41].hash
+      value: -1260279994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[41].name
+      value: Visemes Disabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[42].hash
+      value: 599656271
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[42].name
+      value: New State
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[43].hash
+      value: 1894870567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[43].name
+      value: Controlled Eye Tracking
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[44].hash
+      value: -42640223
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[44].name
+      value: VRC Eye Tracking
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[45].hash
+      value: 1111245017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[45].name
+      value: Face Tracking Disabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[46].hash
+      value: -1643236418
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[46].name
+      value: Face Tracking Enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[47].hash
+      value: -991088413
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[47].name
+      value: Face_Tracking_BlendTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[48].hash
+      value: 1191538848
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[48].name
+      value: Binary_Parameters_Blendtree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[49].hash
+      value: -2040435853
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[49].name
+      value: OSCmooth_Local
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[50].hash
+      value: 469192596
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: animationHashSet.Array.data[50].name
+      value: OSCmooth_Net
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: customEyeLookSettings.eyelidsSkinnedMesh
+      value: 
+      objectReference: {fileID: 4518591563714526481}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: baseAnimationLayers.Array.data[1].isDefault
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: baseAnimationLayers.Array.data[4].animatorController
+      value: 
+      objectReference: {fileID: 9100000, guid: e670d4102b561d543b6c3c18b8cf1e77, type: 2}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: customEyeLookSettings.eyelidsBlendshapes.Array.data[0]
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8061397977243930586, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b565e073d7a3dbd45983fe1f9305079d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4660207665e831c499dc076459e49c32, type: 3}
+--- !u!137 &4518591563714526481 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2888210841022967577, guid: 4660207665e831c499dc076459e49c32,
+    type: 3}
+  m_PrefabInstance: {fileID: 4518591563714526480}
+  m_PrefabAsset: {fileID: 0}

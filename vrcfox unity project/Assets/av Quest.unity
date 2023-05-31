@@ -190,6 +190,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
+    - target: {fileID: 2888210841022967577, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888210841022967577, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[39]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4518591562910165925, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: m_Name
@@ -555,11 +565,11 @@ PrefabInstance:
       propertyPath: customEyeLookSettings.eyesLookingRight.right.y
       value: 0.08715569
       objectReference: {fileID: 0}
-    - target: {fileID: 8061397977243930586, guid: 4660207665e831c499dc076459e49c32,
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: m_Controller
+      propertyPath: baseAnimationLayers.Array.data[4].animatorController
       value: 
-      objectReference: {fileID: 9100000, guid: e670d4102b561d543b6c3c18b8cf1e77, type: 2}
+      objectReference: {fileID: 9100000, guid: fb439669260cdfd47bab7709b070ec6e, type: 2}
     m_RemovedComponents:
     - {fileID: 4518591563733791378, guid: 4660207665e831c499dc076459e49c32, type: 3}
     - {fileID: 4518591563733791379, guid: 4660207665e831c499dc076459e49c32, type: 3}
