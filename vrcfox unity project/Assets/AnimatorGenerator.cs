@@ -1,7 +1,8 @@
 ﻿#if UNITY_EDITOR
-using System;
 using AnimatorAsCode.V0;
 using AnimatorAsCodeFramework.Examples;
+using Cysharp.Threading.Tasks.Triggers;
+using System;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -17,16 +18,10 @@ public class ExpressionPair
 	public int[] gestureTriggers;
 }
 
-[Serializable]
-public class BodyMorph
-{
-	public string parameterName;
-	public Motion motion;
-}
-
 public class AnimatorGenerator : MonoBehaviour
 {
 	public VRCAvatarDescriptor avatar;
+	public SkinnedMeshRenderer skinnedMeshRenderer;
 	public AnimatorController assetContainer;
 	public string assetKey;
 
@@ -39,7 +34,7 @@ public class AnimatorGenerator : MonoBehaviour
 
 	public ExpressionPair[] expressionPairs;
 
-	public BodyMorph[] bodyMorphs;
+	public string[] faceTrackingShapes;
 }
 
 [CustomEditor(typeof(AnimatorGenerator), true)]
@@ -54,20 +49,7 @@ public class AnimatorGeneratorEditor : Editor
 
 	public override void OnInspectorGUI()
 	{
-		AacExample.InspectorTemplate(this, serializedObject, "assetKey", Create, Remove);
-	}
-
-	private void Remove()
-	{
-		var my = (AnimatorGenerator)target;
-		var aac = AacExample.AnimatorAsCode(SystemName, my.avatar, my.assetContainer, my.assetKey);
-
-		aac.RemoveAllMainLayers();
-		aac.RemoveAllSupportingLayers("left hand");
-		aac.RemoveAllSupportingLayers("right hand");
-		aac.RemoveAllSupportingLayers("brow");
-		aac.RemoveAllSupportingLayers("mouth");
-		aac.RemoveAllSupportingLayers("body");
+		AacExample.InspectorTemplate(this, serializedObject, "assetKey", Create);
 	}
 
 	private void Create()
@@ -132,33 +114,72 @@ public class AnimatorGeneratorEditor : Editor
 		}
 
 		// body morphs
-		//var morphLayer = aac.CreateSupportingFxLayer("body morphs").WithAvatarMask(my.fxMask);
-		//var bodyMorphBlendTree = aac.NewBlendTreeAsRaw();
-		//bodyMorphBlendTree.blendType = BlendTreeType.Direct;
 
-		//for (var i = 0; i < my.bodyMorphs.Length; i++)
-		//{
-		//	BodyMorph bodyMorph = my.bodyMorphs[i];
+		// create layer
+		var bodyShapeLayer = aac.CreateSupportingFxLayer("body").WithAvatarMask(my.fxMask);
 
-		//	bodyMorphBlendTree.AddChild(bodyMorph.motion);
-		//	morphLayer.FloatParameter(bodyMorph.parameterName);
-		//	my.assetContainer.AddParameter(bodyMorph.parameterName, AnimatorControllerParameterType.Float);
-		//	bodyMorphBlendTree.children[i].directBlendParameter = bodyMorph.parameterName;
-		//	bodyMorphBlendTree.children[i].timeScale = 0;
-		//}
+		// create blend param to force direct blend tree on
+		bodyShapeLayer.OverrideValue(bodyShapeLayer.FloatParameter("Blend"), 1);
 
-		//morphLayer.NewState("morphs").WithAnimation(bodyMorphBlendTree);
+		// create direct tree
+		var bodyShapeTree = aac.NewBlendTreeAsRaw();
+		bodyShapeTree.name = "body shape tree";
+		bodyShapeTree.blendType = BlendTreeType.Direct;
+		bodyShapeTree.blendParameter = "Blend";
 
-		//for (var i = 0; i < my.bodyMorphs.Length; i++)
-		//{
-		//	BodyMorph bodyMorph = my.bodyMorphs[i];
+		// for each blend shape with the 'body ' prefix, create a new blend shape control subtree
+		for (var i = 0; i < my.skinnedMeshRenderer.sharedMesh.blendShapeCount; i++)
+		{
+			string blendShapeName = my.skinnedMeshRenderer.sharedMesh.GetBlendShapeName(i);
 
-		//	var morphLayer = aac.CreateSupportingFxLayer(bodyMorph.parameterName).WithAvatarMask(my.fxMask);
-		//	var morphParameter = morphLayer.FloatParameter(bodyMorph.parameterName);
-		//	morphLayer.NewState(bodyMorph.parameterName).WithAnimation(bodyMorph.motion).MotionTime(morphParameter);
+			if (blendShapeName.Substring(0, 5) != "body ")
+			{
+				continue;
+			}
 
+			bodyShapeTree.AddChild(BlendShapeControl(aac, bodyShapeLayer, my.skinnedMeshRenderer, blendShapeName));
+		}
 
-		//}
+		for(var i = 0; i < my.faceTrackingShapes.Length; i++)
+		{
+			string shapeName = my.faceTrackingShapes[i];
+
+			bodyShapeTree.AddChild(BlendShapeControl(aac, bodyShapeLayer, my.skinnedMeshRenderer, shapeName));
+
+			if(shapeName.EndsWith("Left"))
+			{
+				bodyShapeTree.AddChild(BlendShapeControl(aac, bodyShapeLayer, my.skinnedMeshRenderer, shapeName.Replace("Left", "Right")));
+			}
+		}
+
+		bodyShapeLayer.NewState("tree").WithAnimation(bodyShapeTree).WithWriteDefaultsSetTo(true);
+	}
+
+	private BlendTree BlendShapeControl(AacFlBase aac, AacFlLayer layer, SkinnedMeshRenderer skinnedMeshRenderer, string blendShapeName)
+	{
+		layer.FloatParameter(blendShapeName);
+
+		var sliderTree = aac.NewBlendTreeAsRaw();
+		sliderTree.name = blendShapeName;
+		sliderTree.blendParameter = blendShapeName;
+		sliderTree.blendType = BlendTreeType.Simple1D;
+		sliderTree.minThreshold = 0;
+		sliderTree.maxThreshold = 1;
+		sliderTree.useAutomaticThresholds = true;
+
+		var zero = aac.NewClip().BlendShape(skinnedMeshRenderer, blendShapeName, 0);
+		zero.Clip.name = blendShapeName + " weight:0";
+		
+		var one = aac.NewClip().BlendShape(skinnedMeshRenderer, blendShapeName, 1);
+		one.Clip.name = blendShapeName + " weight:1";
+
+		sliderTree.children = new[]
+		{
+			new ChildMotion {motion = zero.Clip, timeScale = 1, threshold = 0},
+			new ChildMotion {motion = one.Clip, timeScale = 1, threshold = 1}
+		};
+
+		return sliderTree;
 	}
 }
 #endif
