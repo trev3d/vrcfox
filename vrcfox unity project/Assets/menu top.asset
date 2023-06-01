@@ -13,28 +13,6 @@ MonoBehaviour:
   m_Name: menu top
   m_EditorClassIdentifier: 
   controls:
-  - name: Accent Color
-    icon: {fileID: 2800000, guid: 30891e000b76dfc4db977fc2238911a0, type: 3}
-    type: 203
-    parameter:
-      name: 
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters:
-    - name: body scol
-    labels: []
-  - name: Primary Color
-    icon: {fileID: 2800000, guid: 30891e000b76dfc4db977fc2238911a0, type: 3}
-    type: 203
-    parameter:
-      name: 
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters:
-    - name: body pcol
-    labels: []
   - name: Body Customization
     icon: {fileID: 2800000, guid: 94acefe234605f9478421640fa09af72, type: 3}
     type: 103
