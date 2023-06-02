@@ -438,7 +438,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: FaceTrackingActive
+    m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: -5354049983448555214}
@@ -446,7 +446,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: FaceTrackingActive
+    m_DirectBlendParameter: Blend
     m_Mirror: 0
   m_BlendParameter: FT/EyeTrackingActive
   m_BlendParameterY: FT/EyeTrackingActive
@@ -1246,7 +1246,7 @@ AnimatorController:
   m_Name: anim eyes
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: FaceTrackingActive
+  - m_Name: Blend
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0

@@ -13,163 +13,158 @@ MonoBehaviour:
   m_Name: params
   m_EditorClassIdentifier: 
   parameters:
-  - name: body breasts
+  - name: FaceTrackingActive
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: breasts
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: body torso
+  - name: torso
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: body thighs
+  - name: thighs
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: body lashes
+  - name: lashes
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: body fluff
+  - name: fluff
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: body ears
+  - name: ears
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: EyeClosedLeft
+  - name: v2/JawOpen
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: EyeClosedRight
+  - name: v2/MouthClosed
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: JawOpen
+  - name: v2/MouthUpperUpLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthClosed
+  - name: v2/MouthUpperUpRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthSadLeft
+  - name: v2/MouthLowerDownLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthSadRight
+  - name: v2/MouthLowerDownRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthUpperUpLeft
+  - name: v2/BrowLowererLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthUpperUpRight
+  - name: v2/BrowLowererRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthLowerDownLeft
+  - name: v2/BrowPinchLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthLowerDownRight
+  - name: v2/BrowPinchRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowLowerLeft
+  - name: v2/BrowInnerUpLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowLowerRight
+  - name: v2/BrowInnerUpRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowPinchLeft
+  - name: v2/BrowOuterUpLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowPinchRight
+  - name: v2/BrowOuterUpRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowInnerUpLeft
+  - name: v2/MouthStretch
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowInnerUpRight
+  - name: v2/LipPucker
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowOuterUpLeft
+  - name: v2/LipFunnel
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: BrowOuterUpRight
+  - name: v2/LipSuckLower
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthCornerPullLeft
+  - name: v2/EyeLidLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0.8
+    networkSynced: 1
+  - name: v2/EyeLidRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0.8
+    networkSynced: 1
+  - name: v2/SmileSad
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthCornerPullRight
+  - name: v2/EyeLeftX
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthStretchLeft
+  - name: v2/EyeRightX
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: MouthStretchRight
+  - name: v2/EyeY
     valueType: 1
     saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: 1
-    valueType: 0
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: 2
-    valueType: 0
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: 3
-    valueType: 0
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: 4
-    valueType: 0
-    saved: 1
     defaultValue: 0
     networkSynced: 1

@@ -23,3 +23,13 @@ MonoBehaviour:
     subMenu: {fileID: 11400000, guid: 8ee08068c3f74d349bae5d08bfe98f13, type: 2}
     subParameters: []
     labels: []
+  - name: Disable face animations (for face tracking)
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: FaceTrackingActive
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []

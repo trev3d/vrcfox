@@ -22,7 +22,7 @@ MonoBehaviour:
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: body ears
+    - name: ears
     labels: []
   - name: Cheek fluff
     icon: {fileID: 0}
@@ -33,7 +33,7 @@ MonoBehaviour:
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: body fluff
+    - name: fluff
     labels: []
   - name: Lash size
     icon: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: body lashes
+    - name: lashes
     labels: []
   - name: Breast size
     icon: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: body breasts
+    - name: breasts
     labels: []
   - name: Thigh size
     icon: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: body thighs
+    - name: thighs
     labels: []
   - name: Belly size
     icon: {fileID: 0}
@@ -77,5 +77,5 @@ MonoBehaviour:
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: body torso
+    - name: torso
     labels: []
