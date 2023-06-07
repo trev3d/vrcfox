@@ -27,7 +27,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     type: 102
     parameter:
-      name: FaceTrackingActive
+      name: ue/FaceTrackingActive
     value: 1
     style: 0
     subMenu: {fileID: 0}

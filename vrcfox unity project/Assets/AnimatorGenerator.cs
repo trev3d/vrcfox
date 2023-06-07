@@ -1,23 +1,12 @@
 ﻿#if UNITY_EDITOR
 using AnimatorAsCode.V0;
-using AnimatorAsCodeFramework.Examples;
-using Boo.Lang;
 using System;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
-using VrcParameter = VRC.SDK3.Avatars.ScriptableObjects.VRCExpressionParameters.Parameter;
-
-
-[Serializable]
-public class ExpressionPair
-{
-	public string name;
-	public Motion brow;
-	public Motion mouth;
-	public int[] gestureTriggers;
-}
+using VRC.SDK3.Avatars.ScriptableObjects;
+using System.Collections.Generic;
 
 public class AnimatorGenerator : MonoBehaviour
 {
@@ -33,23 +22,24 @@ public class AnimatorGenerator : MonoBehaviour
 
 	public AvatarMask fxMask;
 
-	public ExpressionPair[] expressionPairs;
+	public string[] mouthGestureExpressions;
+	public string[] browGestureExpressions;
 
 	public string[] faceTrackingFloatShapeNames =
-		{
-			"JawOpen",
-			"MouthClosed",
-			"MouthSadLeft",
-			"MouthUpperUpLeft",
-			"MouthLowerDownLeft",
-			"BrowLowererLeft",
-			"BrowPinchLeft",
-			"BrowInnerUpLeft",
-			"BrowOuterUpLeft",
-			"MouthCornerPullLeft",
-			"MouthStretchLeft",
-			"MouthTightener",
-		};
+	{
+		"JawOpen",
+		"MouthClosed",
+		"MouthSadLeft",
+		"MouthUpperUpLeft",
+		"MouthLowerDownLeft",
+		"BrowLowererLeft",
+		"BrowPinchLeft",
+		"BrowInnerUpLeft",
+		"BrowOuterUpLeft",
+		"MouthCornerPullLeft",
+		"MouthStretchLeft",
+		"MouthTightener",
+	};
 }
 
 [CustomEditor(typeof(AnimatorGenerator), true)]
@@ -57,78 +47,94 @@ public class AnimatorGenerator : MonoBehaviour
 public class AnimatorGeneratorEditor : Editor
 {
 	private string[] LeftRight = { "Left", "Right" };
-	private const string v2 = "v2/";
 	private const string SystemName = "vrcfox";
 	private const float TransitionSpeed = 0.05f;
 
 
 	public override void OnInspectorGUI()
 	{
-		AacExample.InspectorTemplate(this, serializedObject, "assetKey", Create);
+		if (GUILayout.Button("Setup animator!"))
+			Create();
+
+		DrawDefaultInspector();
 	}
 
 	private void Create()
 	{
-
 		var my = (AnimatorGenerator)target;
 
-		var aac = AacExample.AnimatorAsCode(SystemName, my.avatar, my.assetContainer, my.assetKey,
-			AacExample.Options().WriteDefaultsOff());
-
+		var aac = AacV0.Create(new AacConfiguration
+		{
+			SystemName = SystemName,
+			AvatarDescriptor = my.avatar,
+			AnimatorRoot = my.avatar.transform,
+			DefaultValueRoot = my.avatar.transform,
+			AssetContainer = my.assetContainer,
+			AssetKey = my.assetKey,
+			DefaultsProvider = new AacDefaultsProvider(false)
+		});
 		aac.ClearPreviousAssets();
 
 		// hand gestures
-		aac.CreateMainGestureLayer().WithAvatarMask(my.gestureMask);
-		foreach (string side in LeftRight)
 		{
-			var layer = aac.CreateSupportingGestureLayer(side + " hand").WithAvatarMask(side == "Left" ? my.lMask : my.rMask);
-			var gesture = layer.IntParameter("Gesture" + side);
-
-			for (int i = 0; i < my.handMotions.Length; i++)
+			aac.CreateMainGestureLayer().WithAvatarMask(my.gestureMask);
+			foreach (string side in LeftRight)
 			{
-				Motion motion = my.handMotions[i];
+				var layer = aac.CreateSupportingGestureLayer(side + " hand")
+					.WithAvatarMask(side == "Left" ? my.lMask : my.rMask);
 
-				var state = layer.NewState(side + " hand " + i, 1, i).WithAnimation(motion);
+				var gesture = layer.IntParameter("Gesture" + side);
 
-				layer.EntryTransitionsTo(state).When(gesture.IsEqualTo(i));
-				state.Exits().WithTransitionDurationSeconds(TransitionSpeed).When(gesture.IsNotEqualTo(i));
+				for (int i = 0; i < my.handMotions.Length; i++)
+				{
+					Motion motion = my.handMotions[i];
+
+					var state = layer.NewState(motion.name, 1, i)
+						.WithAnimation(motion);
+
+					layer.EntryTransitionsTo(state)
+						.When(gesture.IsEqualTo(i));
+					state.Exits()
+						.WithTransitionDurationSeconds(TransitionSpeed)
+						.When(gesture.IsNotEqualTo(i));
+				}
 			}
 		}
 
-		var fxLayer = aac.CreateMainFxLayer().WithAvatarMask(my.fxMask);
+		aac.CreateMainFxLayer().WithAvatarMask(my.fxMask);
 
-		List<VrcParameter> avatarParams = new List<VrcParameter>();
+		var vrcParams = new List<VRCExpressionParameters.Parameter>();
 
 		// face tracking eye params (these animations are handled in the additive controller)
-		foreach (string side in LeftRight)
-		{
-			avatarParams.Add(new VrcParameter()
-			{
-				name = v2 + "Eye" + side + "X",
-				valueType = VRC.SDK3.Avatars.ScriptableObjects.VRCExpressionParameters.ValueType.Float,
-				saved = false,
-				networkSynced = true,
-			});
-		}
+		//foreach (string side in LeftRight)
+		//{
+		//	avatarParams.Add(new VrcParameter()
+		//	{
+		//		name = v2 + "Eye" + side + "X",
+		//		valueType = VRCExpressionParameters.ValueType.Float,
+		//		saved = false,
+		//		networkSynced = true,
+		//	});
+		//}
 
-		avatarParams.Add(new VrcParameter()
-		{
-			name = v2 + "EyeY",
-			valueType = VRC.SDK3.Avatars.ScriptableObjects.VRCExpressionParameters.ValueType.Float,
-			saved = false,
-			networkSynced = true,
-		});
+		//avatarParams.Add(new VrcParameter()
+		//{
+		//	name = v2 + "EyeY",
+		//	valueType = VRCExpressionParameters.ValueType.Float,
+		//	saved = false,
+		//	networkSynced = true,
+		//});
 
 		// create fx tree
-		var fxTreeLayer = aac.CreateSupportingFxLayer("body").WithAvatarMask(my.fxMask);
+		var fxTreeLayer = aac.CreateSupportingFxLayer("tree").WithAvatarMask(my.fxMask);
 
 		fxTreeLayer.OverrideValue(fxTreeLayer.FloatParameter("Blend"), 1);
 
-		var fxTree = aac.NewBlendTreeAsRaw();
-		fxTree.name = "blendshapes and toggles";
-		fxTree.blendType = BlendTreeType.Direct;
+		var masterTree = aac.NewBlendTreeAsRaw();
+		masterTree.name = "master tree";
+		masterTree.blendType = BlendTreeType.Direct;
 
-		fxTreeLayer.NewState(fxTree.name).WithAnimation(fxTree).WithWriteDefaultsSetTo(true);
+		fxTreeLayer.NewState(masterTree.name).WithAnimation(masterTree).WithWriteDefaultsSetTo(true);
 
 		// expressions
 		//var bLayer = aac.CreateSupportingFxLayer("brow").WithAvatarMask(my.fxMask);
@@ -158,61 +164,170 @@ public class AnimatorGeneratorEditor : Editor
 		//	}
 		//}
 
-		// face tracking
-		var faceTrackingTree = aac.NewBlendTreeAsRaw();
-		faceTrackingTree.name = "face tracking tree";
-		faceTrackingTree.blendType = BlendTreeType.Direct;
-
-		// face tracking eyelids
-		foreach (string side in LeftRight)
+		// brow gesture expressions
 		{
-			faceTrackingTree.AddChild(DualBlendShapeSlider(aac, fxTreeLayer, avatarParams, my.skin, "EyeClosed" + side, "EyeWide" + side, 0, 0.8f, 1, "v2/EyeLid" + side));
-		}
+			var prefix = "exp/brows/";
+			var expressions = my.browGestureExpressions;
+			var layer = aac.CreateSupportingFxLayer("brow gestures").WithAvatarMask(my.fxMask);
+			var gesture = layer.IntParameter("GestureLeft");
 
-		// face tracking straight-forward blendshapes
-		for (var i = 0; i < my.faceTrackingFloatShapeNames.Length; i++)
-		{
-			string shapeName = my.faceTrackingFloatShapeNames[i];
+			List<string> allPossibleExpressions = new List<string>();
 
-			faceTrackingTree.AddChild(BlendShapeSlider(aac, fxTreeLayer, avatarParams, my.skin, shapeName, v2 + shapeName, false));
-
-			if (shapeName.EndsWith("Left"))
+			foreach ( var shapeName in expressions)
 			{
-				shapeName = shapeName.Replace("Left", "Right");
+				if(!allPossibleExpressions.Contains(shapeName))
+					allPossibleExpressions.Add(shapeName);
+			}
 
-				faceTrackingTree.AddChild(BlendShapeSlider(aac, fxTreeLayer, avatarParams, my.skin, shapeName, v2 + shapeName, false));
+			for (int i = 0; i < expressions.Length; i++)
+			{
+				var clip = aac.NewClip();
+
+				foreach(var shapeName in  expressions)
+				{
+					clip.BlendShape(my.skin, prefix + shapeName, shapeName == expressions[i] ? 100 : 0);
+				}
+
+				var state = layer.NewState(expressions[i], 1, i)
+					.WithAnimation(clip);
+
+				layer.EntryTransitionsTo(state)
+					.When(gesture.IsEqualTo(i));
+				state.Exits()
+					.WithTransitionDurationSeconds(TransitionSpeed)
+					.When(gesture.IsNotEqualTo(i));
 			}
 		}
 
-		// face tracking mouth smile & frown
-		faceTrackingTree.AddChild(DualBlendShapeSlider(aac, fxTreeLayer, avatarParams, my.skin, "MouthSad", "MouthSmile", -1, 0, 1, "v2/SmileSad"));
-
-		// add face tree to fx tree
-		fxTree.AddChild(faceTrackingTree);
-
-		// body settings
+		// mouth gesture expressions
 		{
-			string prefix = "body ";
+			var prefix = "exp/mouth/";
+			var expressions = my.mouthGestureExpressions;
+			var layer = aac.CreateSupportingFxLayer("mouth gestures").WithAvatarMask(my.fxMask);
+			var gesture = layer.IntParameter("GestureRight");
 
-			// for each blend shape with the 'body ' prefix, create a new blend shape control subtree
+			List<string> allPossibleExpressions = new List<string>();
+
+			foreach (var shapeName in expressions)
+			{
+				if (!allPossibleExpressions.Contains(shapeName))
+					allPossibleExpressions.Add(shapeName);
+			}
+
+			for (int i = 0; i < expressions.Length; i++)
+			{
+				var clip = aac.NewClip();
+
+				foreach (var shapeName in expressions)
+				{
+					clip.BlendShape(my.skin, prefix + shapeName, shapeName == expressions[i] ? 100 : 0);
+				}
+
+				var state = layer.NewState(expressions[i], 1, i)
+					.WithAnimation(clip);
+
+				layer.EntryTransitionsTo(state)
+					.When(gesture.IsEqualTo(i));
+				state.Exits()
+					.WithTransitionDurationSeconds(TransitionSpeed)
+					.When(gesture.IsNotEqualTo(i));
+			}
+		}
+
+		// body preferences
+		{
+			string prefix = "prefs/";
+
+			var tree = aac.NewBlendTreeAsRaw();
+			tree.name = "face tracking";
+			tree.blendType = BlendTreeType.Direct;
+
+			// for each blend shape with the 'prefs/' prefix,
+			// create a new blend shape control subtree
 			for (var i = 0; i < my.skin.sharedMesh.blendShapeCount; i++)
 			{
 				string blendShapeName = my.skin.sharedMesh.GetBlendShapeName(i);
 
-				if (blendShapeName.Substring(0, 5) != prefix)
+				if (blendShapeName.Substring(0, prefix.Length) != prefix)
 				{
 					continue;
 				}
 
-				fxTree.AddChild(BlendShapeSlider(aac, fxTreeLayer, avatarParams, my.skin, blendShapeName, blendShapeName.Replace(prefix, ""), true));
+				tree.AddChild(BlendShapeSlider(aac, fxTreeLayer, vrcParams,
+					my.skin, blendShapeName, true));
 			}
+
+			masterTree.AddChild(tree);
+		}
+
+		// face tracking
+		{
+			string prefix = "ue/v2/";
+
+			var tree = aac.NewBlendTreeAsRaw();
+			tree.name = "face tracking";
+			tree.blendType = BlendTreeType.Direct;
+
+			// eyelids (disabled in favor of native eyetracking
+			//foreach (string side in LeftRight)
+			//{
+			//	faceTrackingTree.AddChild(DualBlendShapeSlider(aac, fxTreeLayer,
+			//		avatarParams, my.skin,
+			//		"EyeClosed" + side, "EyeWide" + side, 0, 0.8f, 1, "v2/EyeLid" + side));
+			//}
+
+			// straight-forward blendshapes
+			for (var i = 0; i < my.faceTrackingFloatShapeNames.Length; i++)
+			{
+				string shapeName = my.faceTrackingFloatShapeNames[i];
+
+				tree.AddChild(
+					BlendShapeSlider(aac, fxTreeLayer, vrcParams, my.skin,
+					prefix + shapeName, false));
+
+				if (shapeName.EndsWith("Left"))
+				{
+					shapeName = shapeName.Replace("Left", "Right");
+
+					tree.AddChild(
+						BlendShapeSlider(aac, fxTreeLayer, vrcParams, my.skin,
+						prefix + shapeName, false));
+				}
+			}
+
+			// smile sad
+			{
+				CreateFloatParam(fxTreeLayer, vrcParams, prefix + "SmileSad", false, 0);
+
+				var smileClip = aac.NewClip().BlendShape(my.skin, prefix + "Smile", 100);
+				smileClip.Clip.name = "1 smile";
+
+				var defaultClip = aac.NewClip();
+				defaultClip.Clip.name = "0 default";
+
+				var sadClip = aac.NewClip().BlendShape(my.skin, prefix + "Sad", 100);
+				sadClip.Clip.name = "-1 sad";
+
+				var smileSadTree = Create1DTree(aac, prefix + "SmileSad", -1, 1);
+				smileSadTree.children = new[]
+				{
+					new ChildMotion {threshold = 1, timeScale = 1, motion = smileClip.Clip},
+					new ChildMotion {threshold = 0, timeScale = 1, motion = defaultClip.Clip},
+					new ChildMotion {threshold = -1,timeScale = 1, motion = sadClip.Clip},
+				};
+
+				tree.AddChild(smileSadTree);
+			}
+
+
+			masterTree.AddChild(tree);
 		}
 
 		// face tracking vs default animation control 
 		{
-			var layer = aac.CreateSupportingFxLayer("face tracking control").WithAvatarMask(my.fxMask);
+			var layer = aac.CreateSupportingFxLayer("face animations toggle").WithAvatarMask(my.fxMask);
 
-			var param = CreateBoolParam(layer, avatarParams, "FaceTrackingActive", true, false);
+			var param = CreateBoolParam(layer, vrcParams, "ue/FaceTrackingActive", true, false);
 
 			var offState = layer.NewState("face tracking off");
 			var offControl = offState.State.AddStateMachineBehaviour<VRCAnimatorTrackingControl>();
@@ -229,20 +344,31 @@ public class AnimatorGeneratorEditor : Editor
 		}
 
 		// add all the new avatar params to the avatar descriptor
-		my.avatar.expressionParameters.parameters = avatarParams.ToArray();
+		my.avatar.expressionParameters.parameters = vrcParams.ToArray();
 	}
 
-	private BlendTree BlendShapeSlider(AacFlBase aac, AacFlLayer layer, List<VrcParameter> vrcParams, SkinnedMeshRenderer skin, string blendShapeName, string paramName, bool save)
+	private BlendTree BlendShapeSlider(AacFlBase aac, AacFlLayer layer,
+		List<VRCExpressionParameters.Parameter> vrcParams, 
+		SkinnedMeshRenderer skin, string paramAndShapeName, bool save)
 	{
+		return BlendShapeSlider(aac, layer, vrcParams, skin,
+			paramAndShapeName, paramAndShapeName, save);
+	}
+
+	private BlendTree BlendShapeSlider(AacFlBase aac, AacFlLayer layer,
+		List<VRCExpressionParameters.Parameter> vrcParams, 
+		SkinnedMeshRenderer skin, string shapeName, string paramName, bool save)
+	{
+
 		CreateFloatParam(layer, vrcParams, paramName, save, 0);
 
 		var tree = Create1DTree(aac, paramName, 0, 1);
 
-		var state000 = aac.NewClip().BlendShape(skin, blendShapeName, 0);
-		state000.Clip.name = blendShapeName + " weight:0";
+		var state000 = aac.NewClip().BlendShape(skin, shapeName, 0);
+		state000.Clip.name = shapeName + " weight:0";
 
-		var state100 = aac.NewClip().BlendShape(skin, blendShapeName, 100);
-		state100.Clip.name = blendShapeName + " weight:100";
+		var state100 = aac.NewClip().BlendShape(skin, shapeName, 100);
+		state100.Clip.name = shapeName + " weight:100";
 
 		tree.children = new[]
 		{
@@ -253,41 +379,48 @@ public class AnimatorGeneratorEditor : Editor
 		return tree;
 	}
 
-	private BlendTree DualBlendShapeSlider(AacFlBase aac, AacFlLayer layer, List<VrcParameter> vrcParams, SkinnedMeshRenderer skin, string negName, string posName, float min, float mid, float max, string paramName)
+	//private BlendTree DualBlendShapeSlider(AacFlBase aac, AacFlLayer layer,
+	//	List<VrcParameter> vrcParams, SkinnedMeshRenderer skin,
+	//	string negName, string posName,
+	//	float min, float mid, float max,
+	//	string paramName)
+	//{
+
+	//	CreateFloatParam(layer, vrcParams, paramName, false, mid);
+
+	//	var tree = Create1DTree(aac, paramName, min, max);
+
+	//	var pos0 = aac.NewClip().BlendShape(skin, posName, 0);
+	//	pos0.Clip.name = posName + " weight:0";
+
+	//	var pos100 = aac.NewClip().BlendShape(skin, posName, 100);
+	//	pos100.Clip.name = posName + " weight:100";
+
+	//	var neg0 = aac.NewClip().BlendShape(skin, negName, 0);
+	//	neg0.Clip.name = negName + " weight:0";
+
+	//	var neg100 = aac.NewClip().BlendShape(skin, negName, 100);
+	//	neg100.Clip.name = negName + " weight:100";
+
+	//	tree.children = new[]
+	//	{
+	//			new ChildMotion {motion = neg100.Clip, threshold = min, timeScale = 1},
+	//			new ChildMotion {motion = neg0.Clip, threshold = mid, timeScale = 1},
+	//			new ChildMotion {motion = pos0.Clip, threshold = mid, timeScale = 1},
+	//			new ChildMotion {motion = pos100.Clip, threshold = max, timeScale = 1},
+	//	};
+
+	//	return tree;
+	//}
+
+	private AacFlFloatParameter CreateFloatParam(AacFlLayer layer,
+		List<VRCExpressionParameters.Parameter> vrcParams, 
+		string paramName, bool save, float val)
 	{
-		CreateFloatParam(layer, vrcParams, paramName, false, mid);
-
-		var tree = Create1DTree(aac, paramName, min, max);
-
-		var pos0 = aac.NewClip().BlendShape(skin, posName, 0);
-		pos0.Clip.name = posName + " weight:0";
-
-		var pos100 = aac.NewClip().BlendShape(skin, posName, 100);
-		pos100.Clip.name = posName + " weight:100";
-
-		var neg0 = aac.NewClip().BlendShape(skin, negName, 0);
-		neg0.Clip.name = negName + " weight:0";
-
-		var neg100 = aac.NewClip().BlendShape(skin, negName, 100);
-		neg100.Clip.name = negName + " weight:100";
-
-		tree.children = new[]
-		{
-				new ChildMotion {motion = neg100.Clip, threshold = min, timeScale = 1},
-				new ChildMotion {motion = neg0.Clip, threshold = mid, timeScale = 1},
-				new ChildMotion {motion = pos0.Clip, threshold = mid, timeScale = 1},
-				new ChildMotion {motion = pos100.Clip, threshold = max, timeScale = 1},
-			};
-
-		return tree;
-	}
-
-	private AacFlFloatParameter CreateFloatParam(AacFlLayer layer, List<VrcParameter> vrcParams, string paramName, bool save, float val)
-	{
-		vrcParams.Add(new VrcParameter()
+		vrcParams.Add(new VRCExpressionParameters.Parameter()
 		{
 			name = paramName,
-			valueType = VRC.SDK3.Avatars.ScriptableObjects.VRCExpressionParameters.ValueType.Float,
+			valueType = VRCExpressionParameters.ValueType.Float,
 			saved = save,
 			networkSynced = true,
 			defaultValue = val,
@@ -296,21 +429,24 @@ public class AnimatorGeneratorEditor : Editor
 		return layer.FloatParameter(paramName);
 	}
 
-	private AacFlBoolParameter CreateBoolParam(AacFlLayer layer, List<VrcParameter> vrcParams, string paramName, bool save, bool val)
+	private AacFlBoolParameter CreateBoolParam(AacFlLayer layer,
+		List<VRCExpressionParameters.Parameter> vrcParams, 
+		string paramName, bool save, bool val)
 	{
-		vrcParams.Add(new VrcParameter()
+		vrcParams.Add(new VRCExpressionParameters.Parameter()
 		{
 			name = paramName,
-			valueType = VRC.SDK3.Avatars.ScriptableObjects.VRCExpressionParameters.ValueType.Bool,
+			valueType = VRCExpressionParameters.ValueType.Bool,
 			saved = save,
 			networkSynced = true,
-			defaultValue = val? 1 : 0,
+			defaultValue = val ? 1 : 0,
 		});
 
 		return layer.BoolParameter(paramName);
 	}
 
-	private BlendTree Create1DTree(AacFlBase aac, string paramName, float min, float max)
+	private BlendTree Create1DTree(AacFlBase aac, string paramName,
+		float min, float max)
 	{
 		var tree = aac.NewBlendTreeAsRaw();
 		tree.name = paramName;
