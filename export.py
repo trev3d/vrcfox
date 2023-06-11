@@ -50,4 +50,6 @@ bpy.ops.export_scene.fbx(
 	use_triangles=False,
 	
 	)
-	
+
+bpy.ops.ed.undo_push()	
+bpy.ops.ed.undo()

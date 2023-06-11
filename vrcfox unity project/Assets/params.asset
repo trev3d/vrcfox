@@ -13,158 +13,133 @@ MonoBehaviour:
   m_Name: params
   m_EditorClassIdentifier: 
   parameters:
-  - name: FaceTrackingActive
+  - name: prefs/breasts
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: prefs/torso
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: prefs/thighs
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: prefs/lashes
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: prefs/fluff
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: prefs/ears
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/JawOpen
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/LipPucker
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/LipFunnel
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/MouthUpperUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/MouthUpperUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/MouthLowerDownLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/MouthLowerDownRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowLowererLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowLowererRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowPinchLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowPinchRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowInnerUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowInnerUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowOuterUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/BrowOuterUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/MouthStretch
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/MouthClosed
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/LipSuckLower
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/v2/SmileSad
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: ue/FaceTrackingActive
     valueType: 2
     saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: breasts
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: torso
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: thighs
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: lashes
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: fluff
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: ears
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/JawOpen
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/MouthClosed
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/MouthUpperUpLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/MouthUpperUpRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/MouthLowerDownLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/MouthLowerDownRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowLowererLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowLowererRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowPinchLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowPinchRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowInnerUpLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowInnerUpRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowOuterUpLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowOuterUpRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/MouthStretch
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/LipPucker
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/LipFunnel
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/LipSuckLower
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/EyeLidLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0.8
-    networkSynced: 1
-  - name: v2/EyeLidRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0.8
-    networkSynced: 1
-  - name: v2/SmileSad
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/EyeLeftX
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/EyeRightX
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/EyeY
-    valueType: 1
-    saved: 0
     defaultValue: 0
     networkSynced: 1
