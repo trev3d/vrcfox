@@ -1,6 +1,5 @@
 ﻿#if UNITY_EDITOR
 using AnimatorAsCode.V0;
-using System;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -8,7 +7,7 @@ using VRC.SDK3.Avatars.Components;
 using VRC.SDK3.Avatars.ScriptableObjects;
 using System.Collections.Generic;
 
-public class AnimatorGenerator : MonoBehaviour
+public class VrcFoxAnimatorWizard : MonoBehaviour
 {
 	public VRCAvatarDescriptor avatar;
 	public SkinnedMeshRenderer skin;
@@ -48,14 +47,13 @@ public class AnimatorGenerator : MonoBehaviour
 	};
 }
 
-[CustomEditor(typeof(AnimatorGenerator), true)]
+[CustomEditor(typeof(VrcFoxAnimatorWizard), true)]
 
 public class AnimatorGeneratorEditor : Editor
 {
 	private string[] LeftRight = { "Left", "Right" };
 	private const string SystemName = "vrcfox";
 	private const float TransitionSpeed = 0.05f;
-
 
 	public override void OnInspectorGUI()
 	{
@@ -67,7 +65,7 @@ public class AnimatorGeneratorEditor : Editor
 
 	private void Create()
 	{
-		var my = (AnimatorGenerator)target;
+		var my = (VrcFoxAnimatorWizard)target;
 
 		var aac = AacV0.Create(new AacConfiguration
 		{
@@ -79,6 +77,7 @@ public class AnimatorGeneratorEditor : Editor
 			AssetKey = my.assetKey,
 			DefaultsProvider = new AacDefaultsProvider(false)
 		});
+
 		aac.ClearPreviousAssets();
 
 		// hand gestures
@@ -110,26 +109,6 @@ public class AnimatorGeneratorEditor : Editor
 		aac.CreateMainFxLayer().WithAvatarMask(my.fxMask);
 
 		var vrcParams = new List<VRCExpressionParameters.Parameter>();
-
-		// face tracking eye params (these animations are handled in the additive controller)
-		//foreach (string side in LeftRight)
-		//{
-		//	avatarParams.Add(new VrcParameter()
-		//	{
-		//		name = v2 + "Eye" + side + "X",
-		//		valueType = VRCExpressionParameters.ValueType.Float,
-		//		saved = false,
-		//		networkSynced = true,
-		//	});
-		//}
-
-		//avatarParams.Add(new VrcParameter()
-		//{
-		//	name = v2 + "EyeY",
-		//	valueType = VRCExpressionParameters.ValueType.Float,
-		//	saved = false,
-		//	networkSynced = true,
-		//});
 
 		AacFlBoolParameter faceTrackingActiveParam;
 
@@ -165,34 +144,6 @@ public class AnimatorGeneratorEditor : Editor
 		masterTree.blendType = BlendTreeType.Direct;
 
 		fxTreeLayer.NewState(masterTree.name).WithAnimation(masterTree).WithWriteDefaultsSetTo(true);
-
-		// expressions
-		//var bLayer = aac.CreateSupportingFxLayer("brow").WithAvatarMask(my.fxMask);
-		//var bGesture = bLayer.IntParameter("LeftGesture");
-
-		//var mlayer = aac.CreateSupportingFxLayer("mouth").WithAvatarMask(my.fxMask);
-		//var mGesture = mlayer.IntParameter("RightGesture");
-
-
-		//for (var i = 0; i < my.expressionPairs.Length; i++)
-		//{
-		//	var exp = my.expressionPairs[i];
-
-		//	var bState = bLayer.NewState(exp.name + " brow " + i, 1, i).WithAnimation(exp.brow);
-		//	var mState = mlayer.NewState(exp.name + " mouth " + i, 1, i).WithAnimation(exp.mouth);
-
-		//	var bExit = bState.Exits().WithTransitionDurationSeconds(TransitionSpeed).WhenConditions();
-		//	var mExit = mState.Exits().WithTransitionDurationSeconds(TransitionSpeed).WhenConditions();
-
-		//	foreach (int expressionIndex in exp.gestureTriggers)
-		//	{
-		//		bLayer.EntryTransitionsTo(bState).When(bGesture.IsEqualTo(expressionIndex));
-		//		bExit.And(bGesture.IsNotEqualTo(expressionIndex));
-
-		//		mlayer.EntryTransitionsTo(mState).When(mGesture.IsEqualTo(expressionIndex));
-		//		mExit.And(mGesture.IsNotEqualTo(expressionIndex));
-		//	}
-		//}
 
 		// brow gesture expressions
 		{
@@ -308,10 +259,11 @@ public class AnimatorGeneratorEditor : Editor
 					my.skin, blendShapeName, true));
 			}
 
-			tree.AddChild(SliderSubtree(aac, fxTreeLayer, vrcParams, my.skin,
+			// color changing
+			tree.AddChild(SliderSubtree(aac, fxTreeLayer, vrcParams,
 				my.primaryColor0, my.primaryColor1, prefix + "pcol", true));
 
-			tree.AddChild(SliderSubtree(aac, fxTreeLayer, vrcParams, my.skin,
+			tree.AddChild(SliderSubtree(aac, fxTreeLayer, vrcParams,
 				my.secondColor0, my.secondColor1, prefix + "scol", true));
 
 			masterTree.AddChild(tree);
@@ -402,12 +354,12 @@ public class AnimatorGeneratorEditor : Editor
 		var state100 = aac.NewClip().BlendShape(skin, shapeName, 100);
 		state100.Clip.name = shapeName + " weight:100";
 
-		return SliderSubtree(aac, layer, vrcParams, skin, state000.Clip, state100.Clip, paramName, save);
+		return SliderSubtree(aac, layer, vrcParams, state000.Clip, state100.Clip, paramName, save);
 	}
 
 	private BlendTree SliderSubtree(AacFlBase aac, AacFlLayer layer,
-		List<VRCExpressionParameters.Parameter> vrcParams,
-		SkinnedMeshRenderer skin, Motion clip0, Motion clip1, string paramName, bool save)
+		List<VRCExpressionParameters.Parameter> vrcParams, 
+		Motion clip0, Motion clip1, string paramName, bool save)
 	{
 
 		CreateFloatParam(layer, vrcParams, paramName, save, 0);
@@ -422,40 +374,6 @@ public class AnimatorGeneratorEditor : Editor
 
 		return tree;
 	}
-
-	//private BlendTree DualBlendShapeSlider(AacFlBase aac, AacFlLayer layer,
-	//	List<VrcParameter> vrcParams, SkinnedMeshRenderer skin,
-	//	string negName, string posName,
-	//	float min, float mid, float max,
-	//	string paramName)
-	//{
-
-	//	CreateFloatParam(layer, vrcParams, paramName, false, mid);
-
-	//	var tree = Create1DTree(aac, paramName, min, max);
-
-	//	var pos0 = aac.NewClip().BlendShape(skin, posName, 0);
-	//	pos0.Clip.name = posName + " weight:0";
-
-	//	var pos100 = aac.NewClip().BlendShape(skin, posName, 100);
-	//	pos100.Clip.name = posName + " weight:100";
-
-	//	var neg0 = aac.NewClip().BlendShape(skin, negName, 0);
-	//	neg0.Clip.name = negName + " weight:0";
-
-	//	var neg100 = aac.NewClip().BlendShape(skin, negName, 100);
-	//	neg100.Clip.name = negName + " weight:100";
-
-	//	tree.children = new[]
-	//	{
-	//			new ChildMotion {motion = neg100.Clip, threshold = min, timeScale = 1},
-	//			new ChildMotion {motion = neg0.Clip, threshold = mid, timeScale = 1},
-	//			new ChildMotion {motion = pos0.Clip, threshold = mid, timeScale = 1},
-	//			new ChildMotion {motion = pos100.Clip, threshold = max, timeScale = 1},
-	//	};
-
-	//	return tree;
-	//}
 
 	private AacFlFloatParameter CreateFloatParam(AacFlLayer layer,
 		List<VRCExpressionParameters.Parameter> vrcParams, 

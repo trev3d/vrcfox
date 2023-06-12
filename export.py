@@ -35,21 +35,21 @@ bpy.context.view_layer.active_layer_collection = export_layer_collection
 # export
 bpy.ops.export_scene.fbx(
 
-	filepath=bpy.path.abspath(relative_export_path + "/" + file_name),
-	check_existing=False,
-	use_active_collection=True,
-	bake_space_transform=True, 
-	object_types={'ARMATURE', 'MESH'}, 
-	use_mesh_modifiers=False, 
-	use_mesh_modifiers_render=False, 
-	bake_anim_use_all_bones=False,
-	bake_anim_force_startend_keying=False,
-	bake_anim_simplify_factor=0.0,
-	colors_type="LINEAR",
-	use_armature_deform_only=True,
-	use_triangles=False,
-	
-	)
+filepath=bpy.path.abspath(relative_export_path + "/" + file_name),
+check_existing=False,
+use_active_collection=True,
+bake_space_transform=True, 
+object_types={'ARMATURE', 'MESH'}, 
+use_mesh_modifiers=False, 
+use_mesh_modifiers_render=False, 
+bake_anim_use_all_bones=False,
+bake_anim_force_startend_keying=False,
+bake_anim_simplify_factor=0.0,
+colors_type="LINEAR",
+use_armature_deform_only=True,
+use_triangles=False,
+
+)
 
 bpy.ops.ed.undo_push()	
 bpy.ops.ed.undo()
