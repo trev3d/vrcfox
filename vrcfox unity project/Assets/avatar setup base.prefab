@@ -199,7 +199,7 @@ MonoBehaviour:
   ignoreTransforms: []
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
-  pull: 0.5
+  pull: 0.2
   pullCurve:
     serializedVersion: 2
     m_Curve: []
@@ -524,7 +524,7 @@ MonoBehaviour:
   ignoreTransforms: []
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
-  pull: 0.7
+  pull: 0.5
   pullCurve:
     serializedVersion: 2
     m_Curve: []
@@ -830,7 +830,7 @@ MonoBehaviour:
   ignoreTransforms: []
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
-  pull: 0.7
+  pull: 0.5
   pullCurve:
     serializedVersion: 2
     m_Curve: []
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   - viseme/I
   - viseme/O
   - viseme/U
-  unityVersion: 
+  unityVersion: 2019.4.31f1
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   networkIDs: []
@@ -1088,7 +1088,7 @@ MonoBehaviour:
         linked: 1
         left: {x: 0, y: 0, z: 0, w: 0}
         right: {x: 0, y: 0, z: 0, w: 0}
-    eyelidsSkinnedMesh: {fileID: 0}
+    eyelidsSkinnedMesh: {fileID: 2888210841022967577}
     eyelidsBlendshapes: 030000000500000004000000
   customizeAnimationLayers: 1
   baseAnimationLayers:
@@ -1099,9 +1099,10 @@ MonoBehaviour:
     isDefault: 1
   - isEnabled: 0
     type: 2
-    animatorController: {fileID: 0}
+    animatorController: {fileID: 9100000, guid: 357cc47eacc7fb245856d07eb906cfd1,
+      type: 2}
     mask: {fileID: 0}
-    isDefault: 1
+    isDefault: 0
   - isEnabled: 0
     type: 3
     animatorController: {fileID: 9100000, guid: 4df7674ab600e184f943a422fd71c343,
@@ -1137,93 +1138,91 @@ MonoBehaviour:
     isDefault: 1
   AnimationPreset: {fileID: 0}
   animationHashSet:
-  - hash: 917347605
-    name: left hand 0
-  - hash: 1101704579
-    name: left hand 1
-  - hash: -660341703
-    name: left hand 2
-  - hash: -1348154193
-    name: left hand 3
-  - hash: 834689292
-    name: left hand 4
-  - hash: 1187473818
-    name: left hand 5
-  - hash: -540133344
-    name: left hand 6
-  - hash: -1463220042
-    name: left hand 7
-  - hash: -1213183551
-    name: right hand 0
-  - hash: -1061717673
-    name: right hand 1
-  - hash: 1505634541
-    name: right hand 2
-  - hash: 783882363
-    name: right hand 3
-  - hash: -1327657512
-    name: right hand 4
-  - hash: -941966002
-    name: right hand 5
-  - hash: 1590947060
-    name: right hand 6
-  - hash: 701815906
-    name: right hand 7
-  - hash: 213893575
-    name: neutral brow 0
-  - hash: 1147750193
-    name: worried brow 1
-  - hash: 1985031307
-    name: curious brow 2
-  - hash: -1026534634
-    name: frown brow 3
-  - hash: -1948197655
-    name: smile brow 4
-  - hash: 109895913
-    name: neutral mouth 0
-  - hash: 1007050897
-    name: worried mouth 1
-  - hash: -1515978735
-    name: curious mouth 2
-  - hash: 369870261
-    name: frown mouth 3
-  - hash: -362473005
-    name: smile mouth 4
-  - hash: 2031643827
-    name: Blend Tree
-  - hash: 1824843603
-    name: New State
-  - hash: -366624624
-    name: Visemes Enabled
-  - hash: -1633786139
-    name: Visemes Disabled
-  - hash: -1195092665
-    name: New State
-  - hash: 506850734
-    name: Controlled Eye Tracking
-  - hash: 1459561969
-    name: VRC Eye Tracking
-  - hash: 904443154
-    name: Face Tracking Disabled
-  - hash: 1305177791
-    name: Face Tracking Enabled
-  - hash: -630857207
-    name: Face_Tracking_BlendTree
-  - hash: -390240051
-    name: Binary_Parameters_Blendtree
-  - hash: -1178290839
-    name: OSCmooth_Local
-  - hash: 424325902
-    name: OSCmooth_Net
+  - hash: -1260430634
+    name: VRC Controlled Eye Tracking
+  - hash: 1836243648
+    name: Face Tracked Eye Tracking
+  - hash: 1545220479
+    name: master tree
+  - hash: -295692675
+    name: rig_hand 0 neutral
+  - hash: 915532021
+    name: rig_hand 1 fist
+  - hash: 1056964995
+    name: rig_hand 2 open
+  - hash: -1270661767
+    name: rig_hand 3 point
+  - hash: -816517996
+    name: rig_hand 4 peace
+  - hash: -2118409412
+    name: rig_hand 5 rock n roll
+  - hash: -1420037029
+    name: rig_hand 6 gun
+  - hash: 1638421798
+    name: rig_hand 7 thumbs up
+  - hash: 601478037
+    name: rig_hand 0 neutral
+  - hash: 744237656
+    name: rig_hand 1 fist
+  - hash: 634241838
+    name: rig_hand 2 open
+  - hash: 473837550
+    name: rig_hand 3 point
+  - hash: 1730805251
+    name: rig_hand 4 peace
+  - hash: -708430404
+    name: rig_hand 5 rock n roll
+  - hash: -1135795121
+    name: rig_hand 6 gun
+  - hash: 469882692
+    name: rig_hand 7 thumbs up
+  - hash: -1965148844
+    name: face tracking off
+  - hash: -1169342359
+    name: face tracking on
+  - hash: -1099298580
+    name: master tree
+  - hash: 2140097607
+    name: nil
+  - hash: 1388949473
+    name: down
+  - hash: 662105948
+    name: up
+  - hash: 1985228919
+    name: curious
+  - hash: -734016458
+    name: up 0
+  - hash: 218927853
+    name: worried
+  - hash: -1272729800
+    name: curious 0
+  - hash: -209180436
+    name: down 0
+  - hash: 1038480140
+    name: nil
+  - hash: -1232976424
+    name: frown
+  - hash: 747729987
+    name: smile
+  - hash: 1615461652
+    name: grimace
+  - hash: 2126021507
+    name: smile 0
+  - hash: 522600268
+    name: grimace 0
+  - hash: 1746997210
+    name: grimace 1
+  - hash: -1110226309
+    name: frown 0
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:
     isMirrored: 1
     state: 0
     transform: {fileID: 2190328866278626262}
-    radius: 0.001084186
+    radius: 0.0010841857
     height: 0
-    position: {x: 0.0000009698274, y: 0.00056526385, z: 0.00003685361}
+    position: {x: 0.0000009698265, y: 0.0005652629, z: 0.000036853555}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_torso:
     isMirrored: 1
@@ -1237,7 +1236,7 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 4501929368008885926}
-    radius: 0.00093426066
+    radius: 0.0009342595
     height: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1245,7 +1244,7 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 7463764811984273122}
-    radius: 0.0009342604
+    radius: 0.0009342591
     height: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1253,80 +1252,80 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 7139539231766666650}
-    radius: 0.00021541635
-    height: 0.0008616654
-    position: {x: 0.0000056117087, y: 0.0007323409, z: -0.0000088090455}
-    rotation: {x: 0.47214288, y: 0, z: -0.52527165, w: 0.7079342}
+    radius: 0.00021541641
+    height: 0.00086166564
+    position: {x: 0.0000056121207, y: 0.0007323418, z: -0.000008808697}
+    rotation: {x: 0.47214407, y: 0, z: -0.525271, w: 0.7079339}
   collider_handL:
     isMirrored: 1
     state: 0
     transform: {fileID: 2261384790746344247}
-    radius: 0.00021541605
-    height: 0.0008616642
-    position: {x: -0.000005612383, y: 0.0007323432, z: -0.000008808993}
-    rotation: {x: 0.39411634, y: 0, z: 0.5869415, w: 0.7072284}
+    radius: 0.00021541608
+    height: 0.0008616643
+    position: {x: -0.0000056123567, y: 0.0007323434, z: -0.000008808974}
+    rotation: {x: 0.3941165, y: 0, z: 0.5869414, w: 0.7072285}
   collider_fingerIndexL:
     isMirrored: 1
     state: 0
     transform: {fileID: 5058986137564077941}
-    radius: 0.000089251465
-    height: 0.00044625733
+    radius: 0.00008925206
+    height: 0.0004462603
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 863149670287924931}
-    radius: 0.000105955
-    height: 0.000529775
+    radius: 0.000105954605
+    height: 0.000529773
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingL:
     isMirrored: 1
     state: 0
     transform: {fileID: 1307256826819938939}
-    radius: 0.00008581004
-    height: 0.00042905018
+    radius: 0.000085809654
+    height: 0.00042904823
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 5297654841438442311}
-    radius: 0.00006848288
-    height: 0.0003424144
+    radius: 0.00006848252
+    height: 0.0003424126
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerIndexR:
     isMirrored: 1
     state: 0
     transform: {fileID: 9129358847584808649}
-    radius: 0.00008925155
-    height: 0.00044625773
+    radius: 0.000089252026
+    height: 0.00044626012
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 471629325672706193}
-    radius: 0.000105955114
-    height: 0.00052977557
+    radius: 0.00010595503
+    height: 0.0005297751
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingR:
     isMirrored: 1
     state: 0
     transform: {fileID: 7771433182525227463}
-    radius: 0.0000858096
-    height: 0.000429048
+    radius: 0.00008580984
+    height: 0.0004290492
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 8331676728929821151}
-    radius: 0.00006848193
-    height: 0.00034240968
+    radius: 0.00006848155
+    height: 0.00034240776
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &4518591562910165925
@@ -1681,41 +1680,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -3126,11 +3090,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}

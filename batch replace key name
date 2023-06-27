@@ -7,4 +7,4 @@ selected_object = bpy.context.object
 shape_keys = selected_object.data.shape_keys.key_blocks
 
 for key in shape_keys:
-    key.name = key.name.replace("ue/", "ue/v2/")
+    key.name = key.name.replace("ue/", "")
