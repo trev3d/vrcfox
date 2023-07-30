@@ -121,85 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &259094888 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4518591562910165925, guid: 4660207665e831c499dc076459e49c32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4518591563714526480}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &259094889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259094888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fef40173b344a40bf1466cc9c93393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatar: {fileID: 896512367}
-  skin: {fileID: 4518591563714526481}
-  assetContainer: {fileID: 9100000, guid: de9958abfdd79be45afaa08e31d2899f, type: 2}
-  assetKey: 
-  gestureMask: {fileID: 31900000, guid: 2c544c8b584d741bdb884b8f910e8b64, type: 2}
-  lMask: {fileID: 31900000, guid: 7ff0199655202a04eb175de45a6e078a, type: 2}
-  rMask: {fileID: 31900000, guid: 903ce375d5f609d44b9f00b425d6eda9, type: 2}
-  handMotions:
-  - {fileID: 7400000, guid: 17f6811ad8fbaec4ba758c0e9d4bc63e, type: 2}
-  - {fileID: 7400000, guid: 9716ac2dc262b524193365c552868456, type: 2}
-  - {fileID: 7400000, guid: 2c53e22680d6f644d8f67bf16fc29e04, type: 2}
-  - {fileID: 7400000, guid: 159b856034800bb4ea0319b1ce4fd8c7, type: 2}
-  - {fileID: 7400000, guid: 2262c43a626a1664cb4a56f5c791c215, type: 2}
-  - {fileID: 7400000, guid: 21778a9afd428014e9d0e351ad5a1c40, type: 2}
-  - {fileID: 7400000, guid: 17e549f94f6d25f4da19e77f85918ec1, type: 2}
-  - {fileID: 7400000, guid: be1b6b943c973cc44ba8ca84a47f3273, type: 2}
-  fxMask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
-  primaryColor0: {fileID: 7400000, guid: 8421033fab3bd4941a54cc533287898b, type: 2}
-  primaryColor1: {fileID: 7400000, guid: 1ee5d60bcc1f77a47b1e79f2944139e3, type: 2}
-  secondColor0: {fileID: 7400000, guid: de7942e8683b2d34ea22c50b83f37f9b, type: 2}
-  secondColor1: {fileID: 7400000, guid: b7ba98e9f6ffbba43a2ed420efb56037, type: 2}
-  mouthGestureExpressions:
-  - nil
-  - frown
-  - smile
-  - grimace
-  - smile
-  - grimace
-  - grimace
-  - frown
-  browGestureExpressions:
-  - nil
-  - down
-  - up
-  - curious
-  - up
-  - worried
-  - curious
-  - down
-  faceTrackingFloatShapeNames:
-  - JawOpen
-  - LipPucker
-  - LipFunnel
-  - MouthUpperUpLeft
-  - MouthLowerDownLeft
-  - MouthStretch
-  - MouthClosed
-  - MouthRaiserUpper
-  - MouthRaiserLower
---- !u!114 &896512367 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4518591563714526480}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 542108242, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4518591563714526480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,15 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2888210841022967577, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
     - target: {fileID: 4518591562910165925, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
       propertyPath: m_Name
-      value: PC avatar
+      value: PC
       objectReference: {fileID: 0}
     - target: {fileID: 4518591562910165926, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
@@ -424,9 +340,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4660207665e831c499dc076459e49c32, type: 3}
---- !u!137 &4518591563714526481 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2888210841022967577, guid: 4660207665e831c499dc076459e49c32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4518591563714526480}
-  m_PrefabAsset: {fileID: 0}
