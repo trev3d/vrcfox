@@ -1,6 +1,9 @@
+# EXPORT SCRIPT - click '▶' on menu bar above to export to Unity
+
 relative_export_path = "//vrcfox unity project/Assets"
 file_name = "vrcfox model.fbx"
 desired_model_name = "Body"
+export_uv_map = "player-customized colors"
 export_collection_name="master"
 
 import bpy
@@ -19,6 +22,9 @@ for obj in export_collection.all_objects:
 		for _, m in enumerate(obj.modifiers):
 			if m.type != "ARMATURE":
 				bpy.ops.object.modifier_apply(modifier=m.name)
+	
+	if obj.type == "ARMATURE":
+		obj.data.pose_position = 'POSE';
 
 bpy.context.view_layer.objects.active = bpy.context.selected_objects[0]
 
@@ -27,6 +33,9 @@ bpy.ops.object.join()
 
 # rename object
 bpy.context.active_object.name = desired_model_name
+
+# set active UV layer
+bpy.context.object.data.uv_layers[export_uv_map].active = True 
 
 # set master collection to active collection
 export_layer_collection = bpy.context.view_layer.layer_collection.children[export_collection_name]
