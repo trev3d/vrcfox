@@ -2,6 +2,7 @@
 a bare-bones furry avatar for VRChat featuring basic body & color customization and face tracking
 
 (todo, record facetracking video!)
+
 ![Screenshot_4](https://github.com/cellomonster/vrcfox/assets/32079637/ac0921cf-05ab-407d-bc21-43188dd42ca3)
 
 ## Modifying
