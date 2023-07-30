@@ -115,6 +115,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: fox
+    second: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: vertex shaded
     second: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
   materials:
@@ -843,18 +848,18 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: trev model(Clone)
+    - name: vrcfox model(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: fox
-      parentName: trev model(Clone)
+    - name: Body
+      parentName: vrcfox model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.00000005960465, y: 0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: rig
-      parentName: trev model(Clone)
+      parentName: vrcfox model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
@@ -925,12 +930,12 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: hair
       parentName: head
-      position: {x: 0.000025106028, y: 0.0018226611, z: 0.0002799268}
-      rotation: {x: 0.85123867, y: -0.08609165, z: 0.20134293, w: 0.47690883}
-      scale: {x: 0.9999997, y: 0.9999999, z: 0.99999994}
+      position: {x: -0.00040440273, y: 0.001494546, z: 0.00080581266}
+      rotation: {x: 0.9229212, y: 0.00000010369046, z: -0.00000016961344, w: 0.3849889}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.99999976}
     - name: hair_end
       parentName: hair
-      position: {x: -0, y: 0.0010348695, z: 0}
+      position: {x: -0, y: 0.00073905423, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: jaw
@@ -946,7 +951,7 @@ ModelImporter:
     - name: shoulder.L
       parentName: chest
       position: {x: -0.0011143846, y: 0.0013022999, z: -0.00012415054}
-      rotation: {x: -0.36412427, y: 0.55160886, z: 0.34991837, w: 0.66385114}
+      rotation: {x: -0.3641247, y: 0.5516087, z: 0.34991878, w: 0.66385084}
       scale: {x: 1.0000004, y: 0.9999998, z: 1.0000001}
     - name: upper_arm.L
       parentName: shoulder.L
@@ -986,7 +991,7 @@ ModelImporter:
     - name: f_middle.01.L
       parentName: hand.L
       position: {x: -0.000012032188, y: 0.0008834026, z: -0.00013386398}
-      rotation: {x: -0.00023431404, y: 0.0040902393, z: -0.07308668, w: 0.9973172}
+      rotation: {x: -0.00023431404, y: 0.0040902384, z: -0.07308666, w: 0.9973172}
       scale: {x: 0.9999996, y: 0.99999994, z: 0.9999997}
     - name: f_middle.02.L
       parentName: f_middle.01.L
@@ -1146,7 +1151,7 @@ ModelImporter:
     - name: f_ring.01.R
       parentName: hand.R
       position: {x: 0.000004695591, y: 0.0008801522, z: 0.00008854318}
-      rotation: {x: 0.005300194, y: 0.0020117757, z: 0.080361746, w: 0.9967497}
+      rotation: {x: 0.0053001954, y: 0.0020117764, z: 0.08036176, w: 0.9967497}
       scale: {x: 0.9999998, y: 0.9999998, z: 0.99999976}
     - name: f_ring.02.R
       parentName: f_ring.01.R

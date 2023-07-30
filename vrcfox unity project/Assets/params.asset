@@ -13,47 +13,133 @@ MonoBehaviour:
   m_Name: params
   m_EditorClassIdentifier: 
   parameters:
-  - name: VRCEmote
-    valueType: 0
+  - name: prefs/FaceTrackingActive
+    valueType: 2
     saved: 1
     defaultValue: 0
-  - name: VRCFaceBlendH
+    networkSynced: 1
+  - name: prefs/breasts
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: VRCFaceBlendV
+    networkSynced: 1
+  - name: prefs/torso
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: pcol
+    networkSynced: 1
+  - name: prefs/thighs
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: scol
+    networkSynced: 1
+  - name: prefs/lashes
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: fluff
+    networkSynced: 1
+  - name: prefs/fluff
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: breasts
+    networkSynced: 1
+  - name: prefs/ears
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: lashes
+    networkSynced: 1
+  - name: prefs/pcol
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: torso
+    networkSynced: 1
+  - name: prefs/scol
     valueType: 1
     saved: 1
     defaultValue: 0
-  - name: thighs
+    networkSynced: 1
+  - name: v2/JawOpen
     valueType: 1
-    saved: 1
+    saved: 0
     defaultValue: 0
-  - name: ears
+    networkSynced: 1
+  - name: v2/LipPucker
     valueType: 1
-    saved: 1
+    saved: 0
     defaultValue: 0
+    networkSynced: 1
+  - name: v2/LipFunnel
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthUpperUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthUpperUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthLowerDownLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthLowerDownRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthStretch
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthClosed
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/SmileSad
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/EyeLidLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/EyeLidRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowExpressionLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowExpressionRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/EyeLeftX
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/EyeRightX
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/EyeY
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1

@@ -50,19 +50,19 @@ namespace AnimatorAsCodeFramework.Examples
             // - The second transition is "AccessoryThing is false"
             shown.TransitionsTo(hidden).When(accessoriesParams.IsAnyFalse());
 
-            if (false)
-            {
-                // Alternatively, you can use the long way:
-                var enableAccessoriesParam = fx.BoolParameter("EnableAccessories");
-                var thingParam = fx.BoolParameter("ThingParam");
+            //if (false)
+            //{
+            //    // Alternatively, you can use the long way:
+            //    var enableAccessoriesParam = fx.BoolParameter("EnableAccessories");
+            //    var thingParam = fx.BoolParameter("ThingParam");
 
-                hidden.TransitionsTo(shown).When(enableAccessoriesParam.IsTrue()).And(thingParam.IsTrue());
+            //    hidden.TransitionsTo(shown).When(enableAccessoriesParam.IsTrue()).And(thingParam.IsTrue());
 
-                // - The first transition:
-                shown.TransitionsTo(hidden).When(enableAccessoriesParam.IsFalse())
-                    // - The second transition:
-                    .Or().When(thingParam.IsFalse());
-            }
+            //    // - The first transition:
+            //    shown.TransitionsTo(hidden).When(enableAccessoriesParam.IsFalse())
+            //        // - The second transition:
+            //        .Or().When(thingParam.IsFalse());
+            //}
         }
 
         private void Remove()
