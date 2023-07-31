@@ -18,6 +18,7 @@ The Unity project contains an 'avatar setup base' prefab and two scenes for Ques
 The Unity project also includes a script to easily customize expressions but it contains a lot of hard-coded values and isn't meant to be user-friendly YET. If you make any manual changes to the animators you should **NEVER** press the 'Setup Animator!' button as this will **destroy your work!!!**
 
 ## TODO:
+- [ ] User friendly animator wizard (WIP)
 - [ ] Add body geometry. Right now the only thing under the coat is air!
 - [X] Revise visemes and expression
 - [X] Face tracking support
