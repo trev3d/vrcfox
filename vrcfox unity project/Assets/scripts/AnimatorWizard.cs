@@ -7,6 +7,7 @@ using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 using VRC.SDK3.Avatars.ScriptableObjects;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 [Serializable]
 public struct DualShape
@@ -66,38 +67,54 @@ public class AnimatorWizard : MonoBehaviour
 
 	public Motion primaryColor0;
 	public Motion primaryColor1;
-
+	[Space(10)]
 	public Motion secondColor0;
 	public Motion secondColor1;
 
 	[Header("Brow & mouth expressions controlled by hand gestures. Index corresponds to gesture parameter value!")]
 	[Space(SpaceSize)]
 	public string mouthPrefix = "exp/mouth/";
-
-	public string[] mouthShapeNames;
-
+	public string[] mouthShapeNames =
+	{
+		"basis",
+		"frown",
+		"smile",
+		"grimace",
+		"smile",
+		"grimace",
+		"grimace",
+		"frown",
+	};
+	[Space(10)]
 	public string browsPrefix = "exp/brows/";
-	public string[] browShapeNames;
+	public string[] browShapeNames =
+	{
+		"basis",
+		"down",
+		"up",
+		"curious",
+		"up",
+		"worried",
+		"curious",
+		"down",
+	};
 
 	[Header("Face tracking settings")] [Space(SpaceSize)]
 	public bool ftSupport = true;
 
 	public string ftPrefix = "v2/";
 
-	public string[] ftSingleShapes =
+	public string[] ftShapes =
 	{
+		"BrowDownLeft",
+		"BrowUpLeft",
 		"JawOpen",
+		"LipFunnel",
+		"LipPucker",
 		"MouthClosed",
-		"MouthSadLeft",
+		"MouthStretch",
 		"MouthUpperUpLeft",
 		"MouthLowerDownLeft",
-		"BrowLowererLeft",
-		"BrowPinchLeft",
-		"BrowInnerUpLeft",
-		"BrowOuterUpLeft",
-		"MouthCornerPullLeft",
-		"MouthStretchLeft",
-		"MouthTightener",
 	};
 
 	public DualShape[] ftDualShapes =
@@ -121,16 +138,27 @@ public class AnimatorGeneratorEditor : Editor
 	public override void OnInspectorGUI()
 	{
 		if (GUILayout.Button("Setup animator! (DESTRUCTIVE!!!)"))
-			Create();
+		{
+			if (EditorUtility.DisplayDialog("Animator Wizard", "Running this too will destroy any manual" + 
+				"modifications to your animators. Are you sure you want to continue?", 
+				    "yes (DESTRUCTIVE!)", "NO"))
+			{
+				Create();
+			}
+		}
 
 		DrawDefaultInspector();
 	}
 
+	private AnimatorWizard my;
+	private AacFlBase aac;
+	private List<VRCExpressionParameters.Parameter> vrcParams;
+
 	private void Create()
 	{
-		var my = (AnimatorWizard)target;
-		var vrcParams = new List<VRCExpressionParameters.Parameter>();
-		var aac = AacV0.Create(new AacConfiguration
+		my = (AnimatorWizard)target;
+		vrcParams = new List<VRCExpressionParameters.Parameter>();
+		aac = AacV0.Create(new AacConfiguration
 		{
 			SystemName = SystemName,
 			AvatarDescriptor = my.avatar,
@@ -142,7 +170,6 @@ public class AnimatorGeneratorEditor : Editor
 		});
 
 		aac.ClearPreviousAssets();
-		aac.RemoveAllSupportingLayers("");
 
 		// Gesture layer
 		aac.CreateMainGestureLayer().WithAvatarMask(my.gestureMask);
@@ -180,8 +207,8 @@ public class AnimatorGeneratorEditor : Editor
 		fxLayer.OverrideValue(fxLayer.FloatParameter("Blend"), 1);
 
 		{
-			AacFlBoolParameter ftActiveParam = CreateBoolParam(fxLayer,
-				vrcParams, my.prefsPrefix + "FaceTrackingActive", true, false);
+			AacFlBoolParameter ftActiveParam =
+				CreateBoolParam(fxLayer, my.prefsPrefix + "FaceTrackingActive", true, false);
 			AacFlFloatParameter ftBlendParam = fxLayer.FloatParameter("BlendFaceTracking");
 
 			// master fx tree
@@ -197,6 +224,7 @@ public class AnimatorGeneratorEditor : Editor
 				var expressions = my.browShapeNames;
 				var layer = aac.CreateSupportingFxLayer("brow poses").WithAvatarMask(my.fxMask);
 				var gesture = layer.IntParameter("GestureLeft");
+				var prefix = my.browsPrefix;
 
 				List<string> allPossibleExpressions = new List<string>();
 
@@ -215,7 +243,7 @@ public class AnimatorGeneratorEditor : Editor
 
 					foreach (var shapeName in expressions)
 					{
-						clip.BlendShape(my.skin, my.browsPrefix + shapeName, shapeName == expressions[i] ? 100 : 0);
+						clip.BlendShape(my.skin, prefix + shapeName, shapeName == expressions[i] ? 100 : 0);
 					}
 
 					var state = layer.NewState(expressions[i], 1, i)
@@ -248,6 +276,7 @@ public class AnimatorGeneratorEditor : Editor
 				var expressions = my.mouthShapeNames;
 				var layer = aac.CreateSupportingFxLayer("mouth poses").WithAvatarMask(my.fxMask);
 				var gesture = layer.IntParameter("GestureRight");
+				var prefix = my.mouthPrefix;
 
 				List<string> allPossibleExpressions = new List<string>();
 
@@ -266,7 +295,7 @@ public class AnimatorGeneratorEditor : Editor
 
 					foreach (var shapeName in expressions)
 					{
-						clip.BlendShape(my.skin, my.mouthPrefix + shapeName, shapeName == expressions[i] ? 100 : 0);
+						clip.BlendShape(my.skin, prefix + shapeName, shapeName == expressions[i] ? 100 : 0);
 					}
 
 					var state = layer.NewState(expressions[i], 1, i)
@@ -308,19 +337,24 @@ public class AnimatorGeneratorEditor : Editor
 
 					if (blendShapeName.Substring(0, my.prefsPrefix.Length) == my.prefsPrefix)
 					{
-						tree.AddChild(BlendshapeTree(aac, fxTreeLayer, vrcParams,
-							my.skin, blendShapeName, true));
+						tree.AddChild(BlendshapeTree(fxTreeLayer, blendShapeName, true));
 					}
 				}
 
 				if (my.colorCustomization)
 				{
 					// color changing
-					tree.AddChild(Subtree(aac, fxTreeLayer, vrcParams,
-						new[] { my.primaryColor0, my.primaryColor1 }, new[] { 0f, 1f }, my.prefsPrefix + "pcol", true));
+					tree.AddChild(Subtree(fxTreeLayer,
+						new[] { my.primaryColor0, my.primaryColor1 }, 
+						new[] { 0f, 1f }, 
+						my.prefsPrefix + "pcol", 
+						true));
 
-					tree.AddChild(Subtree(aac, fxTreeLayer, vrcParams,
-						new[] { my.secondColor0, my.secondColor1 }, new[] { 0f, 1f }, my.prefsPrefix + "scol", true));
+					tree.AddChild(Subtree(fxTreeLayer,
+						new[] { my.secondColor0, my.secondColor1 }, 
+						new[] { 0f, 1f }, 
+						my.prefsPrefix + "scol", 
+						true));
 				}
 			}
 
@@ -353,13 +387,13 @@ public class AnimatorGeneratorEditor : Editor
 				tree.blendParameterY = ftActiveParam.Name;
 
 				// straight-forward blendshapes
-				for (var i = 0; i < my.ftSingleShapes.Length; i++)
+				for (var i = 0; i < my.ftShapes.Length; i++)
 				{
-					string shapeName = my.ftSingleShapes[i];
+					string shapeName = my.ftShapes[i];
 
 					for (int flip = 0; flip < Flip(ref shapeName); flip++)
 					{
-						tree.AddChild(BlendshapeTree(aac, fxTreeLayer, vrcParams, my.skin,
+						tree.AddChild(BlendshapeTree(fxTreeLayer,
 							my.ftPrefix + shapeName, false));
 					}
 				}
@@ -372,7 +406,7 @@ public class AnimatorGeneratorEditor : Editor
 
 					for (int flip = 0; flip < Flip(ref paramName); flip++)
 					{
-						tree.AddChild(DualBlendshapeTree(aac, fxTreeLayer, vrcParams, my.skin,
+						tree.AddChild(DualBlendshapeTree(fxTreeLayer,
 							my.ftPrefix + paramName,
 							my.ftPrefix + shape.minShapeName + GetSide(paramName),
 							my.ftPrefix + shape.maxShapeName + GetSide(paramName),
@@ -386,9 +420,9 @@ public class AnimatorGeneratorEditor : Editor
 
 				// eyes
 				{
-					CreateFloatParamVrcOnly(vrcParams, my.ftPrefix + "EyeLeftX", false, 0);
-					CreateFloatParamVrcOnly(vrcParams, my.ftPrefix + "EyeRightX", false, 0);
-					CreateFloatParamVrcOnly(vrcParams, my.ftPrefix + "EyeY", false, 0);
+					CreateFloatParamVrcOnly(my.ftPrefix + "EyeLeftX", false, 0);
+					CreateFloatParamVrcOnly(my.ftPrefix + "EyeRightX", false, 0);
+					CreateFloatParamVrcOnly(my.ftPrefix + "EyeY", false, 0);
 				}
 			}
 		}
@@ -398,62 +432,55 @@ public class AnimatorGeneratorEditor : Editor
 		my.avatar.expressionParameters.parameters = vrcParams.ToArray();
 	}
 
-	private BlendTree BlendshapeTree(AacFlBase aac, AacFlLayer layer,
-		List<VRCExpressionParameters.Parameter> vrcParams,
-		SkinnedMeshRenderer skin, string paramAndShapeName, bool save)
+	private BlendTree BlendshapeTree(AacFlLayer layer, string paramAndShapeName, bool save)
 	{
-		return BlendshapeTree(aac, layer, vrcParams, skin,
-			paramAndShapeName, paramAndShapeName, save);
+		return BlendshapeTree(layer, paramAndShapeName, paramAndShapeName, save);
 	}
 
-	private BlendTree BlendshapeTree(AacFlBase aac, AacFlLayer layer,
-		List<VRCExpressionParameters.Parameter> vrcParams,
-		SkinnedMeshRenderer skin, string shapeName, string paramName, bool save)
+	private BlendTree BlendshapeTree(AacFlLayer layer, string shapeName, string paramName, bool save)
 	{
-		var state000 = aac.NewClip().BlendShape(skin, shapeName, 0);
-		state000.Clip.name = paramName + " weight:0";
+		var state000 = aac.NewClip().BlendShape(my.skin, shapeName, 0);
+		state000.Clip.name = paramName + ":0";
 
-		var state100 = aac.NewClip().BlendShape(skin, shapeName, 100);
-		state100.Clip.name = paramName + " weight:100";
+		var state100 = aac.NewClip().BlendShape(my.skin, shapeName, 100);
+		state100.Clip.name = paramName + ":1";
 
-		return Subtree(aac, layer, vrcParams, new Motion[] { state000.Clip, state100.Clip }, new[] { 0f, 1f },
+		return Subtree(layer, new Motion[] { state000.Clip, state100.Clip }, new[] { 0f, 1f },
 			paramName, save);
 	}
 
-	private BlendTree DualBlendshapeTree(AacFlBase aac, AacFlLayer layer,
-		List<VRCExpressionParameters.Parameter> vrcParams, SkinnedMeshRenderer skin, string paramName,
-		string minShapeName, string maxShapeName, float minValue, float neutralValue, float maxValue)
+	private BlendTree DualBlendshapeTree(
+		AacFlLayer layer, string paramName,
+		string minShapeName, string maxShapeName, 
+		float minValue, float neutralValue, float maxValue)
 	{
-		var param = CreateFloatParam(layer, vrcParams, paramName, false, 0);
 
 		var minClip = aac.NewClip()
-			.BlendShape(skin, minShapeName, 100)
-			.BlendShape(skin, maxShapeName, 0);
-		minClip.Clip.name = param.Name + " min";
+			.BlendShape(my.skin, minShapeName, 100)
+			.BlendShape(my.skin, maxShapeName, 0);
+		minClip.Clip.name = paramName + ":" + minShapeName;
 
 		var neutralClip = aac.NewClip()
-			.BlendShape(skin, minShapeName, 0)
-			.BlendShape(skin, maxShapeName, 0);
-		neutralClip.Clip.name = param.Name + " neutral";
+			.BlendShape(my.skin, minShapeName, 0)
+			.BlendShape(my.skin, maxShapeName, 0);
+		neutralClip.Clip.name = paramName + ":neutral";
 
 		var maxClip = aac.NewClip()
-			.BlendShape(skin, minShapeName, 0)
-			.BlendShape(skin, maxShapeName, 100);
-		maxClip.Clip.name = param.Name + " max";
+			.BlendShape(my.skin, minShapeName, 0)
+			.BlendShape(my.skin, maxShapeName, 100);
+		maxClip.Clip.name = paramName + ":" + maxShapeName;
 
-		return Subtree(aac, layer, vrcParams,
-			new[] { minClip.Clip, neutralClip.Clip, maxClip.Clip },
-			new[] { minValue, neutralValue, maxValue }, param.Name, false);
+		return Subtree(layer,
+			new Motion[] { minClip.Clip, neutralClip.Clip, maxClip.Clip },
+			new[] { minValue, neutralValue, maxValue }, paramName, false);
 	}
 
 
-	private BlendTree Subtree(AacFlBase aac, AacFlLayer layer,
-		List<VRCExpressionParameters.Parameter> vrcParams,
-		Motion[] motions, float[] thresholds, string paramName, bool save)
+	private BlendTree Subtree(AacFlLayer layer, Motion[] motions, float[] thresholds, string paramName, bool save)
 	{
-		CreateFloatParam(layer, vrcParams, paramName, save, 0);
+		CreateFloatParam(layer, paramName, save, 0);
 
-		var tree = Create1DTree(aac, paramName, 0, 1);
+		var tree = Create1DTree(paramName, 0, 1);
 
 		ChildMotion[] children = new ChildMotion[motions.Length];
 
@@ -467,17 +494,14 @@ public class AnimatorGeneratorEditor : Editor
 		return tree;
 	}
 
-	private AacFlFloatParameter CreateFloatParam(AacFlLayer layer,
-		List<VRCExpressionParameters.Parameter> vrcParams,
-		string paramName, bool save, float val)
+	private AacFlFloatParameter CreateFloatParam(AacFlLayer layer, string paramName, bool save, float val)
 	{
-		CreateFloatParamVrcOnly(vrcParams, paramName, save, val);
+		CreateFloatParamVrcOnly(paramName, save, val);
 
 		return layer.FloatParameter(paramName);
 	}
 
-	private void CreateFloatParamVrcOnly(List<VRCExpressionParameters.Parameter> vrcParams,
-		string paramName, bool save, float val)
+	private void CreateFloatParamVrcOnly(string paramName, bool save, float val)
 	{
 		vrcParams.Add(new VRCExpressionParameters.Parameter()
 		{
@@ -489,9 +513,7 @@ public class AnimatorGeneratorEditor : Editor
 		});
 	}
 
-	private AacFlBoolParameter CreateBoolParam(AacFlLayer layer,
-		List<VRCExpressionParameters.Parameter> vrcParams,
-		string paramName, bool save, bool val)
+	private AacFlBoolParameter CreateBoolParam(AacFlLayer layer, string paramName, bool save, bool val)
 	{
 		vrcParams.Add(new VRCExpressionParameters.Parameter()
 		{
@@ -505,8 +527,7 @@ public class AnimatorGeneratorEditor : Editor
 		return layer.BoolParameter(paramName);
 	}
 
-	private BlendTree Create1DTree(AacFlBase aac, string paramName,
-		float min, float max)
+	private BlendTree Create1DTree(string paramName, float min, float max)
 	{
 		var tree = aac.NewBlendTreeAsRaw();
 		tree.useAutomaticThresholds = false;

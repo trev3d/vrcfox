@@ -1391,10 +1391,11 @@ MonoBehaviour:
   avatar: {fileID: 4518591563733791311}
   skin: {fileID: 2888210841022967577}
   assetContainer: {fileID: 9100000, guid: a33c5817a0ccd554595fad701f7d25e6, type: 2}
+  fxMask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
   gestureMask: {fileID: 31900000, guid: 2c544c8b584d741bdb884b8f910e8b64, type: 2}
-  lMask: {fileID: 31900000, guid: 7ff0199655202a04eb175de45a6e078a, type: 2}
-  rMask: {fileID: 31900000, guid: 903ce375d5f609d44b9f00b425d6eda9, type: 2}
-  handMotions:
+  lMask: {fileID: 31900000, guid: 2ea11c35275506a4fbf628a11c068a8e, type: 2}
+  rMask: {fileID: 31900000, guid: 00b67f2d2f7eba8438148317288155d8, type: 2}
+  handPoses:
   - {fileID: 7400000, guid: 17f6811ad8fbaec4ba758c0e9d4bc63e, type: 2}
   - {fileID: 7400000, guid: 9716ac2dc262b524193365c552868456, type: 2}
   - {fileID: 7400000, guid: 2c53e22680d6f644d8f67bf16fc29e04, type: 2}
@@ -1403,13 +1404,15 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 21778a9afd428014e9d0e351ad5a1c40, type: 2}
   - {fileID: 7400000, guid: 17e549f94f6d25f4da19e77f85918ec1, type: 2}
   - {fileID: 7400000, guid: be1b6b943c973cc44ba8ca84a47f3273, type: 2}
-  fxMask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
+  prefsPrefix: prefs/
+  colorCustomization: 1
   primaryColor0: {fileID: 7400000, guid: 8421033fab3bd4941a54cc533287898b, type: 2}
   primaryColor1: {fileID: 7400000, guid: 1ee5d60bcc1f77a47b1e79f2944139e3, type: 2}
   secondColor0: {fileID: 7400000, guid: de7942e8683b2d34ea22c50b83f37f9b, type: 2}
   secondColor1: {fileID: 7400000, guid: b7ba98e9f6ffbba43a2ed420efb56037, type: 2}
-  mouthGestureExpressions:
-  - nil
+  mouthPrefix: exp/mouth/
+  mouthShapeNames:
+  - basis
   - frown
   - smile
   - grimace
@@ -1417,8 +1420,9 @@ MonoBehaviour:
   - grimace
   - grimace
   - frown
-  browGestureExpressions:
-  - nil
+  browsPrefix: exp/brows/
+  browShapeNames:
+  - basis
   - down
   - up
   - curious
@@ -1426,16 +1430,46 @@ MonoBehaviour:
   - worried
   - curious
   - down
-  faceTrackingFloatShapeNames:
+  ftSupport: 1
+  ftPrefix: v2/
+  ftSingleShapes:
   - JawOpen
-  - LipPucker
-  - LipFunnel
+  - MouthClosed
+  - MouthSadLeft
   - MouthUpperUpLeft
   - MouthLowerDownLeft
-  - MouthStretch
-  - MouthClosed
-  - MouthRaiserUpper
-  - MouthRaiserLower
+  - BrowLowererLeft
+  - BrowPinchLeft
+  - BrowInnerUpLeft
+  - BrowOuterUpLeft
+  - MouthCornerPullLeft
+  - MouthStretchLeft
+  - MouthTightener
+  ftDualShapes:
+  - paramName: SmileSad
+    minShapeName: MouthSad
+    maxShapeName: MouthSmile
+    minValue: -1
+    neutralValue: 0
+    maxValue: 1
+  - paramName: JawX
+    minShapeName: JawLeft
+    maxShapeName: JawRight
+    minValue: -1
+    neutralValue: 0
+    maxValue: 1
+  - paramName: EyeLidLeft
+    minShapeName: EyeClosed
+    maxShapeName: EyeWide
+    minValue: 0
+    neutralValue: 0.8
+    maxValue: 1
+  - paramName: BrowExpressionLeft
+    minShapeName: BrowDown
+    maxShapeName: BrowUp
+    minValue: -1
+    neutralValue: 0
+    maxValue: 1
 --- !u!1 &4518591563850499180
 GameObject:
   m_ObjectHideFlags: 0

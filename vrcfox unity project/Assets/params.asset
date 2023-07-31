@@ -63,17 +63,17 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/LipPucker
+  - name: v2/MouthClosed
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/LipFunnel
+  - name: v2/MouthSadRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthUpperUpLeft
+  - name: v2/MouthSadLeft
     valueType: 1
     saved: 0
     defaultValue: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthLowerDownLeft
+  - name: v2/MouthUpperUpLeft
     valueType: 1
     saved: 0
     defaultValue: 0
@@ -93,12 +93,72 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthStretch
+  - name: v2/MouthLowerDownLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthClosed
+  - name: v2/BrowLowererRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowLowererLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowPinchRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowPinchLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowInnerUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowInnerUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowOuterUpRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowOuterUpLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthCornerPullRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthCornerPullLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthStretchRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthStretchLeft
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/MouthTightener
     valueType: 1
     saved: 0
     defaultValue: 0
@@ -108,7 +168,7 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/EyeLidLeft
+  - name: v2/JawX
     valueType: 1
     saved: 0
     defaultValue: 0
@@ -118,12 +178,17 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowExpressionLeft
+  - name: v2/EyeLidLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
   - name: v2/BrowExpressionRight
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/BrowExpressionLeft
     valueType: 1
     saved: 0
     defaultValue: 0
