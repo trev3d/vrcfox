@@ -338,5 +338,11 @@ PrefabInstance:
       propertyPath: animationHashSet.Array.data[37].name
       value: master tree
       objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: baseAnimationLayers.Array.data[4].mask
+      value: 
+      objectReference: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4660207665e831c499dc076459e49c32, type: 3}

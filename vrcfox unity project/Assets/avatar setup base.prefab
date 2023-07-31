@@ -1118,7 +1118,7 @@ MonoBehaviour:
     type: 5
     animatorController: {fileID: 9100000, guid: e670d4102b561d543b6c3c18b8cf1e77,
       type: 2}
-    mask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
+    mask: {fileID: 0}
     isDefault: 0
   specialAnimationLayers:
   - isEnabled: 0
@@ -1390,8 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatar: {fileID: 4518591563733791311}
   skin: {fileID: 2888210841022967577}
-  assetContainer: {fileID: 9100000, guid: de9958abfdd79be45afaa08e31d2899f, type: 2}
-  assetKey: 
+  assetContainer: {fileID: 9100000, guid: a33c5817a0ccd554595fad701f7d25e6, type: 2}
   gestureMask: {fileID: 31900000, guid: 2c544c8b584d741bdb884b8f910e8b64, type: 2}
   lMask: {fileID: 31900000, guid: 7ff0199655202a04eb175de45a6e078a, type: 2}
   rMask: {fileID: 31900000, guid: 903ce375d5f609d44b9f00b425d6eda9, type: 2}
