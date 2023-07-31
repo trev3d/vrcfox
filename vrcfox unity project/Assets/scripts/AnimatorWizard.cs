@@ -8,6 +8,7 @@ using VRC.SDK3.Avatars.Components;
 using VRC.SDK3.Avatars.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
+using VRC;
 
 [Serializable]
 public struct DualShape
@@ -430,6 +431,7 @@ public class AnimatorGeneratorEditor : Editor
 
 		// add all the new avatar params to the avatar descriptor
 		my.avatar.expressionParameters.parameters = vrcParams.ToArray();
+		EditorUtility.SetDirty(my.avatar.expressionParameters);
 	}
 
 	private BlendTree BlendshapeTree(AacFlLayer layer, string paramAndShapeName, bool save)
