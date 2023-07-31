@@ -1089,7 +1089,7 @@ MonoBehaviour:
         left: {x: 0, y: 0, z: 0, w: 0}
         right: {x: 0, y: 0, z: 0, w: 0}
     eyelidsSkinnedMesh: {fileID: 2888210841022967577}
-    eyelidsBlendshapes: 030000000500000004000000
+    eyelidsBlendshapes: 030000000400000036000000
   customizeAnimationLayers: 1
   baseAnimationLayers:
   - isEnabled: 0
@@ -1144,22 +1144,6 @@ MonoBehaviour:
     name: Face Tracked Eye Tracking
   - hash: 1545220479
     name: master tree
-  - hash: -295692675
-    name: rig_hand 0 neutral
-  - hash: 915532021
-    name: rig_hand 1 fist
-  - hash: 1056964995
-    name: rig_hand 2 open
-  - hash: -1270661767
-    name: rig_hand 3 point
-  - hash: -816517996
-    name: rig_hand 4 peace
-  - hash: -2118409412
-    name: rig_hand 5 rock n roll
-  - hash: -1420037029
-    name: rig_hand 6 gun
-  - hash: 1638421798
-    name: rig_hand 7 thumbs up
   - hash: 601478037
     name: rig_hand 0 neutral
   - hash: 744237656
@@ -1176,44 +1160,60 @@ MonoBehaviour:
     name: rig_hand 6 gun
   - hash: 469882692
     name: rig_hand 7 thumbs up
+  - hash: -295692675
+    name: rig_hand 0 neutral
+  - hash: 915532021
+    name: rig_hand 1 fist
+  - hash: 1056964995
+    name: rig_hand 2 open
+  - hash: -1270661767
+    name: rig_hand 3 point
+  - hash: -816517996
+    name: rig_hand 4 peace
+  - hash: -2118409412
+    name: rig_hand 5 rock n roll
+  - hash: -1420037029
+    name: rig_hand 6 gun
+  - hash: 1638421798
+    name: rig_hand 7 thumbs up
+  - hash: -1099298580
+    name: master tree
+  - hash: 1279168734
+    name: basis
+  - hash: -1927818747
+    name: down
+  - hash: -1103015122
+    name: up
+  - hash: 591769788
+    name: curious
+  - hash: 199340498
+    name: up 0
+  - hash: 1478300198
+    name: worried
+  - hash: 1905620876
+    name: curious 0
+  - hash: -416363429
+    name: down 0
+  - hash: -1810253833
+    name: basis
+  - hash: -2125537196
+    name: frown
+  - hash: 459133391
+    name: smile
+  - hash: 1371753208
+    name: grimace
+  - hash: 1328690287
+    name: smile 0
+  - hash: -1192717303
+    name: grimace 0
+  - hash: -806378337
+    name: grimace 1
+  - hash: -1940259433
+    name: frown 0
   - hash: -1965148844
     name: face tracking off
   - hash: -1169342359
     name: face tracking on
-  - hash: -1099298580
-    name: master tree
-  - hash: 2140097607
-    name: nil
-  - hash: 1388949473
-    name: down
-  - hash: 662105948
-    name: up
-  - hash: 1985228919
-    name: curious
-  - hash: -734016458
-    name: up 0
-  - hash: 218927853
-    name: worried
-  - hash: -1272729800
-    name: curious 0
-  - hash: -209180436
-    name: down 0
-  - hash: 1038480140
-    name: nil
-  - hash: -1232976424
-    name: frown
-  - hash: 747729987
-    name: smile
-  - hash: 1615461652
-    name: grimace
-  - hash: 2126021507
-    name: smile 0
-  - hash: 522600268
-    name: grimace 0
-  - hash: 1746997210
-    name: grimace 1
-  - hash: -1110226309
-    name: frown 0
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:
@@ -1803,11 +1803,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
-    - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 97
-      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_ApplyRootMotion
