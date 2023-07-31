@@ -141,6 +141,36 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       }
     },
+    "com.vrmc.gltf": {
+      "version": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.113.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.vrmc.vrmshaders": "0.113.0",
+        "com.unity.modules.animation": "1.0.0"
+      },
+      "hash": "01659457d8f0db619c97356c684682a472bb6dd1"
+    },
+    "com.vrmc.univrm": {
+      "version": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.113.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.vrmc.vrmshaders": "0.113.0",
+        "com.vrmc.gltf": "0.113.0",
+        "com.unity.ugui": "1.0.0"
+      },
+      "hash": "01659457d8f0db619c97356c684682a472bb6dd1"
+    },
+    "com.vrmc.vrmshaders": {
+      "version": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.113.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.modules.imageconversion": "1.0.0"
+      },
+      "hash": "01659457d8f0db619c97356c684682a472bb6dd1"
+    },
     "dev.vrlabs.av3manager": {
       "version": "file:dev.vrlabs.av3manager",
       "depth": 0,
