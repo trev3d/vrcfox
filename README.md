@@ -3,7 +3,10 @@ a tiny bare-bones VRChat avatar featuring color customization and face tracking
 
 (todo, record facetracking video!)
 
+### [Sketchfab preview](https://sketchfab.com/3d-models/vrcfox-9ed90de72e9c437b8820cbf0eeb32a50)
+
 <img width="1440" alt="sc" src="https://github.com/cellomonster/vrcfox/assets/32079637/32ec5ee5-2350-4acf-8677-eb2edef943a3">
+
 
 ## Modifying
 
