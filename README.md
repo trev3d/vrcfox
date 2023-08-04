@@ -1,6 +1,8 @@
 # vrcfox
 a tiny bare-bones VRChat avatar featuring color customization and face tracking
 
+licensed under the Creative Commons Attribution-NonCommercial 4.0 International License, so as long as you don't make any money off of the contained assets you can do whatever you want with them!
+
 (todo, record facetracking video!)
 
 ### [Sketchfab preview](https://sketchfab.com/3d-models/vrcfox-9ed90de72e9c437b8820cbf0eeb32a50)
