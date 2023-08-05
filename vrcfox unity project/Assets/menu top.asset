@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: menu top
   m_EditorClassIdentifier: 
   controls:
+  - name: Clothes
+    icon: {fileID: 2800000, guid: 94acefe234605f9478421640fa09af72, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 4e72b7e474a8a724fa22f75f1056304a, type: 2}
+    subParameters: []
+    labels: []
   - name: Body Customization
     icon: {fileID: 2800000, guid: 2838854f3384cd743a164f9c6ada5de4, type: 3}
     type: 103

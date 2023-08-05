@@ -121,19 +121,19 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &807607610 stripped
+--- !u!1 &2129263405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3635577836961582874, guid: 4660207665e831c499dc076459e49c32,
     type: 3}
   m_PrefabInstance: {fileID: 4518591563714526480}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &807607612
+--- !u!114 &2129263407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807607610}
+  m_GameObject: {fileID: 2129263405}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
@@ -172,20 +172,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791310, guid: 4660207665e831c499dc076459e49c32,
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: blueprintId
-      value: avtr_83719901-ed19-4bb6-bacf-9276d5d4de31
+      propertyPath: animationHashSet.Array.size
+      value: 39
       objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791310, guid: 4660207665e831c499dc076459e49c32,
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: fallbackStatus
-      value: 3
+      propertyPath: animationHashSet.Array.data[38].hash
+      value: -576816719
       objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791310, guid: 4660207665e831c499dc076459e49c32,
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
-      propertyPath: completedSDKPipeline
-      value: 1
+      propertyPath: animationHashSet.Array.data[38].name
+      value: drivers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4660207665e831c499dc076459e49c32, type: 3}
