@@ -18,8 +18,6 @@ The easiest way to customize the colors is with vertex painting. This works well
 
 A script to easily export the model to Unity is included in the Blender file. It is visible at the bottom of the window when you open the project. Clicking the '▶' button will export the model to Unity.
 
-![export](https://github.com/cellomonster/vrcfox/assets/32079637/be38158c-5d4d-4c26-9fee-7168ec719684)
-
 The Unity project contains an 'avatar setup base' prefab and two scenes for Quest and PC. Changes made to the prefab will propogate to both the PC and Quest verions of the avatar, while changes made to the Quest/PC scenes are platform specific. 
 
 The Unity project also includes a script (attached to the avatar prefab) to easily customize facial expressions, player preferences, and facetracking features. You can disable some features to save on VRChat parameter budget or add your own blendshapes for expressions, body customization, clothing toggles, facetracking, etc.
