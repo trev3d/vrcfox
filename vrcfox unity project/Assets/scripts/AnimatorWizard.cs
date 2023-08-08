@@ -43,37 +43,28 @@ public struct DualShape
 
 public class AnimatorWizard : MonoBehaviour
 {
-	private const int SpaceSize = 30;
 
 	public AnimatorController assetContainer;
-
-	[Header("Avatar masks")] [Space(SpaceSize)]
+	
 	public AvatarMask fxMask;
 
 	public AvatarMask gestureMask;
 	public AvatarMask lMask;
 	public AvatarMask rMask;
-
-	[Header("Hand gesture poses. Index corresponds to gesture parameter value!")] [Space(SpaceSize)]
+	
 	public Motion[] handPoses;
 	
-	[Header("Player preference blendshape prefix.")]
-	[Tooltip(
-		"Wizard will create parameters for any blendshapes with these prefixes")]
-	[Space(SpaceSize)]
 	public bool createShapePreferences = true;
 	public string shapeSliderPrefix = "pref/slider/";
 	public string shapeTogglesPrefix = "pref/toggle/";
 
-	public bool generateColorCustomization = true;
+	public bool createColorCustomization = true;
 
 	public Motion primaryColor0;
 	public Motion primaryColor1;
-	[Space(10)] public Motion secondColor0;
+	public Motion secondColor0;
 	public Motion secondColor1;
-
-	[Header("Brow & mouth expressions controlled by hand gestures. Index maps to gesture parameter value!")]
-	[Space(SpaceSize)]
+	
 	public string mouthPrefix = "exp/mouth/";
 
 	public string[] mouthShapeNames =
@@ -88,7 +79,7 @@ public class AnimatorWizard : MonoBehaviour
 		"frown",
 	};
 
-	[Space(10)] public string browsPrefix = "exp/brows/";
+	public string browPrefix = "exp/brows/";
 
 	public string[] browShapeNames =
 	{
@@ -101,11 +92,7 @@ public class AnimatorWizard : MonoBehaviour
 		"curious",
 		"down",
 	};
-
-	[FormerlySerializedAs("generateFaceTracking")]
-	[FormerlySerializedAs("ftSupport")]
-	[Header("Face tracking settings")]
-	[Space(SpaceSize)]
+	
 	public bool createFaceTracking = true;
 
 	public string ftPrefix = "ft/";
@@ -208,7 +195,7 @@ public class AnimatorWizard : MonoBehaviour
 		AacFlFloatParameter ftBlendParam = fxLayer.FloatParameter(ftPrefix + "enabled-float");
 
 		// brow gesture expressions
-		MapHandPosesToShapes("brow expressions", skin, browShapeNames, browsPrefix, false, ftActiveParam);
+		MapHandPosesToShapes("brow expressions", skin, browShapeNames, browPrefix, false, ftActiveParam);
 
 		// mouth gesture expressions
 		MapHandPosesToShapes("mouth expressions", skin, mouthShapeNames, mouthPrefix, true, ftActiveParam);
@@ -257,7 +244,7 @@ public class AnimatorWizard : MonoBehaviour
 			}
 		}
 
-		if (generateColorCustomization)
+		if (createColorCustomization)
 		{
 			var tree = masterTree.CreateBlendTreeChild(0);
 			tree.name = "color customization";
@@ -549,11 +536,74 @@ public class AnimatorWizard : MonoBehaviour
 [CustomEditor(typeof(AnimatorWizard), true)]
 public class AnimatorGeneratorEditor : Editor
 {
+	private SerializedProperty assetContainer;
+	private SerializedProperty fxMask, gestureMask, lMask, rMask;
+
+	private SerializedProperty handPoses;
+	private SerializedProperty createShapePreferences, createColorCustomization, createFaceTracking;
+
+	private SerializedProperty shapeSliderPrefix, shapeTogglesPrefix, mouthPrefix, browPrefix, ftPrefix;
+
+	private SerializedProperty primaryColor0, primaryColor1, secondColor0, secondColor1;
+
+	private SerializedProperty mouthShapeNames, browShapeNames;
+
+	private SerializedProperty ftShapes, ftDualShapes;
+
+	private AnimatorWizard wizard;
+	
+	private void OnEnable()
+	{
+		wizard = (AnimatorWizard)target;
+		
+		assetContainer = serializedObject.FindProperty("assetContainer");
+		fxMask = serializedObject.FindProperty("fxMask");
+		gestureMask = serializedObject.FindProperty("gestureMask");
+		lMask = serializedObject.FindProperty("lMask");
+		rMask = serializedObject.FindProperty("rMask");
+
+		handPoses = serializedObject.FindProperty("handPoses");
+
+		createShapePreferences = serializedObject.FindProperty("createShapePreferences");
+		createColorCustomization = serializedObject.FindProperty("createColorCustomization");
+		createFaceTracking = serializedObject.FindProperty("createFaceTracking");
+
+		shapeSliderPrefix = serializedObject.FindProperty("shapeSliderPrefix");
+		shapeTogglesPrefix = serializedObject.FindProperty("shapeTogglesPrefix");
+		mouthPrefix = serializedObject.FindProperty("mouthPrefix");
+		browPrefix = serializedObject.FindProperty("browPrefix");
+		ftPrefix = serializedObject.FindProperty("ftPrefix");
+
+		primaryColor0 = serializedObject.FindProperty("primaryColor0");
+		secondColor0 = serializedObject.FindProperty("secondColor0");
+
+		primaryColor1 = serializedObject.FindProperty("primaryColor1");
+		secondColor1 = serializedObject.FindProperty("secondColor1");
+
+		mouthShapeNames = serializedObject.FindProperty("mouthShapeNames");
+		browShapeNames = serializedObject.FindProperty("browShapeNames");
+
+		ftShapes = serializedObject.FindProperty("ftShapes");
+		ftDualShapes = serializedObject.FindProperty("ftDualShapes");
+	}
+
 	private const string AlertMsg =
 		"Running this will destroy any manual animator changes. Are you sure you want to continue?";
 
 	public override void OnInspectorGUI()
 	{
+		GUIStyle headerStyle = new GUIStyle()
+		{
+			richText = false,
+			fontStyle = FontStyle.Bold,
+			fontSize =  EditorStyles.label.fontSize + 5,
+			padding = new RectOffset(3, 3, 40, 8),
+			normal = new GUIStyleState()
+			{
+				textColor = EditorStyles.label.normal.textColor
+			}
+		};
+		
 		if (GUILayout.Button("Setup animator! (DESTRUCTIVE!!!)", GUILayout.Height(50)))
 		{
 			if (EditorUtility.DisplayDialog("Animator Wizard", AlertMsg, "yes (DESTRUCTIVE!)", "NO"))
@@ -561,8 +611,69 @@ public class AnimatorGeneratorEditor : Editor
 				Create();
 			}
 		}
+		
+		GUILayout.Space(20);
 
-		DrawDefaultInspector();
+		EditorGUILayout.PropertyField(assetContainer);
+
+		GUILayout.Label("Avatar animator masks", headerStyle);
+		EditorGUILayout.PropertyField(fxMask);
+		EditorGUILayout.PropertyField(gestureMask);
+		EditorGUILayout.PropertyField(lMask);
+		EditorGUILayout.PropertyField(rMask);
+		
+		GUILayout.Label("Hand Poses", headerStyle);
+		GUILayout.Label("Array index maps to hand gesture parameter. Array length should be 8!");
+		EditorGUILayout.PropertyField(handPoses);
+
+		GUILayout.Label("Facial expressions", headerStyle);
+		GUILayout.Label("Brow and mouth blendshapes controlled by left and right hands." +
+		                "Array index maps to hand gesture parameter. Array length should be 8!");
+		EditorGUILayout.PropertyField(mouthPrefix);
+		EditorGUILayout.PropertyField(mouthShapeNames);
+		GUILayout.Space(20);
+		EditorGUILayout.PropertyField(browPrefix);
+		EditorGUILayout.PropertyField(browShapeNames);
+		
+		GUILayout.Label("Animator creation flags", headerStyle);
+		GUILayout.Label("Choose what parts of the animator are generated. " +
+		                "Disabling features saves VRC parameter budget!");
+		EditorGUILayout.PropertyField(createShapePreferences);
+		EditorGUILayout.PropertyField(createColorCustomization);
+		EditorGUILayout.PropertyField(createFaceTracking);
+		
+		if (wizard.createShapePreferences)
+		{
+			GUILayout.Label("Preference prefixes", headerStyle);
+			GUILayout.Label(
+				"Animator wizard will automatically create VRC parameters for blendshapes with these prefixes");
+			EditorGUILayout.PropertyField(shapeSliderPrefix);
+			EditorGUILayout.PropertyField(shapeTogglesPrefix);
+		}
+
+		if (wizard.createColorCustomization)
+		{
+			GUILayout.Label("Color customization UV-offset animations", headerStyle);
+			GUILayout.Label("Animations controlling color palette texture UV-offsets for in-game color customization");
+			EditorGUILayout.PropertyField(primaryColor0);
+			EditorGUILayout.PropertyField(primaryColor1);
+			EditorGUILayout.PropertyField(secondColor0);
+			EditorGUILayout.PropertyField(secondColor1);
+		}
+
+		if (wizard.createFaceTracking)
+		{
+			GUILayout.Label("VRCFaceTracking (Universal Shapes) settings", headerStyle);
+			EditorGUILayout.PropertyField(ftPrefix);
+			GUILayout.Space(10);
+			GUILayout.Label("Single shapes controlled by a float parameter");
+			EditorGUILayout.PropertyField(ftShapes);
+			GUILayout.Space(10);
+			GUILayout.Label("Mutually exclusive shape pairs controlled by a single float parameter");
+			EditorGUILayout.PropertyField(ftDualShapes);
+		}
+
+		serializedObject.ApplyModifiedProperties();
 	}
 
 	private void Create()
