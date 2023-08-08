@@ -168,46 +168,6 @@ PrefabInstance:
       propertyPath: completedSDKPipeline
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: collider_head.radius
-      value: 0.0010815704
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: collider_head.position.x
-      value: -8.326673e-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: collider_head.position.y
-      value: 0.0005802341
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: collider_head.position.z
-      value: -9.0403784e-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: animationHashSet.Array.size
-      value: 39
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: animationHashSet.Array.data[38].hash
-      value: -576816719
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: animationHashSet.Array.data[38].name
-      value: drivers
-      objectReference: {fileID: 0}
-    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
-        type: 3}
-      propertyPath: customEyeLookSettings.eyelidsBlendshapes.Array.data[2]
-      value: 52
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4518591563733791378, guid: 4660207665e831c499dc076459e49c32, type: 3}
     - {fileID: 4518591563733791379, guid: 4660207665e831c499dc076459e49c32, type: 3}

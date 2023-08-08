@@ -13,162 +13,157 @@ MonoBehaviour:
   m_Name: params
   m_EditorClassIdentifier: 
   parameters:
-  - name: prefs/FaceTrackingActive
+  - name: ft/enabled
     valueType: 2
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: prefs/breasts
+  - name: pref/slider/breasts
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: prefs/torso
+  - name: pref/slider/torso
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: prefs/thighs
+  - name: pref/slider/thighs
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: prefs/lashes
+  - name: pref/slider/lashes
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: prefs/fluff
+  - name: pref/slider/fluff
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: prefs/ears
+  - name: pref/slider/ears
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: toggle/glasses
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 1
-  - name: prefs/pcol
+  - name: pref/slider/pcol
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: prefs/scol
+  - name: pref/slider/scol
     valueType: 1
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowDownRight
+  - name: ft/BrowDownRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowDownLeft
+  - name: ft/BrowDownLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowUpRight
+  - name: ft/BrowUpRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowUpLeft
+  - name: ft/BrowUpLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/JawOpen
+  - name: ft/JawOpen
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/LipFunnel
+  - name: ft/LipFunnel
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/LipPucker
+  - name: ft/LipPucker
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthClosed
+  - name: ft/MouthClosed
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthStretch
+  - name: ft/MouthStretch
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthUpperUpRight
+  - name: ft/MouthUpperUpRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthUpperUpLeft
+  - name: ft/MouthUpperUpLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthLowerDownRight
+  - name: ft/MouthLowerDownRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/MouthLowerDownLeft
+  - name: ft/MouthLowerDownLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/SmileSad
+  - name: ft/SmileSad
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/JawX
+  - name: ft/JawX
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/EyeLidRight
+  - name: ft/EyeLidRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/EyeLidLeft
+  - name: ft/EyeLidLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowExpressionRight
+  - name: ft/BrowExpressionRight
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowExpressionLeft
+  - name: ft/BrowExpressionLeft
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/EyeLeftX
+  - name: ft/EyeLeftX
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/EyeRightX
+  - name: ft/EyeRightX
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/EyeY
+  - name: ft/EyeY
     valueType: 1
     saved: 0
     defaultValue: 0

@@ -524,7 +524,7 @@ MonoBehaviour:
   ignoreTransforms: []
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
-  pull: 0.5
+  pull: 0.8
   pullCurve:
     serializedVersion: 2
     m_Curve: []
@@ -830,7 +830,7 @@ MonoBehaviour:
   ignoreTransforms: []
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
-  pull: 0.5
+  pull: 0.8
   pullCurve:
     serializedVersion: 2
     m_Curve: []
@@ -1214,6 +1214,8 @@ MonoBehaviour:
     name: face tracking off
   - hash: -1169342359
     name: face tracking on
+  - hash: -576816719
+    name: drivers
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:
@@ -1388,8 +1390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fef40173b344a40bf1466cc9c93393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avatar: {fileID: 4518591563733791311}
-  skin: {fileID: 2888210841022967577}
   assetContainer: {fileID: 9100000, guid: a33c5817a0ccd554595fad701f7d25e6, type: 2}
   fxMask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
   gestureMask: {fileID: 31900000, guid: 2c544c8b584d741bdb884b8f910e8b64, type: 2}
@@ -1404,9 +1404,10 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 21778a9afd428014e9d0e351ad5a1c40, type: 2}
   - {fileID: 7400000, guid: 17e549f94f6d25f4da19e77f85918ec1, type: 2}
   - {fileID: 7400000, guid: be1b6b943c973cc44ba8ca84a47f3273, type: 2}
-  prefsPrefix: prefs/
-  togglesPrefix: toggle/
-  colorCustomization: 1
+  createShapePreferences: 1
+  shapeSliderPrefix: pref/slider/
+  shapeTogglesPrefix: pref/toggle/
+  generateColorCustomization: 1
   primaryColor0: {fileID: 7400000, guid: 8421033fab3bd4941a54cc533287898b, type: 2}
   primaryColor1: {fileID: 7400000, guid: 1ee5d60bcc1f77a47b1e79f2944139e3, type: 2}
   secondColor0: {fileID: 7400000, guid: de7942e8683b2d34ea22c50b83f37f9b, type: 2}
@@ -1431,8 +1432,8 @@ MonoBehaviour:
   - worried
   - curious
   - down
-  ftSupport: 1
-  ftPrefix: v2/
+  createFaceTracking: 1
+  ftPrefix: ft/
   ftShapes:
   - BrowDownLeft
   - BrowUpLeft
