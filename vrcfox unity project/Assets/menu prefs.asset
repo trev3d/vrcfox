@@ -35,16 +35,15 @@ MonoBehaviour:
     subParameters:
     - name: pref/slider/fluff
     labels: []
-  - name: Lash size
+  - name: Eyelashes
     icon: {fileID: 0}
-    type: 203
+    type: 102
     parameter:
-      name: 
+      name: pref/toggle/lashes
     value: 1
     style: 0
     subMenu: {fileID: 0}
-    subParameters:
-    - name: pref/slider/lashes
+    subParameters: []
     labels: []
   - name: Breast size
     icon: {fileID: 0}
@@ -78,14 +77,4 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters:
     - name: pref/slider/torso
-    labels: []
-  - name: New Control
-    icon: {fileID: 0}
-    type: 101
-    parameter:
-      name: 
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
     labels: []

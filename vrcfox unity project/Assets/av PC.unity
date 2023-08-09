@@ -121,25 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1551018767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3635577836961582874, guid: 4660207665e831c499dc076459e49c32,
-    type: 3}
-  m_PrefabInstance: {fileID: 4518591563714526480}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1551018769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551018767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contentType: 0
 --- !u!1001 &4518591563714526480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,8 +155,168 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
+      propertyPath: collider_head.radius
+      value: 0.0010820867
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_footL.radius
+      value: 0.0009342592
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handL.height
+      value: 0.00086166465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handL.radius
+      value: 0.00021541616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.height
+      value: 0.0008616669
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.radius
+      value: 0.00021541673
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handL.position.x
+      value: -0.0000056099425
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handL.position.y
+      value: 0.0007323417
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handL.position.z
+      value: -0.000008809523
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handL.rotation.z
+      value: -0.0018160557
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.position.x
+      value: 0.0000056123226
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.position.y
+      value: 0.0007323421
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.position.z
+      value: -0.000008809419
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.rotation.w
+      value: 0.7113533
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.rotation.x
+      value: 0.7028323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_handR.rotation.z
+      value: 0.0018155233
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
       propertyPath: animationHashSet.Array.size
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerRingL.height
+      value: 0.00042904977
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerRingL.radius
+      value: 0.00008580995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerRingR.height
+      value: 0.00042905094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerRingR.radius
+      value: 0.00008581019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerIndexL.height
+      value: 0.00044625782
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerIndexL.radius
+      value: 0.00008925157
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerIndexR.height
+      value: 0.00044625677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerIndexR.radius
+      value: 0.000089251356
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerLittleL.height
+      value: 0.0003424138
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerLittleL.radius
+      value: 0.00006848276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerLittleR.height
+      value: 0.00034241352
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerLittleR.radius
+      value: 0.00006848271
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerMiddleL.height
+      value: 0.0005297759
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerMiddleL.radius
+      value: 0.00010595519
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerMiddleR.height
+      value: 0.0005297761
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
+        type: 3}
+      propertyPath: collider_fingerMiddleR.radius
+      value: 0.000105955216
       objectReference: {fileID: 0}
     - target: {fileID: 4518591563733791311, guid: 4660207665e831c499dc076459e49c32,
         type: 3}
