@@ -224,8 +224,8 @@ public class AnimatorWizard : MonoBehaviour
 
 				if (blendShapeName.StartsWith(shapeSliderPrefix))
 				{
-					var param = CreateFloatParam(fxLayer, blendShapeName, true, 0);
-					tree.AddChild(BlendshapeTree(fxTreeLayer, skin, param));
+					var param = CreateFloatParam(fxLayer, blendShapeName, true, 0.25f);
+					tree.AddChild(BlendshapeTree(fxTreeLayer, skin, param, -100f/3f, 100));
 				} else if (blendShapeName.StartsWith(shapeTogglesPrefix))
 				{
 					var boolParam = CreateBoolParam(fxLayer, blendShapeName, true, false);
@@ -350,17 +350,19 @@ public class AnimatorWizard : MonoBehaviour
 		EditorUtility.SetDirty(avatar.expressionParameters);
 	}
 
-	private BlendTree BlendshapeTree(AacFlLayer layer, SkinnedMeshRenderer skin, AacFlParameter param)
+	private BlendTree BlendshapeTree(AacFlLayer layer, SkinnedMeshRenderer skin, AacFlParameter param, 
+		float min = 0, float max = 100)
 	{
-		return BlendshapeTree(layer, skin, param.Name, param);
+		return BlendshapeTree(layer, skin, param.Name, param, min, max);
 	}
 
-	private BlendTree BlendshapeTree(AacFlLayer layer, SkinnedMeshRenderer skin, string shapeName, AacFlParameter param)
+	private BlendTree BlendshapeTree(AacFlLayer layer, SkinnedMeshRenderer skin, string shapeName, AacFlParameter param,
+	float min = 0, float max = 100)
 	{
-		var state000 = _aac.NewClip().BlendShape(skin, shapeName, 0);
+		var state000 = _aac.NewClip().BlendShape(skin, shapeName, min);
 		state000.Clip.name = param.Name + ":0";
 
-		var state100 = _aac.NewClip().BlendShape(skin, shapeName, 100);
+		var state100 = _aac.NewClip().BlendShape(skin, shapeName, max);
 		state100.Clip.name = param.Name + ":1";
 
 		return Subtree(new Motion[] { state000.Clip, state100.Clip }, new[] { 0f, 1f },

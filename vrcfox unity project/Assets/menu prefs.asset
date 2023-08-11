@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: menu prefs
   m_EditorClassIdentifier: 
   controls:
-  - name: Ear size
+  - name: Ears
     icon: {fileID: 0}
     type: 203
     parameter:
@@ -24,7 +24,7 @@ MonoBehaviour:
     subParameters:
     - name: pref/slider/ears
     labels: []
-  - name: Cheek fluff size
+  - name: Cheeks
     icon: {fileID: 0}
     type: 203
     parameter:
@@ -45,18 +45,17 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  - name: Breast size
+  - name: Breasts
     icon: {fileID: 0}
-    type: 203
+    type: 102
     parameter:
-      name: 
+      name: pref/toggle/breasts
     value: 1
     style: 0
     subMenu: {fileID: 0}
-    subParameters:
-    - name: pref/slider/breasts
+    subParameters: []
     labels: []
-  - name: Thigh size
+  - name: Legs
     icon: {fileID: 0}
     type: 203
     parameter:
@@ -67,7 +66,7 @@ MonoBehaviour:
     subParameters:
     - name: pref/slider/thighs
     labels: []
-  - name: Belly size
+  - name: Torso
     icon: {fileID: 0}
     type: 203
     parameter:
@@ -77,4 +76,26 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters:
     - name: pref/slider/torso
+    labels: []
+  - name: Arms
+    icon: {fileID: 0}
+    type: 203
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: pref/slider/arms
+    labels: []
+  - name: Hair
+    icon: {fileID: 0}
+    type: 203
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: pref/slider/hair
     labels: []

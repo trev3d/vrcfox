@@ -3,7 +3,7 @@
 relative_export_path = "//vrcfox unity project/Assets"
 file_name = "vrcfox model.fbx"
 desired_model_name = "Body"
-export_uv_map = "player-customized colors"
+export_uv_map = "ColorMap"
 export_collection_name="master"
 
 import bpy
