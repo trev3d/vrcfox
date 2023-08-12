@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: palette VRC
+  m_Name: main material
   m_Shader: {fileID: 4800000, guid: affc81f3d164d734d8f13053effb1c5c, type: 3}
   m_ShaderKeywords: _EMISSION _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4

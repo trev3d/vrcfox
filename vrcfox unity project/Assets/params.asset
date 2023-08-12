@@ -26,17 +26,17 @@ MonoBehaviour:
   - name: pref/slider/torso
     valueType: 1
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 1
   - name: pref/slider/thighs
     valueType: 1
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 1
   - name: pref/slider/arms
     valueType: 1
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 1
   - name: pref/toggle/lashes
     valueType: 2
@@ -46,17 +46,17 @@ MonoBehaviour:
   - name: pref/slider/fluff
     valueType: 1
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 1
   - name: pref/slider/ears
     valueType: 1
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 1
   - name: pref/slider/hair
     valueType: 1
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 1
   - name: pref/slider/pcol
     valueType: 1

@@ -224,8 +224,8 @@ public class AnimatorWizard : MonoBehaviour
 
 				if (blendShapeName.StartsWith(shapeSliderPrefix))
 				{
-					var param = CreateFloatParam(fxLayer, blendShapeName, true, 0.25f);
-					tree.AddChild(BlendshapeTree(fxTreeLayer, skin, param, -100f/3f, 100));
+					var param = CreateFloatParam(fxLayer, blendShapeName, true, 0);
+					tree.AddChild(BlendshapeTree(fxTreeLayer, skin, param));
 				} else if (blendShapeName.StartsWith(shapeTogglesPrefix))
 				{
 					var boolParam = CreateBoolParam(fxLayer, blendShapeName, true, false);
