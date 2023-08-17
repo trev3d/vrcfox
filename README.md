@@ -1,9 +1,9 @@
 # vrcfox
 a tiny bare-bones VRChat avatar featuring color customization and face tracking
 
-(todo, record facetracking video!)
+## [Download >>>](https://github.com/cellomonster/vrcfox/releases/latest) (choose version and download 'source code' zip!)
 
-### [Sketchfab preview](https://sketchfab.com/3d-models/vrcfox-9ed90de72e9c437b8820cbf0eeb32a50)
+## [Sketchfab preview](https://sketchfab.com/3d-models/vrcfox-9ed90de72e9c437b8820cbf0eeb32a50)
 
 ![Screenshot_3](https://github.com/cellomonster/vrcfox/assets/32079637/9d5b7d82-6fe0-44bb-9798-a9bc0a6ca2ae)
 
