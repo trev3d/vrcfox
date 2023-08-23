@@ -1033,20 +1033,20 @@ MonoBehaviour:
       right: {x: 0, y: 0, z: 0, w: 1}
     eyesLookingUp:
       linked: 1
-      left: {x: -0.06975647, y: 0, z: 0, w: 0.9975641}
-      right: {x: -0.06975647, y: 0, z: 0, w: 0.9975641}
+      left: {x: -0.104528464, y: 0, z: 0, w: 0.9945219}
+      right: {x: -0.104528464, y: 0, z: 0, w: 0.9945219}
     eyesLookingDown:
       linked: 1
-      left: {x: 0.06975647, y: 0, z: 0, w: 0.9975641}
-      right: {x: 0.06975647, y: 0, z: 0, w: 0.9975641}
+      left: {x: 0.1564345, y: 0, z: 0, w: 0.98768836}
+      right: {x: 0.1564345, y: 0, z: 0, w: 0.98768836}
     eyesLookingLeft:
       linked: 1
-      left: {x: 0, y: -0.08715574, z: 0, w: 0.9961947}
-      right: {x: 0, y: -0.08715574, z: 0, w: 0.9961947}
+      left: {x: 0, y: -0.1305262, z: 0, w: 0.9914449}
+      right: {x: 0, y: -0.1305262, z: 0, w: 0.9914449}
     eyesLookingRight:
       linked: 1
-      left: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
-      right: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
+      left: {x: 0, y: 0.1305262, z: 0, w: 0.9914449}
+      right: {x: 0, y: 0.1305262, z: 0, w: 0.9914449}
     eyelidType: 2
     upperLeftEyelid: {fileID: 0}
     upperRightEyelid: {fileID: 0}
@@ -1089,7 +1089,7 @@ MonoBehaviour:
         left: {x: 0, y: 0, z: 0, w: 0}
         right: {x: 0, y: 0, z: 0, w: 0}
     eyelidsSkinnedMesh: {fileID: 2888210841022967577}
-    eyelidsBlendshapes: 040000000500000035000000
+    eyelidsBlendshapes: 04000000050000002f000000
   customizeAnimationLayers: 1
   baseAnimationLayers:
   - isEnabled: 0
@@ -1099,10 +1099,9 @@ MonoBehaviour:
     isDefault: 1
   - isEnabled: 0
     type: 2
-    animatorController: {fileID: 9100000, guid: 357cc47eacc7fb245856d07eb906cfd1,
-      type: 2}
+    animatorController: {fileID: 0}
     mask: {fileID: 0}
-    isDefault: 0
+    isDefault: 1
   - isEnabled: 0
     type: 3
     animatorController: {fileID: 9100000, guid: 4df7674ab600e184f943a422fd71c343,
@@ -1138,12 +1137,6 @@ MonoBehaviour:
     isDefault: 1
   AnimationPreset: {fileID: 0}
   animationHashSet:
-  - hash: -1260430634
-    name: VRC Controlled Eye Tracking
-  - hash: 1836243648
-    name: Face Tracked Eye Tracking
-  - hash: 1545220479
-    name: master tree
   - hash: 601478037
     name: rig_hand 0 neutral
   - hash: 744237656
@@ -1176,55 +1169,55 @@ MonoBehaviour:
     name: rig_hand 6 gun
   - hash: 1638421798
     name: rig_hand 7 thumbs up
-  - hash: -1099298580
-    name: master tree
-  - hash: 1279168734
+  - hash: 927299615
     name: basis
-  - hash: -1927818747
+  - hash: 1205124559
     name: down
-  - hash: -1103015122
+  - hash: -809957849
     name: up
-  - hash: 591769788
+  - hash: 1601521538
     name: curious
-  - hash: 199340498
+  - hash: -1054679528
     name: up 0
-  - hash: 1478300198
+  - hash: 606987544
     name: worried
-  - hash: 1905620876
+  - hash: 327776126
     name: curious 0
-  - hash: -416363429
+  - hash: 188106133
     name: down 0
-  - hash: -1810253833
+  - hash: -629658374
     name: basis
-  - hash: -2125537196
+  - hash: -818971815
     name: frown
-  - hash: 459133391
+  - hash: 1430014658
     name: smile
-  - hash: 1371753208
+  - hash: -2085605352
     name: grimace
-  - hash: 1328690287
+  - hash: -1656664433
     name: smile 0
-  - hash: -1192717303
+  - hash: 1447439796
     name: grimace 0
-  - hash: -806378337
+  - hash: 557915426
     name: grimace 1
-  - hash: -1940259433
+  - hash: 1579845495
     name: frown 0
+  - hash: -576816719
+    name: drivers
   - hash: -1965148844
     name: face tracking off
   - hash: -1169342359
     name: face tracking on
-  - hash: -576816719
-    name: drivers
+  - hash: -1099298580
+    name: master tree
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:
     isMirrored: 1
     state: 0
     transform: {fileID: 2190328866278626262}
-    radius: 0.0010820867
+    radius: 0.0010820868
     height: 0
-    position: {x: -8.326673e-17, y: 0.0005802341, z: -9.0403784e-10}
+    position: {x: -6.2450045e-17, y: 0.00058023224, z: -9.258657e-10}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_torso:
     isMirrored: 1
@@ -1254,80 +1247,80 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 7139539231766666650}
-    radius: 0.00021541561
-    height: 0.00086166244
-    position: {x: 0.0000056110925, y: 0.00073234004, z: -0.000008808452}
-    rotation: {x: 0.700484, y: 0, z: -0.060508423, w: 0.7110985}
+    radius: 0.00021541574
+    height: 0.00086166296
+    position: {x: 0.000005608669, y: 0.00073233875, z: -0.000008808841}
+    rotation: {x: 0.70048386, y: 0, z: -0.06050791, w: 0.71109855}
   collider_handL:
     isMirrored: 1
     state: 0
     transform: {fileID: 2261384790746344247}
-    radius: 0.00021541477
-    height: 0.00086165906
-    position: {x: -0.0000056108847, y: 0.0007323383, z: -0.0000088091365}
-    rotation: {x: 0.70048296, y: 0, z: 0.060508106, w: 0.71109945}
+    radius: 0.00021541501
+    height: 0.00086166005
+    position: {x: -0.0000056095537, y: 0.00073233945, z: -0.0000088095385}
+    rotation: {x: 0.70048326, y: 0, z: 0.06050794, w: 0.71109915}
   collider_fingerIndexL:
     isMirrored: 1
     state: 0
     transform: {fileID: 5058986137564077941}
-    radius: 0.00008925235
-    height: 0.00044626175
+    radius: 0.00008925242
+    height: 0.0004462621
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 863149670287924931}
-    radius: 0.000105955616
-    height: 0.0005297781
+    radius: 0.000105955005
+    height: 0.000529775
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingL:
     isMirrored: 1
     state: 0
     transform: {fileID: 1307256826819938939}
-    radius: 0.00008580894
-    height: 0.00042904468
+    radius: 0.00008580918
+    height: 0.0004290459
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 5297654841438442311}
-    radius: 0.00006848282
-    height: 0.0003424141
+    radius: 0.00006848276
+    height: 0.00034241378
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerIndexR:
     isMirrored: 1
     state: 0
     transform: {fileID: 9129358847584808649}
-    radius: 0.000089251946
-    height: 0.0004462597
+    radius: 0.00008925174
+    height: 0.0004462587
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 471629325672706193}
-    radius: 0.00010595525
-    height: 0.0005297762
+    radius: 0.00010595515
+    height: 0.00052977575
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingR:
     isMirrored: 1
     state: 0
     transform: {fileID: 7771433182525227463}
-    radius: 0.00008580982
-    height: 0.0004290491
+    radius: 0.000085809625
+    height: 0.00042904812
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 8331676728929821151}
-    radius: 0.000068482084
-    height: 0.00034241044
+    radius: 0.00006848286
+    height: 0.0003424143
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &4518591562910165925
@@ -1356,7 +1349,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4518591562910165925}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1365,7 +1358,7 @@ Transform:
   - {fileID: 3953077789111464083}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &7746804780396034587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,8 +1384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thumbnailTexture: {fileID: 2800000, guid: 36ccfa0960f18234d89c19053cc06c94, type: 3}
-  vrcThumbnailRenderTexture: {fileID: 8400000, guid: 94b649c2bd1ac4cac95049605dc5333d,
-    type: 2}
 --- !u!114 &5824838411998035675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,7 +1439,7 @@ MonoBehaviour:
   - curious
   - down
   createFaceTracking: 1
-  ftPrefix: ft/
+  ftPrefix: v2/
   ftShapes:
   - BrowDownLeft
   - BrowUpLeft
@@ -1459,6 +1450,7 @@ MonoBehaviour:
   - MouthStretch
   - MouthUpperUpLeft
   - MouthLowerDownLeft
+  - MouthRaiserLower
   ftDualShapes:
   - paramName: SmileSad
     minShapeName: MouthSad
@@ -1472,17 +1464,17 @@ MonoBehaviour:
     minValue: -1
     neutralValue: 0
     maxValue: 1
-  - paramName: EyeLidLeft
-    minShapeName: EyeClosed
-    maxShapeName: EyeWide
-    minValue: 0
-    neutralValue: 0.8
-    maxValue: 1
   - paramName: BrowExpressionLeft
     minShapeName: BrowDown
     maxShapeName: BrowUp
     minValue: -1
     neutralValue: 0
+    maxValue: 1
+  - paramName: EyeLidLeft
+    minShapeName: EyeClosed
+    maxShapeName: EyeWide
+    minValue: 0
+    neutralValue: 0.7
     maxValue: 1
 --- !u!1 &4518591563850499180
 GameObject:
@@ -1715,7 +1707,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -1765,6 +1757,11 @@ PrefabInstance:
     - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[5]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[47]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,

@@ -19,10 +19,15 @@ public class ThumbnailOverride : MonoBehaviour
 	private IEnumerator LateStart()
 	{
 		yield return new WaitForFixedUpdate();
-		
-		// add component copy to VRCCam
-		ThumbnailOverride setterOnCam = GameObject.Find("VRCCam").AddComponent<ThumbnailOverride>();
-		setterOnCam.thumbnailTexture = thumbnailTexture;
+
+		GameObject vrcCam = GameObject.Find("VRCCam");
+
+		if (vrcCam != null)
+		{
+			// add component copy to VRCCam
+			ThumbnailOverride setterOnCam = vrcCam.AddComponent<ThumbnailOverride>();
+			setterOnCam.thumbnailTexture = thumbnailTexture;
+		}
 	}
 
 	// override render texture

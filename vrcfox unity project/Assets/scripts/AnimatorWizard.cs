@@ -268,7 +268,7 @@ public class AnimatorWizard : MonoBehaviour
 			var offState = layer.NewState("face tracking off")
 				.Drives(ftBlendParam, 0);
 			var offControl = offState.State.AddStateMachineBehaviour<VRCAnimatorTrackingControl>();
-			offControl.trackingEyes = VRC_AnimatorTrackingControl.TrackingType.Tracking;
+			// offControl.trackingEyes = VRC_AnimatorTrackingControl.TrackingType.Tracking;
 			offControl.trackingMouth = VRC_AnimatorTrackingControl.TrackingType.Tracking;
 
 			// zero all FT blendshapes when FT disabled
@@ -289,7 +289,7 @@ public class AnimatorWizard : MonoBehaviour
 			var onState = layer.NewState("face tracking on")
 				.Drives(ftBlendParam, 1);
 			var onControl = onState.State.AddStateMachineBehaviour<VRCAnimatorTrackingControl>();
-			onControl.trackingEyes = VRC_AnimatorTrackingControl.TrackingType.Animation;
+			// onControl.trackingEyes = VRC_AnimatorTrackingControl.TrackingType.Animation;
 			onControl.trackingMouth = VRC_AnimatorTrackingControl.TrackingType.Animation;
 
 			layer.AnyTransitionsTo(onState).WithTransitionToSelf().When(ftActiveParam.IsTrue());
@@ -338,11 +338,11 @@ public class AnimatorWizard : MonoBehaviour
 			masterTree.children = children;
 
 			// eyes
-			{
-				CreateFloatParamVrcOnly(ftPrefix + "EyeLeftX", false, 0);
-				CreateFloatParamVrcOnly(ftPrefix + "EyeRightX", false, 0);
-				CreateFloatParamVrcOnly(ftPrefix + "EyeY", false, 0);
-			}
+			// {
+			// 	CreateFloatParamVrcOnly(ftPrefix + "EyeLeftX", false, 0);
+			// 	CreateFloatParamVrcOnly(ftPrefix + "EyeRightX", false, 0);
+			// 	CreateFloatParamVrcOnly(ftPrefix + "EyeY", false, 0);
+			// }
 		}
 
 		// add all the new avatar params to the avatar descriptor

@@ -37,7 +37,7 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: 9c92f7f33b59648408a58ef7cdb57903, type: 3}
     type: 102
     parameter:
-      name: ft/enabled
+      name: v2/enabled
     value: 1
     style: 0
     subMenu: {fileID: 0}
