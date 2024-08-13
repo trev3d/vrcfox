@@ -22,14 +22,9 @@ The Unity project contains an 'avatar setup base' prefab and two scenes for Ques
 
 The Unity project also includes a script (attached to the avatar prefab) to easily customize facial expressions, player preferences, and facetracking features. You can disable some features to save on VRChat parameter budget or add your own blendshapes for expressions, body customization, clothing toggles, facetracking, etc.
 
-## TODO:
-- [X] User friendly animator wizard
-- [ ] Add body geometry. Right now the only thing under the coat is air!
-- [X] Revise visemes and expression
-- [X] Face tracking support
-- [ ] Limited outfit customization (something better than that drab grey coat!)
-- [X] UVs for textures
-- [ ] VRM file?
+## A request
+
+Given the license I can't legally stop you, but I'll still ask politely - please do not use this model for pornographic or suggestive content.
 
 ## Attribution
 - I'm using [hai-vr's av3-animator-as-code package](https://github.com/hai-vr/av3-animator-as-code) to set up animators
