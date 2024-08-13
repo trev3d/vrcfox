@@ -3,6 +3,8 @@ a minimalistic furry avatar for vrchat
 
 ## [Download >>>](https://github.com/cellomonster/vrcfox/releases/latest) (choose version and download 'source code' zip!)
 
+![avatar screenshot](screenshot.png)
+
 ## Customization
 
 The full project includes both a Blend file and a Unity project.
