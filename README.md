@@ -1,18 +1,13 @@
 # vrcfox
-a tiny bare-bones VRChat avatar featuring color customization and face tracking
+a tiny bare-bones furry avatar for vrchat
 
 ## [Download >>>](https://github.com/cellomonster/vrcfox/releases/latest) (choose version and download 'source code' zip!)
 
-## [Sketchfab preview](https://sketchfab.com/3d-models/vrcfox-9ed90de72e9c437b8820cbf0eeb32a50)
-
-![Screenshot_3](https://github.com/cellomonster/vrcfox/assets/32079637/9d5b7d82-6fe0-44bb-9798-a9bc0a6ca2ae)
-
-
-## Modifying
+## Customization
 
 The full project includes both a Blend file and a Unity project.
 
-The blend file requires Blender 3.6 or later
+The blend file requires Blender 4.2 or later
 
 The easiest way to customize the colors is with vertex painting rather than using a texture. This works well for solid colors but won't work for fancy patterns. Your avatar file size will stay tiny and quick to download without texture files. If you would rather use a texture, the model has a second set of UVs. You'll need to change each mesh's active UV layer to 'UVMap' and apply a texture yourself. You'll also want to erase all of the vertex colors as these will still appear on the default material in the Unity project!
 
