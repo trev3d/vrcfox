@@ -1,5 +1,5 @@
 # vrcfox
-a tiny bare-bones furry avatar for vrchat
+a minimalistic furry avatar for vrchat
 
 ## [Download >>>](https://github.com/cellomonster/vrcfox/releases/latest) (choose version and download 'source code' zip!)
 
