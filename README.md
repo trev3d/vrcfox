@@ -5,6 +5,8 @@ a minimalistic furry avatar for vrchat
 
 ### [Use public test avatar >>>](https://vrchat.com/home/avatar/avtr_935bce4d-b613-4658-8f0c-057c62b4eb41)
 
+### [Sketchfab preview >>>](https://sketchfab.com/3d-models/low-poly-fox-f46335a0a8064fb484712d2d228f3b14)
+
 ### [Download files >>>](https://github.com/cellomonster/vrcfox/releases/latest) 
 (choose version and download 'source code' zip!)
 
