@@ -1,7 +1,9 @@
 # vrcfox
 a minimalistic furry avatar for vrchat
 
-## Get
+![avatar screenshot](screenshot.png)
+
+## Get ⬇️
 
 ### [Use public test avatar >>>](https://vrchat.com/home/avatar/avtr_935bce4d-b613-4658-8f0c-057c62b4eb41)
 
@@ -10,10 +12,11 @@ a minimalistic furry avatar for vrchat
 ### [Download files >>>](https://github.com/cellomonster/vrcfox/releases/latest) 
 (choose version and download 'source code' zip!)
 
-![avatar screenshot](screenshot.png)
+## Strakacher's fork ⭐
+A fork that comes with a body mesh, extra clothes meshes, and many other additional customization options! 
+### [Fork repo >>>](https://github.com/strakacher21/vrcfox-2.3_body_and_cloth_edition)
 
-## A request
-
+## A request ⚠️
 Given the license I can't legally stop you, but I'll still ask politely - please do not use this model for pornographic or suggestive content.
 
 ## Customization
