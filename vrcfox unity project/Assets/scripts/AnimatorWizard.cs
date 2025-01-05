@@ -1,5 +1,6 @@
 ﻿#if UNITY_EDITOR
 using System;
+using System.Linq;
 using AnimatorAsCode.V0;
 using UnityEditor;
 using UnityEditor.Animations;
@@ -64,7 +65,12 @@ public class AnimatorWizard : MonoBehaviour
 	public Motion primaryColor1;
 	public Motion secondColor0;
 	public Motion secondColor1;
-	
+
+	public bool createOSCsmooth = true;
+	public bool IsLocal = false;
+	public float localSmoothness = 0.1f;
+    public float remoteSmoothness = 0.7f;	
+
 	public string mouthPrefix = "exp/mouth/";
 
 	public string[] mouthShapeNames =
@@ -337,6 +343,112 @@ public class AnimatorWizard : MonoBehaviour
 			children[children.Length - 1].directBlendParameter = ftBlendParam.Name;
 			masterTree.children = children;
 
+			if (createOSCsmooth)
+			{
+
+				var OSCLayer = _aac.CreateSupportingFxLayer("OSC smoothing").WithAvatarMask(fxMask);
+
+				// The main OSC trees 
+				var OSCLocalTree = _aac.NewBlendTreeAsRaw();
+				OSCLocalTree.name = "OSC Local";
+				OSCLocalTree.blendType = BlendTreeType.Direct;
+				var OSCLocalState = OSCLayer.NewState(OSCLocalTree.name).WithAnimation(OSCLocalTree).WithWriteDefaultsSetTo(true);
+
+				var OSCRemoteTree = _aac.NewBlendTreeAsRaw();
+				OSCRemoteTree.name = "OSC Remote";
+				OSCRemoteTree.blendType = BlendTreeType.Direct;
+				var OSCRemoteState = OSCLayer.NewState(OSCRemoteTree.name).WithAnimation(OSCRemoteTree).WithWriteDefaultsSetTo(true);
+
+				var allShapes = ftShapes.Concat(ftDualShapes.Select(ds => ds.paramName));
+
+				// General function for creating trees
+				void CreateOSCTrees(string type, BlendTree rootTree, float smoothness)
+				{
+					foreach (var shape in allShapes)
+					{
+						// Params
+						var inputParamName = $"{ftPrefix}{shape}";
+						var smootherParamName = $"OSCsmooth/{type}/{ftPrefix}{shape}Smoother";
+						var driverParamName = $"OSCsmooth/Proxy/{ftPrefix}{shape}";
+
+						CreateFloatParam(fxLayer, smootherParamName, true, 0.0f);
+						CreateFloatParam(fxLayer, driverParamName, true, 0.0f);
+
+						// Replace params in the FT tree
+						foreach (var child in masterTree.children)
+						{
+							if (child.motion is BlendTree blendTree)
+							{
+								ReplaceBlendTreeParameter(blendTree, inputParamName, driverParamName);
+							}
+						}
+
+						var inputParam = OSCLayer.FloatParameter(inputParamName);
+						var smootherParam = OSCLayer.FloatParameter(smootherParamName);
+						OSCLayer.OverrideValue(smootherParam, smoothness);
+
+						// Root Tree
+						var rootSubTree = rootTree.CreateBlendTreeChild(0);
+						rootSubTree.name = $"OSCsmooth/{type}/{ftPrefix}{shape}Smoother";
+						rootSubTree.blendType = BlendTreeType.Simple1D;
+						rootSubTree.useAutomaticThresholds = false;
+						rootSubTree.blendParameter = smootherParamName;
+
+						// Input Tree
+						var inputTree = rootSubTree.CreateBlendTreeChild(0);
+						inputTree.name = $"OSCsmooth Input ({ftPrefix}{shape})";
+						inputTree.blendType = BlendTreeType.Simple1D;
+						inputTree.useAutomaticThresholds = false;
+						inputTree.blendParameter = inputParam.Name;
+
+						var clipMin = _aac.NewClip($"Animator.OSCsmooth/Proxy/{ftPrefix}{shape}_Min")
+							.Animating(anim => anim.AnimatesAnimator(OSCLayer.FloatParameter(driverParamName)).WithFixedSeconds(0.0f, -1.0f));
+						var clipMax = _aac.NewClip($"Animator.OSCsmooth/Proxy/{ftPrefix}{shape}_Max")
+							.Animating(anim => anim.AnimatesAnimator(OSCLayer.FloatParameter(driverParamName)).WithFixedSeconds(0.0f, 1.0f));
+
+						inputTree.AddChild(clipMin.Clip, -1.0f);
+						inputTree.AddChild(clipMax.Clip, 1.0f);
+
+						// Driver Tree
+						var driverTree = rootSubTree.CreateBlendTreeChild(1);
+						driverTree.name = $"OSCsmooth Driver ({ftPrefix}{shape})";
+						driverTree.blendType = BlendTreeType.Simple1D;
+						driverTree.useAutomaticThresholds = false;
+						driverTree.blendParameter = driverParamName;
+
+						driverTree.AddChild(clipMin.Clip, -1.0f);
+						driverTree.AddChild(clipMax.Clip, 1.0f);
+					}
+				}
+
+				CreateOSCTrees("Local", OSCLocalTree, localSmoothness);
+				CreateOSCTrees("Remote", OSCRemoteTree, remoteSmoothness);
+
+				OSCLocalState.TransitionsTo(OSCRemoteState).When(OSCLayer.BoolParameter("IsLocal").IsFalse());
+				OSCRemoteState.TransitionsTo(OSCLocalState).When(OSCLayer.BoolParameter("IsLocal").IsTrue());
+				
+				void ReplaceBlendTreeParameter(BlendTree tree, string oldParam, string newParam)
+				{
+					if (tree.blendParameter == oldParam)
+					{
+						tree.blendParameter = newParam;
+					}
+
+					if (tree.blendParameterY == oldParam)
+					{
+						tree.blendParameterY = newParam;
+					}
+
+					foreach (var child in tree.children)
+					{
+						if (child.motion is BlendTree childTree)
+						{
+							ReplaceBlendTreeParameter(childTree, oldParam, newParam);
+						}
+					}
+				}
+			}
+
 			// eyes
 			// {
 			// 	CreateFloatParamVrcOnly(ftPrefix + "EyeLeftX", false, 0);
@@ -417,6 +529,7 @@ public class AnimatorWizard : MonoBehaviour
 					exit.Or().When(disableParam.IsTrue());
 				}
 			}
+			
 		}
 	}
 
@@ -470,26 +583,34 @@ public class AnimatorWizard : MonoBehaviour
 
 	private void CreateFloatParamVrcOnly(string paramName, bool save, float val)
 	{
-		_vrcParams.Add(new VRCExpressionParameters.Parameter()
+		if(!paramName.StartsWith("OSCsmooth"))
 		{
-			name = paramName,
-			valueType = VRCExpressionParameters.ValueType.Float,
-			saved = save,
-			networkSynced = true,
-			defaultValue = val,
-		});
+			_vrcParams.Add(new VRCExpressionParameters.Parameter()
+			{
+				name = paramName,
+				valueType = VRCExpressionParameters.ValueType.Float,
+				saved = save,
+				networkSynced = true,
+				defaultValue = val,
+			});
+		}
+
 	}
 
 	private AacFlBoolParameter CreateBoolParam(AacFlLayer layer, string paramName, bool save, bool val)
 	{
-		_vrcParams.Add(new VRCExpressionParameters.Parameter()
+		if(!paramName.StartsWith("OSCsmooth"))
 		{
-			name = paramName,
-			valueType = VRCExpressionParameters.ValueType.Bool,
-			saved = save,
-			networkSynced = true,
-			defaultValue = val ? 1 : 0,
-		});
+			_vrcParams.Add(new VRCExpressionParameters.Parameter()
+			{
+				name = paramName,
+				valueType = VRCExpressionParameters.ValueType.Bool,
+				saved = save,
+				networkSynced = true,
+				defaultValue = val ? 1 : 0,
+			});			
+		}
+
 
 		return layer.BoolParameter(paramName);
 	}
@@ -542,8 +663,10 @@ public class AnimatorGeneratorEditor : Editor
 	private SerializedProperty fxMask, gestureMask, lMask, rMask;
 
 	private SerializedProperty handPoses;
-	private SerializedProperty createShapePreferences, createColorCustomization, createFaceTracking;
+	private SerializedProperty createShapePreferences, createColorCustomization, createFaceTracking, createOSCsmooth;
 
+	private SerializedProperty localSmoothness, remoteSmoothness;
+	
 	private SerializedProperty shapeSliderPrefix, shapeTogglesPrefix, mouthPrefix, browPrefix, ftPrefix;
 
 	private SerializedProperty primaryColor0, primaryColor1, secondColor0, secondColor1;
@@ -584,6 +707,10 @@ public class AnimatorGeneratorEditor : Editor
 
 		mouthShapeNames = serializedObject.FindProperty("mouthShapeNames");
 		browShapeNames = serializedObject.FindProperty("browShapeNames");
+
+		createOSCsmooth = serializedObject.FindProperty("createOSCsmooth");
+		localSmoothness = serializedObject.FindProperty("localSmoothness");
+		remoteSmoothness = serializedObject.FindProperty("remoteSmoothness");
 
 		ftShapes = serializedObject.FindProperty("ftShapes");
 		ftDualShapes = serializedObject.FindProperty("ftDualShapes");
@@ -630,7 +757,7 @@ public class AnimatorGeneratorEditor : Editor
 
 		GUILayout.Label("Facial expressions", headerStyle);
 		GUILayout.Label("Brow and mouth blendshapes controlled by left and right hands." +
-		                "Array index maps to hand gesture parameter. Array length should be 8!");
+		                "\nArray index maps to hand gesture parameter. Array length should be 8!");
 		EditorGUILayout.PropertyField(mouthPrefix);
 		EditorGUILayout.PropertyField(mouthShapeNames);
 		GUILayout.Space(20);
@@ -639,7 +766,7 @@ public class AnimatorGeneratorEditor : Editor
 		
 		GUILayout.Label("Animator creation flags", headerStyle);
 		GUILayout.Label("Choose what parts of the animator are generated. " +
-		                "Disabling features saves VRC parameter budget!");
+		                "\nDisabling features saves VRC parameter budget!");
 		EditorGUILayout.PropertyField(createShapePreferences);
 		EditorGUILayout.PropertyField(createColorCustomization);
 		EditorGUILayout.PropertyField(createFaceTracking);
@@ -648,7 +775,7 @@ public class AnimatorGeneratorEditor : Editor
 		{
 			GUILayout.Label("Preference prefixes", headerStyle);
 			GUILayout.Label(
-				"Animator wizard will automatically create VRC parameters for blendshapes with these prefixes");
+				"\nAnimator wizard will automatically create VRC parameters for blendshapes with these prefixes");
 			EditorGUILayout.PropertyField(shapeSliderPrefix);
 			EditorGUILayout.PropertyField(shapeTogglesPrefix);
 		}
@@ -667,6 +794,16 @@ public class AnimatorGeneratorEditor : Editor
 		{
 			GUILayout.Label("VRCFaceTracking (Universal Shapes) settings", headerStyle);
 			EditorGUILayout.PropertyField(ftPrefix);
+			GUILayout.Space(10);
+			GUILayout.Label("OSC smooth is needed to fix Face Tracking params," +
+			 "as without it animation is choppy and jerky, \nas if it's lacking FPS");
+			GUILayout.Space(10);
+			EditorGUILayout.PropertyField(createOSCsmooth);
+			if(wizard.createOSCsmooth)
+			{
+			EditorGUILayout.PropertyField(localSmoothness);
+			EditorGUILayout.PropertyField(remoteSmoothness);
+			}
 			GUILayout.Space(10);
 			GUILayout.Label("Single shapes controlled by a float parameter");
 			EditorGUILayout.PropertyField(ftShapes);
