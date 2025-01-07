@@ -1,6 +1,5 @@
 ﻿#if UNITY_EDITOR
 using System;
-using System.Linq;
 using AnimatorAsCode.V0;
 using UnityEditor;
 using UnityEditor.Animations;
@@ -345,7 +344,6 @@ public class AnimatorWizard : MonoBehaviour
 
 			if (createOSCsmooth)
 			{
-
 				var OSCLayer = _aac.CreateSupportingFxLayer("OSC smoothing").WithAvatarMask(fxMask);
 
 				// The main OSC trees 
@@ -359,7 +357,16 @@ public class AnimatorWizard : MonoBehaviour
 				OSCRemoteTree.blendType = BlendTreeType.Direct;
 				var OSCRemoteState = OSCLayer.NewState(OSCRemoteTree.name).WithAnimation(OSCRemoteTree).WithWriteDefaultsSetTo(true);
 
-				var allShapes = ftShapes.Concat(ftDualShapes.Select(ds => ds.paramName));
+				// Combine ftShapes and ftDualShapes manually
+				var allShapes = new List<string>();
+				foreach (var shape in ftShapes)
+				{
+					allShapes.Add(shape);
+				}
+				foreach (var ds in ftDualShapes)
+				{
+					allShapes.Add(ds.paramName);
+				}
 
 				// General function for creating trees
 				void CreateOSCTrees(string type, BlendTree rootTree, float smoothness)
