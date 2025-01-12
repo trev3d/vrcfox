@@ -2,126 +2,8 @@ fileFormatVersion: 2
 guid: d4bf82d2ccd2e46e2b24a85ff543f3af
 ModelImporter:
   serializedVersion: 22200
-  internalIDToNameTable:
-  - first:
-      74: -4383088484394742554
-    second: rig|hand fist
-  - first:
-      74: 1790761964589581758
-    second: rig|hand middle finger
-  - first:
-      74: -2997442549648561869
-    second: rig|hand neutral
-  - first:
-      74: -5111209471878291501
-    second: rig|hand peace
-  - first:
-      74: 1153038577700280034
-    second: rig|hand point
-  - first:
-      74: -7392902572617639109
-    second: rig|hand thumbs up
-  - first:
-      74: 4589448038466466325
-    second: rig|idle hand
-  - first:
-      74: -3154397555439104915
-    second: rig|t-pose
-  - first:
-      74: -7929877181813401174
-    second: fox|t-pose
-  - first:
-      74: 4977405000299937427
-    second: fox|hand neutral
-  - first:
-      74: -8006403416233361372
-    second: fox|hand fist
-  - first:
-      74: -1672858728846447720
-    second: rig|hand fist.001
-  - first:
-      74: -8308889621863200675
-    second: rig|hand fist.002
-  - first:
-      74: 1831412991990518627
-    second: rig|hand fist.003
-  - first:
-      74: -3440952596078587180
-    second: rig|hand fist.004
-  - first:
-      74: 6714865894615092687
-    second: rig|hand fist.005
-  - first:
-      74: -6451438235879545265
-    second: fox.001|hand fist.004
-  - first:
-      74: 6585201401118333735
-    second: rig|hand fist.006
-  - first:
-      74: 4424676660012839317
-    second: rig|hand fist.007
-  - first:
-      74: 5901408339110735755
-    second: rig|tail still
-  - first:
-      74: -783969365161348589
-    second: rig|tail wag
-  - first:
-      74: -8499350523210219388
-    second: rig|a t-pose
-  - first:
-      74: 8031530277767556733
-    second: rig|hand gun
-  - first:
-      74: -599171721351526546
-    second: rig|hand gun shoot
-  - first:
-      74: 3563174298529885795
-    second: rig|hand open
-  - first:
-      74: -241033498799007248
-    second: rig|hand idle
-  - first:
-      74: 5793635560677517586
-    second: rig|hand middle
-  - first:
-      74: -6121194909928515709
-    second: rig|thumbnail
-  - first:
-      74: -323290640565089156
-    second: rig|hand 0 neutral
-  - first:
-      74: 1812292174531892778
-    second: rig|hand 1 fist
-  - first:
-      74: -6936282357973609983
-    second: rig|hand 2 open
-  - first:
-      74: 6345884184507438519
-    second: rig|hand 3 point
-  - first:
-      74: -597605664110973857
-    second: rig|hand 4 peace
-  - first:
-      74: 5224918019115096257
-    second: rig|hand 5 rock n roll
-  - first:
-      74: 7338417288294162353
-    second: rig|hand 6 gun
-  - first:
-      74: 5305558247662170596
-    second: rig|hand 7 thumbs up
+  internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: fox
-    second: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: vertex shaded
-    second: {fileID: 2100000, guid: 69d47536874444ecabb559b613060c2c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -146,9 +28,9 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 3
-    animationRotationError: 0
+    animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
@@ -158,9 +40,9 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 0 neutral
       takeName: rig|hand 0 neutral
-      internalID: 0
+      internalID: -323290640565089156
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -187,9 +69,9 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 1 fist
       takeName: rig|hand 1 fist
-      internalID: 0
+      internalID: 1812292174531892778
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -216,9 +98,9 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 2 open
       takeName: rig|hand 2 open
-      internalID: 0
+      internalID: -6936282357973609983
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -245,9 +127,9 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 3 point
       takeName: rig|hand 3 point
-      internalID: 0
+      internalID: 6345884184507438519
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -274,9 +156,9 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 4 peace
       takeName: rig|hand 4 peace
-      internalID: 0
+      internalID: -597605664110973857
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -303,9 +185,9 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 5 rock n roll
       takeName: rig|hand 5 rock n roll
-      internalID: 0
+      internalID: 5224918019115096257
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -332,9 +214,9 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 6 gun
       takeName: rig|hand 6 gun
-      internalID: 0
+      internalID: 7338417288294162353
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -361,9 +243,38 @@ ModelImporter:
     - serializedVersion: 16
       name: rig|hand 7 thumbs up
       takeName: rig|hand 7 thumbs up
-      internalID: 0
+      internalID: 5305558247662170596
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|showcase pose
+      takeName: rig|showcase pose
+      internalID: 327038236460324731
+      firstFrame: 0
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -400,7 +311,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
+    nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -418,7 +329,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -495,14 +406,6 @@ ModelImporter:
         modified: 0
     - boneName: belly
       humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: chest
-      humanName: Chest
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -861,6 +764,14 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
+    - boneName: chest
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
     skeleton:
     - name: vrcfox model(Clone)
       parentName: 
@@ -879,7 +790,7 @@ ModelImporter:
       scale: {x: 100, y: 100, z: 100}
     - name: hip
       parentName: rig
-      position: {x: -0, y: -0.00040162948, z: 0.010286805}
+      position: {x: 0, y: -0.0004016292, z: 0.010592193}
       rotation: {x: 0.67048764, y: -0.00000008844387, z: -0.000000079928334, w: 0.74192077}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: belly
@@ -985,7 +896,7 @@ ModelImporter:
     - name: f_index.01.L
       parentName: hand.L
       position: {x: -0.000014596503, y: 0.0008571691, z: -0.00032403937}
-      rotation: {x: -0.0076400894, y: -0.004421925, z: -0.088489905, w: 0.996038}
+      rotation: {x: -0.028146612, y: -0.002387345, z: -0.059748366, w: 0.99781376}
       scale: {x: 0.9999999, y: 1.0000001, z: 0.99999976}
     - name: f_index.02.L
       parentName: f_index.01.L
@@ -995,7 +906,7 @@ ModelImporter:
     - name: f_index.03.L
       parentName: f_index.02.L
       position: {x: -2.9926012e-10, y: 0.00022312869, z: -4.6566128e-12}
-      rotation: {x: 0.000050952116, y: -0.013181674, z: -0.045754083, w: 0.9988658}
+      rotation: {x: 0.000045726007, y: -0.013184187, z: -0.04133508, w: 0.9990584}
       scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
     - name: f_index.03.L_end
       parentName: f_index.03.L
@@ -1005,17 +916,17 @@ ModelImporter:
     - name: f_middle.01.L
       parentName: hand.L
       position: {x: -0.000012031833, y: 0.00088339974, z: -0.00013386404}
-      rotation: {x: -0.00023388476, y: 0.0040901317, z: -0.07308583, w: 0.99731725}
+      rotation: {x: -0.0190416, y: 0.0054773972, z: -0.053313885, w: 0.99838126}
       scale: {x: 0.9999996, y: 0.99999994, z: 0.9999997}
     - name: f_middle.02.L
       parentName: f_middle.01.L
       position: {x: 7.272683e-10, y: 0.00040882966, z: 1.8626451e-11}
-      rotation: {x: 0.00000038112424, y: -0.0000031582492, z: -0.07288987, w: 0.99734}
+      rotation: {x: 0.0000009424981, y: -0.000003134365, z: -0.039978348, w: 0.9992005}
       scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
     - name: f_middle.03.L
       parentName: f_middle.02.L
       position: {x: 5.627953e-10, y: 0.0002648893, z: 1.3969838e-11}
-      rotation: {x: 0.000000039016076, y: -0.0000011544074, z: -0.12540664, w: 0.9921054}
+      rotation: {x: -0.0000018366541, y: -0.000001172955, z: -0.03731143, w: 0.9993037}
       scale: {x: 0.9999998, y: 1.0000004, z: 1}
     - name: f_middle.03.L_end
       parentName: f_middle.03.L
@@ -1025,17 +936,17 @@ ModelImporter:
     - name: f_pinky.01.L
       parentName: hand.L
       position: {x: 0.0000049168452, y: 0.0008255795, z: 0.00032790698}
-      rotation: {x: -0.0046977224, y: 0.04073248, z: -0.094274476, w: 0.99470156}
+      rotation: {x: -0.027817627, y: 0.043155834, z: -0.062565595, w: 0.99671924}
       scale: {x: 0.9999999, y: 1.0000005, z: 1.0000001}
     - name: f_pinky.02.L
       parentName: f_pinky.01.L
       position: {x: -0.0000000018673016, y: 0.00028912476, z: -4.6566126e-11}
-      rotation: {x: 0.0014243813, y: -0.01981672, z: -0.0716305, w: 0.9972334}
+      rotation: {x: 0.0007958876, y: -0.01985198, z: -0.040030442, w: 0.9990009}
       scale: {x: 0.99999994, y: 0.9999999, z: 0.9999996}
     - name: f_pinky.03.L
       parentName: f_pinky.02.L
       position: {x: -1.1757947e-10, y: 0.00017120673, z: -8.381903e-11}
-      rotation: {x: -0.00000053974384, y: -0.000015467502, z: -0.09810025, w: 0.99517655}
+      rotation: {x: -0.00000072392857, y: -0.000015538184, z: -0.03869911, w: 0.99925095}
       scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
     - name: f_pinky.03.L_end
       parentName: f_pinky.03.L
@@ -1045,17 +956,17 @@ ModelImporter:
     - name: f_ring.01.L
       parentName: hand.L
       position: {x: -0.0000046961254, y: 0.00088014617, z: 0.00008854296}
-      rotation: {x: 0.0053004753, y: -0.0020117909, z: -0.080361426, w: 0.9967497}
+      rotation: {x: -0.019996027, y: -0.00011995432, z: -0.05317567, w: 0.99838495}
       scale: {x: 0.99999976, y: 0.99999976, z: 0.9999997}
     - name: f_ring.02.L
       parentName: f_ring.01.L
       position: {x: 0.0000000023079336, y: 0.00040111865, z: -2.0954757e-11}
-      rotation: {x: -0.00018464807, y: 0.00066046603, z: -0.070336126, w: 0.9975231}
+      rotation: {x: -0.00010449065, y: 0.0006615694, z: -0.040112082, w: 0.999195}
       scale: {x: 0.9999996, y: 0.99999964, z: 0.99999994}
     - name: f_ring.03.L
       parentName: f_ring.02.L
       position: {x: -7.0896927e-10, y: 0.0002145242, z: -3.958121e-11}
-      rotation: {x: -0.000079813544, y: 0.0005644572, z: -0.058291957, w: 0.9982994}
+      rotation: {x: -0.00005652352, y: 0.00056500454, z: -0.040707715, w: 0.9991709}
       scale: {x: 1.0000001, y: 1.0000002, z: 1}
     - name: f_ring.03.L_end
       parentName: f_ring.03.L
@@ -1065,12 +976,12 @@ ModelImporter:
     - name: thumb.01.L
       parentName: hand.L
       position: {x: 0.00007682031, y: 0.0002909232, z: -0.00024829758}
-      rotation: {x: -0.20598066, y: 0.60450643, z: -0.47798502, w: 0.6030542}
+      rotation: {x: -0.25958496, y: 0.65610653, z: -0.39937022, w: 0.5853574}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: thumb.02.L
       parentName: thumb.01.L
       position: {x: 7.636845e-10, y: 0.00038021436, z: 5.075708e-10}
-      rotation: {x: -0.00033840744, y: -0.005779096, z: 0.05859756, w: 0.9982649}
+      rotation: {x: -0.00023511049, y: -0.0057841833, z: 0.040690046, w: 0.99915504}
       scale: {x: 1.0000005, y: 1.0000005, z: 1.0000001}
     - name: thumb.03.L
       parentName: thumb.02.L
@@ -1105,7 +1016,7 @@ ModelImporter:
     - name: f_index.01.R
       parentName: hand.R
       position: {x: 0.000014598824, y: 0.0008571705, z: -0.0003240391}
-      rotation: {x: -0.007640095, y: 0.004421967, z: 0.08848991, w: 0.996038}
+      rotation: {x: -0.028146392, y: 0.002387493, z: 0.059748407, w: 0.9978137}
       scale: {x: 0.9999998, y: 0.99999994, z: 0.99999976}
     - name: f_index.02.R
       parentName: f_index.01.R
@@ -1115,7 +1026,7 @@ ModelImporter:
     - name: f_index.03.R
       parentName: f_index.02.R
       position: {x: 0.0000000011574594, y: 0.0002231297, z: -9.3132255e-12}
-      rotation: {x: 0.00005091618, y: 0.013181721, z: 0.045754068, w: 0.9988658}
+      rotation: {x: 0.000045856337, y: 0.013184305, z: 0.04133344, w: 0.9990585}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999964}
     - name: f_index.03.R_end
       parentName: f_index.03.R
@@ -1125,17 +1036,17 @@ ModelImporter:
     - name: f_middle.01.R
       parentName: hand.R
       position: {x: 0.000012032818, y: 0.0008834005, z: -0.00013386406}
-      rotation: {x: -0.00023389705, y: -0.0040901154, z: 0.07308584, w: 0.99731725}
+      rotation: {x: -0.019039966, y: -0.0054771896, z: 0.053315565, w: 0.9983812}
       scale: {x: 0.99999964, y: 1, z: 0.9999997}
     - name: f_middle.02.R
       parentName: f_middle.01.R
       position: {x: -0.0000000010321309, y: 0.0004088293, z: 9.3132255e-12}
-      rotation: {x: 0.00000039094385, y: 0.0000031619857, z: 0.072889864, w: 0.99734}
+      rotation: {x: 0.000001531094, y: 0.000003140419, z: 0.039978288, w: 0.9992006}
       scale: {x: 1, y: 1.0000002, z: 0.99999994}
     - name: f_middle.03.R
       parentName: f_middle.02.R
       position: {x: -1.907756e-10, y: 0.00026488723, z: 0}
-      rotation: {x: 0.000000009446007, y: 0.000001165966, z: 0.12540665, w: 0.9921054}
+      rotation: {x: -0.0000012342581, y: 0.00000094200436, z: 0.037306268, w: 0.9993039}
       scale: {x: 0.9999996, y: 0.9999999, z: 1.0000001}
     - name: f_middle.03.R_end
       parentName: f_middle.03.R
@@ -1145,17 +1056,17 @@ ModelImporter:
     - name: f_pinky.01.R
       parentName: hand.R
       position: {x: -0.000004915878, y: 0.0008255816, z: 0.00032790712}
-      rotation: {x: -0.004697707, y: -0.040732462, z: 0.09427452, w: 0.99470156}
+      rotation: {x: -0.027819732, y: -0.0431565, z: 0.06255955, w: 0.9967196}
       scale: {x: 0.9999999, y: 1.0000005, z: 1.0000002}
     - name: f_pinky.02.R
       parentName: f_pinky.01.R
       position: {x: -8.684583e-10, y: 0.00028912612, z: 1.3038516e-10}
-      rotation: {x: 0.001424352, y: 0.019816732, z: 0.07163058, w: 0.9972334}
+      rotation: {x: 0.0007968841, y: 0.019851893, z: 0.040036593, w: 0.99900067}
       scale: {x: 1.0000002, y: 1.0000001, z: 1}
     - name: f_pinky.03.R
       parentName: f_pinky.02.R
       position: {x: 0.0000000016193371, y: 0.0001712058, z: 6.519258e-11}
-      rotation: {x: -0.0000005432532, y: 0.000015458265, z: 0.098100245, w: 0.99517655}
+      rotation: {x: -0.0000021880835, y: 0.000015528867, z: 0.03869537, w: 0.9992511}
       scale: {x: 1, y: 1.0000001, z: 0.99999994}
     - name: f_pinky.03.R_end
       parentName: f_pinky.03.R
@@ -1165,17 +1076,17 @@ ModelImporter:
     - name: f_ring.01.R
       parentName: hand.R
       position: {x: 0.0000046979126, y: 0.0008801499, z: 0.00008854331}
-      rotation: {x: 0.005300454, y: 0.0020117972, z: 0.08036151, w: 0.9967497}
+      rotation: {x: -0.019993758, y: 0.00012019274, z: 0.05317843, w: 0.99838483}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
     - name: f_ring.02.R
       parentName: f_ring.01.R
       position: {x: -5.2212273e-10, y: 0.00040111775, z: -1.9790605e-11}
-      rotation: {x: -0.00018464796, y: -0.0006604569, z: 0.07033607, w: 0.9975231}
+      rotation: {x: -0.00010433419, y: -0.00066144613, z: 0.04010561, w: 0.9991952}
       scale: {x: 1, y: 1, z: 1.0000001}
     - name: f_ring.03.R
       parentName: f_ring.02.R
       position: {x: 0.0000000010465737, y: 0.0002145251, z: -4.249159e-11}
-      rotation: {x: -0.00007981955, y: -0.00056445104, z: 0.058291994, w: 0.9982994}
+      rotation: {x: -0.00005532597, y: -0.00056482357, z: 0.04070253, w: 0.99917114}
       scale: {x: 0.9999997, y: 0.9999996, z: 1.0000001}
     - name: f_ring.03.R_end
       parentName: f_ring.03.R
@@ -1185,12 +1096,12 @@ ModelImporter:
     - name: thumb.01.R
       parentName: hand.R
       position: {x: -0.00007681976, y: 0.0002909232, z: -0.0002482977}
-      rotation: {x: -0.20598067, y: -0.60450625, z: 0.47798508, w: 0.6030542}
+      rotation: {x: -0.25979328, y: -0.6562453, z: 0.399153, w: 0.58525765}
       scale: {x: 1.0000002, y: 1.0000002, z: 1}
     - name: thumb.02.R
       parentName: thumb.01.R
       position: {x: 1.6763806e-10, y: 0.0003802142, z: -0.0000000017881393}
-      rotation: {x: -0.00033845234, y: 0.0057790396, z: -0.05859756, w: 0.9982649}
+      rotation: {x: -0.00023752442, y: 0.0057840627, z: -0.04069288, w: 0.999155}
       scale: {x: 0.9999997, y: 1.0000001, z: 1.0000005}
     - name: thumb.03.R
       parentName: thumb.02.R
@@ -1310,13 +1221,13 @@ ModelImporter:
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 0
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  importBlendShapeDeformPercent: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

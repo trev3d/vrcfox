@@ -6,8 +6,8 @@ AvatarMask:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mask hand gestures
-  m_Mask: 00000000000000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000
+  m_Name: mask eye left
+  m_Mask: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_Elements:
   - m_Path: 
     m_Weight: 1
@@ -25,16 +25,24 @@ AvatarMask:
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/neck/head
     m_Weight: 0
-  - m_Path: rig/hip/belly/chest/neck/head/ear.L
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.L
     m_Weight: 0
-  - m_Path: rig/hip/belly/chest/neck/head/ear.L/ear.L_end
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.L/ear.2.L
     m_Weight: 0
-  - m_Path: rig/hip/belly/chest/neck/head/ear.R
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.L/ear.2.L/ear.3.L
     m_Weight: 0
-  - m_Path: rig/hip/belly/chest/neck/head/ear.R/ear.R_end
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.L/ear.2.L/ear.3.L/ear.3.L_end
+    m_Weight: 0
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.R
+    m_Weight: 0
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.R/ear.2.R
+    m_Weight: 0
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.R/ear.2.R/ear.3.R
+    m_Weight: 0
+  - m_Path: rig/hip/belly/chest/neck/head/ear.1.R/ear.2.R/ear.3.R/ear.3.R_end
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/neck/head/eye.L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig/hip/belly/chest/neck/head/eye.L/eye.L_end
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/neck/head/eye.R
@@ -49,6 +57,10 @@ AvatarMask:
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/neck/head/jaw/jaw_end
     m_Weight: 0
+  - m_Path: rig/hip/belly/chest/neck/head/tongue
+    m_Weight: 0
+  - m_Path: rig/hip/belly/chest/neck/head/tongue/tongue_end
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L
@@ -56,47 +68,47 @@ AvatarMask:
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L/f_index.02.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L/f_index.02.L/f_index.03.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L/f_index.02.L/f_index.03.L/f_index.03.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L/f_middle.02.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L/f_middle.02.L/f_middle.03.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L/f_middle.02.L/f_middle.03.L/f_middle.03.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L/f_pinky.02.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L/f_pinky.03.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L/f_ring.02.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L/f_ring.02.L/f_ring.03.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L/f_ring.02.L/f_ring.03.L/f_ring.03.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L/thumb.03.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L/thumb.03.L/thumb.03.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R
@@ -104,54 +116,46 @@ AvatarMask:
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R
     m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R/f_index.02.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R/f_index.02.R/f_index.03.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R/f_index.02.R/f_index.03.R/f_index.03.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R/f_middle.02.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R/f_middle.02.R/f_middle.03.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R/f_middle.02.R/f_middle.03.R/f_middle.03.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R/f_pinky.02.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R/f_pinky.03.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R/f_ring.02.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R/f_ring.02.R/f_ring.03.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R/f_ring.02.R/f_ring.03.R/f_ring.03.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R/thumb.03.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig/hip/belly/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R/thumb.03.R/thumb.03.R_end
-    m_Weight: 1
-  - m_Path: rig/hip/coat.L
-    m_Weight: 0
-  - m_Path: rig/hip/coat.L/coat.L_end
-    m_Weight: 0
-  - m_Path: rig/hip/coat.R
-    m_Weight: 0
-  - m_Path: rig/hip/coat.R/coat.R_end
     m_Weight: 0
   - m_Path: rig/hip/tail.1
     m_Weight: 0

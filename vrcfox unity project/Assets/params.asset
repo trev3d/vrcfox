@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: -1506855854, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: params
   m_EditorClassIdentifier: 
+  isEmpty: 0
   parameters:
-  - name: v2/enabled
+  - name: v2/LipTrackingActive
     valueType: 2
     saved: 1
     defaultValue: 0
@@ -63,22 +64,17 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowDownRight
+  - name: v2/EyeTrackingActive
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 1
+  - name: v2/EyeX
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: v2/BrowDownLeft
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowUpRight
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: v2/BrowUpLeft
+  - name: v2/EyeY
     valueType: 1
     saved: 0
     defaultValue: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: menu prefs
   m_EditorClassIdentifier: 
   controls:
-  - name: Ears
-    icon: {fileID: 0}
+  - name: <b>Ears
+    icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     type: 203
     parameter:
       name: 
@@ -24,8 +24,8 @@ MonoBehaviour:
     subParameters:
     - name: pref/slider/ears
     labels: []
-  - name: Cheeks
-    icon: {fileID: 0}
+  - name: <b>Cheeks
+    icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     type: 203
     parameter:
       name: 
@@ -35,8 +35,8 @@ MonoBehaviour:
     subParameters:
     - name: pref/slider/fluff
     labels: []
-  - name: Eyelashes
-    icon: {fileID: 0}
+  - name: <b>Eyelashes
+    icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     type: 102
     parameter:
       name: pref/toggle/lashes
@@ -45,8 +45,8 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  - name: Breasts
-    icon: {fileID: 0}
+  - name: <b>Breasts
+    icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     type: 102
     parameter:
       name: pref/toggle/breasts
@@ -55,8 +55,8 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  - name: Legs
-    icon: {fileID: 0}
+  - name: <b>Legs
+    icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     type: 203
     parameter:
       name: 
@@ -66,8 +66,8 @@ MonoBehaviour:
     subParameters:
     - name: pref/slider/thighs
     labels: []
-  - name: Torso
-    icon: {fileID: 0}
+  - name: <b>Torso
+    icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     type: 203
     parameter:
       name: 
@@ -77,8 +77,8 @@ MonoBehaviour:
     subParameters:
     - name: pref/slider/torso
     labels: []
-  - name: Arms
-    icon: {fileID: 0}
+  - name: <b>Arms
+    icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     type: 203
     parameter:
       name: 

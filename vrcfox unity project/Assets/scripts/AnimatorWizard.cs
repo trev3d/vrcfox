@@ -49,6 +49,8 @@ public class AnimatorWizard : MonoBehaviour
 	public AvatarMask fxMask;
 
 	public AvatarMask gestureMask;
+	public AvatarMask EyeLeftMask;
+	public AvatarMask EyeRightMask;
 	public AvatarMask lMask;
 	public AvatarMask rMask;
 	
@@ -64,7 +66,23 @@ public class AnimatorWizard : MonoBehaviour
 	public Motion primaryColor1;
 	public Motion secondColor0;
 	public Motion secondColor1;
-	
+
+	public bool createOSCsmooth = true;
+	public bool IsLocal = false;
+	public float localSmoothness = 0.1f;
+    public float remoteSmoothness = 0.7f;	
+
+	public bool createEyeTracking = true;
+	public float maxEyeMotionValue = 0.25f;
+	public Motion EyeLookDown;
+	public Motion EyeLookLeft;
+	public Motion EyeLookLeftDown;
+	public Motion EyeLookLeftUp;
+	public Motion EyeLookNeutral;
+	public Motion EyeLookRight;	
+	public Motion EyeLookRightDown;	
+	public Motion EyeLookRightUp;
+	public Motion EyeLookUp;	
 	public string mouthPrefix = "exp/mouth/";
 
 	public string[] mouthShapeNames =
@@ -191,8 +209,8 @@ public class AnimatorWizard : MonoBehaviour
 
 		// FT param (toggles expressions off / on)
 		AacFlBoolParameter ftActiveParam =
-			CreateBoolParam(fxLayer, ftPrefix + "enabled", true, false);
-		AacFlFloatParameter ftBlendParam = fxLayer.FloatParameter(ftPrefix + "enabled-float");
+			CreateBoolParam(fxLayer, ftPrefix + "LipTrackingActive", true, false);
+		AacFlFloatParameter ftBlendParam = fxLayer.FloatParameter(ftPrefix + "LipTrackingActive-float");
 
 		// brow gesture expressions
 		MapHandPosesToShapes("brow expressions", skin, browShapeNames, browPrefix, false, ftActiveParam);
@@ -259,6 +277,119 @@ public class AnimatorWizard : MonoBehaviour
 				new[] { 0f, 1f },
 				CreateFloatParam(fxTreeLayer, shapeSliderPrefix + "scol", true, 0)));
 		}
+		
+		// Eye Tracking (WIP)
+		if (createEyeTracking)
+		{
+			var AdditiveLayer = _aac.CreateMainIdleLayer();
+			var EyeLeftLayer = _aac.CreateSupportingIdleLayer("Eye Left Tracking").WithAvatarMask(EyeLeftMask);
+			var EyeRightLayer = _aac.CreateSupportingIdleLayer("Eye Right Tracking").WithAvatarMask(EyeRightMask);
+
+			AacFlBoolParameter etActiveParam = CreateBoolParam(AdditiveLayer, ftPrefix + "EyeTrackingActive", true, false);
+			AacFlFloatParameter etBlendParam = AdditiveLayer.FloatParameter(ftPrefix + "EyeTrackingActive-float");
+			AacFlFloatParameter EyeXParam = CreateFloatParam(AdditiveLayer, ftPrefix + "EyeX", false, 0.0f);
+			AacFlFloatParameter EyeYParam = CreateFloatParam(AdditiveLayer, ftPrefix + "EyeY", false, 0.0f);
+
+			// --- Left Eye ---
+			// VRC Eye Control State
+			var VRCEyeLeftControlState = EyeLeftLayer.NewState("VRC Eye Control")
+				.WithWriteDefaultsSetTo(true)
+				.Drives(etBlendParam, 0.0f)
+				.TrackingTracks(AacFlState.TrackingElement.Eyes);
+
+			// Eye Tracking Tree
+			var EyeLeftTrackingTree = _aac.NewBlendTreeAsRaw();
+			EyeLeftTrackingTree.name = "Eye Left Tracking";
+			EyeLeftTrackingTree.blendType = BlendTreeType.FreeformCartesian2D;
+			EyeLeftTrackingTree.blendParameter = EyeXParam.Name;
+			EyeLeftTrackingTree.blendParameterY = EyeYParam.Name;
+
+			// add motions
+			AddEyeTrackingMotions(EyeLeftTrackingTree, maxEyeMotionValue, new Motion[]
+			{
+				EyeLookDown, EyeLookLeftDown, EyeLookLeft, EyeLookLeftUp, EyeLookNeutral,
+				EyeLookRightDown, EyeLookRight, EyeLookRightUp, EyeLookUp
+			});
+
+			// Eye Tracking State
+			var EyeTrackingStateLeft = EyeLeftLayer.NewState("Eye Tracking")
+				.WithAnimation(EyeLeftTrackingTree)
+				.WithWriteDefaultsSetTo(true)
+				.Drives(etBlendParam, 1.0f)
+				.TrackingAnimates(AacFlState.TrackingElement.Eyes);
+
+			// Transitions
+			EyeLeftLayer.AnyTransitionsTo(VRCEyeLeftControlState).When(etActiveParam.IsFalse());
+			EyeLeftLayer.AnyTransitionsTo(EyeTrackingStateLeft).WithTransitionToSelf().When(etActiveParam.IsTrue());
+
+			// --- Right Eye ---
+			// VRC Eye Control State
+			var VRCEyeRightControlState = EyeRightLayer.NewState("VRC Eye Control")
+				.WithWriteDefaultsSetTo(true)
+				.Drives(etBlendParam, 0.0f)
+				.TrackingTracks(AacFlState.TrackingElement.Eyes);
+
+			// Eye Tracking Tree
+			var EyeRightTrackingTree = _aac.NewBlendTreeAsRaw();
+			EyeRightTrackingTree.name = "Eye Right Tracking";
+			EyeRightTrackingTree.blendType = BlendTreeType.FreeformCartesian2D;
+			EyeRightTrackingTree.blendParameter = EyeXParam.Name;
+			EyeRightTrackingTree.blendParameterY = EyeYParam.Name;
+
+			// add motions
+			AddEyeTrackingMotions(EyeRightTrackingTree, maxEyeMotionValue, new Motion[]
+			{
+				EyeLookDown, EyeLookLeftDown, EyeLookLeft, EyeLookLeftUp, EyeLookNeutral,
+				EyeLookRightDown, EyeLookRight, EyeLookRightUp, EyeLookUp
+			});
+
+			// Eye Tracking State
+			var EyeTrackingStateRight = EyeRightLayer.NewState("Eye Tracking")
+				.WithAnimation(EyeRightTrackingTree)
+				.WithWriteDefaultsSetTo(true)
+				.Drives(etBlendParam, 1.0f)
+				.TrackingAnimates(AacFlState.TrackingElement.Eyes);
+
+			// Transitions
+			EyeRightLayer.AnyTransitionsTo(VRCEyeRightControlState).When(etActiveParam.IsFalse());
+			EyeRightLayer.AnyTransitionsTo(EyeTrackingStateRight).WithTransitionToSelf().When(etActiveParam.IsTrue());
+
+			// functions for adding motions and managing child arrays
+			void AddEyeTrackingMotions(BlendTree tree, float maxMotionValue, Motion[] motions)
+			{
+				var positions = new[]
+				{
+					new Vector2(0, -maxMotionValue), // Down
+					new Vector2(-maxMotionValue, -maxMotionValue), // LeftDown
+					new Vector2(-maxMotionValue, 0), // Left
+					new Vector2(-maxMotionValue, maxMotionValue), // LeftUp
+					Vector2.zero, // Neutral
+					new Vector2(maxMotionValue, -maxMotionValue), // RightDown
+					new Vector2(maxMotionValue, 0), // Right
+					new Vector2(maxMotionValue, maxMotionValue), // RightUp
+					new Vector2(0, maxMotionValue) // Up
+				};
+
+				for (int i = 0; i < motions.Length; i++)
+				{
+					var child = new ChildMotion
+					{
+						motion = motions[i],
+						position = positions[i],
+						timeScale = 1f
+					};
+					tree.children = AppendChild(tree.children, child);
+				}
+			}
+
+			ChildMotion[] AppendChild(ChildMotion[] children, ChildMotion child)
+			{
+				var newChildren = new ChildMotion[children.Length + 1];
+				Array.Copy(children, newChildren, children.Length);
+				newChildren[children.Length] = child;
+				return newChildren;
+			}
+		}
 
 		// face tracking
 		if (createFaceTracking)
@@ -266,11 +397,8 @@ public class AnimatorWizard : MonoBehaviour
 			var layer = _aac.CreateSupportingFxLayer("face animations toggle").WithAvatarMask(fxMask);
 
 			var offState = layer.NewState("face tracking off")
-				.Drives(ftBlendParam, 0);
-			var offControl = offState.State.AddStateMachineBehaviour<VRCAnimatorTrackingControl>();
-			// offControl.trackingEyes = VRC_AnimatorTrackingControl.TrackingType.Tracking;
-			offControl.trackingMouth = VRC_AnimatorTrackingControl.TrackingType.Tracking;
-
+				.Drives(ftBlendParam, 0)
+				.TrackingTracks(AacFlState.TrackingElement.Mouth);
 			// zero all FT blendshapes when FT disabled
 			var offClip = _aac.NewClip("zero all FT blendshapes");
 
@@ -287,10 +415,8 @@ public class AnimatorWizard : MonoBehaviour
 			offState.WithAnimation(offClip);
 
 			var onState = layer.NewState("face tracking on")
-				.Drives(ftBlendParam, 1);
-			var onControl = onState.State.AddStateMachineBehaviour<VRCAnimatorTrackingControl>();
-			// onControl.trackingEyes = VRC_AnimatorTrackingControl.TrackingType.Animation;
-			onControl.trackingMouth = VRC_AnimatorTrackingControl.TrackingType.Animation;
+				.Drives(ftBlendParam, 1)
+				.TrackingAnimates(AacFlState.TrackingElement.Mouth);
 
 			layer.AnyTransitionsTo(onState).WithTransitionToSelf().When(ftActiveParam.IsTrue());
 			layer.AnyTransitionsTo(offState).When(ftActiveParam.IsFalse());
@@ -337,14 +463,122 @@ public class AnimatorWizard : MonoBehaviour
 			children[children.Length - 1].directBlendParameter = ftBlendParam.Name;
 			masterTree.children = children;
 
-			// eyes
-			// {
-			// 	CreateFloatParamVrcOnly(ftPrefix + "EyeLeftX", false, 0);
-			// 	CreateFloatParamVrcOnly(ftPrefix + "EyeRightX", false, 0);
-			// 	CreateFloatParamVrcOnly(ftPrefix + "EyeY", false, 0);
-			// }
-		}
+			if (createOSCsmooth)
+			{
+				var OSCLayer = _aac.CreateSupportingFxLayer("OSC smoothing").WithAvatarMask(fxMask);
 
+				// The main OSC trees 
+				var OSCLocalTree = _aac.NewBlendTreeAsRaw();
+				OSCLocalTree.name = "OSC Local";
+				OSCLocalTree.blendType = BlendTreeType.Direct;
+				var OSCLocalState = OSCLayer.NewState(OSCLocalTree.name).WithAnimation(OSCLocalTree).WithWriteDefaultsSetTo(true);
+
+				var OSCRemoteTree = _aac.NewBlendTreeAsRaw();
+				OSCRemoteTree.name = "OSC Remote";
+				OSCRemoteTree.blendType = BlendTreeType.Direct;
+				var OSCRemoteState = OSCLayer.NewState(OSCRemoteTree.name).WithAnimation(OSCRemoteTree).WithWriteDefaultsSetTo(true);
+
+				// Combine ftShapes and ftDualShapes manually
+				var allShapes = new List<string>();
+				foreach (var shape in ftShapes)
+				{
+					allShapes.Add(shape);
+				}
+				foreach (var ds in ftDualShapes)
+				{
+					allShapes.Add(ds.paramName);
+				}
+
+				// General function for creating trees
+				void CreateOSCTrees(string type, BlendTree rootTree, float smoothness)
+				{
+					foreach (var shape in allShapes)
+					{
+						// Params
+						var inputParamName = $"{ftPrefix}{shape}";
+						var smootherParamName = $"OSCsmooth/{type}/{ftPrefix}{shape}Smoother";
+						var driverParamName = $"OSCsmooth/Proxy/{ftPrefix}{shape}";
+
+						AacFlFloatParameter smootherParam = OSCLayer.FloatParameter(smootherParamName);
+						AacFlFloatParameter driverParam = OSCLayer.FloatParameter(driverParamName);
+
+						OSCLayer.OverrideValue(smootherParam, 0.0f);
+						OSCLayer.OverrideValue(driverParam, 0.0f);
+
+						// Replace params in the FT tree
+						foreach (var child in masterTree.children)
+						{
+							if (child.motion is BlendTree blendTree)
+							{
+								ReplaceBlendTreeParameter(blendTree, inputParamName, driverParam.Name);
+							}
+						}
+
+						var inputParam = OSCLayer.FloatParameter(inputParamName);
+
+						// Root Tree
+						var rootSubTree = rootTree.CreateBlendTreeChild(0);
+						rootSubTree.name = $"OSCsmooth/{type}/{ftPrefix}{shape}Smoother";
+						rootSubTree.blendType = BlendTreeType.Simple1D;
+						rootSubTree.useAutomaticThresholds = false;
+						rootSubTree.blendParameter = smootherParam.Name;
+
+						// Input Tree
+						var inputTree = rootSubTree.CreateBlendTreeChild(0);
+						inputTree.name = $"OSCsmooth Input ({ftPrefix}{shape})";
+						inputTree.blendType = BlendTreeType.Simple1D;
+						inputTree.useAutomaticThresholds = false;
+						inputTree.blendParameter = inputParam.Name;
+
+						var clipMin = _aac.NewClip($"Animator.OSCsmooth/Proxy/{ftPrefix}{shape}_Min")
+							.Animating(anim => anim.AnimatesAnimator(driverParam).WithFixedSeconds(0.0f, -1.0f));
+						var clipMax = _aac.NewClip($"Animator.OSCsmooth/Proxy/{ftPrefix}{shape}_Max")
+							.Animating(anim => anim.AnimatesAnimator(driverParam).WithFixedSeconds(0.0f, 1.0f));
+
+						inputTree.AddChild(clipMin.Clip, -1.0f);
+						inputTree.AddChild(clipMax.Clip, 1.0f);
+
+						// Driver Tree
+						var driverTree = rootSubTree.CreateBlendTreeChild(1);
+						driverTree.name = $"OSCsmooth Driver ({ftPrefix}{shape})";
+						driverTree.blendType = BlendTreeType.Simple1D;
+						driverTree.useAutomaticThresholds = false;
+						driverTree.blendParameter = driverParam.Name;
+
+						driverTree.AddChild(clipMin.Clip, -1.0f);
+						driverTree.AddChild(clipMax.Clip, 1.0f);
+					}
+				}
+
+				CreateOSCTrees("Local", OSCLocalTree, localSmoothness);
+				CreateOSCTrees("Remote", OSCRemoteTree, remoteSmoothness);
+
+				OSCLocalState.TransitionsTo(OSCRemoteState).When(OSCLayer.BoolParameter("IsLocal").IsFalse());
+				OSCRemoteState.TransitionsTo(OSCLocalState).When(OSCLayer.BoolParameter("IsLocal").IsTrue());
+
+				void ReplaceBlendTreeParameter(BlendTree tree, string oldParam, string newParam)
+				{
+					if (tree.blendParameter == oldParam)
+					{
+						tree.blendParameter = newParam;
+					}
+
+					if (tree.blendParameterY == oldParam)
+					{
+						tree.blendParameterY = newParam;
+					}
+
+					foreach (var child in tree.children)
+					{
+						if (child.motion is BlendTree childTree)
+						{
+							ReplaceBlendTreeParameter(childTree, oldParam, newParam);
+						}
+					}
+				}
+			}
+		}
+		
 		// add all the new avatar params to the avatar descriptor
 		avatar.expressionParameters.parameters = _vrcParams.ToArray();
 		EditorUtility.SetDirty(avatar.expressionParameters);
@@ -417,6 +651,7 @@ public class AnimatorWizard : MonoBehaviour
 					exit.Or().When(disableParam.IsTrue());
 				}
 			}
+			
 		}
 	}
 
@@ -470,26 +705,26 @@ public class AnimatorWizard : MonoBehaviour
 
 	private void CreateFloatParamVrcOnly(string paramName, bool save, float val)
 	{
-		_vrcParams.Add(new VRCExpressionParameters.Parameter()
-		{
-			name = paramName,
-			valueType = VRCExpressionParameters.ValueType.Float,
-			saved = save,
-			networkSynced = true,
-			defaultValue = val,
-		});
+			_vrcParams.Add(new VRCExpressionParameters.Parameter()
+			{
+				name = paramName,
+				valueType = VRCExpressionParameters.ValueType.Float,
+				saved = save,
+				networkSynced = true,
+				defaultValue = val,
+			});
 	}
 
 	private AacFlBoolParameter CreateBoolParam(AacFlLayer layer, string paramName, bool save, bool val)
 	{
-		_vrcParams.Add(new VRCExpressionParameters.Parameter()
-		{
-			name = paramName,
-			valueType = VRCExpressionParameters.ValueType.Bool,
-			saved = save,
-			networkSynced = true,
-			defaultValue = val ? 1 : 0,
-		});
+			_vrcParams.Add(new VRCExpressionParameters.Parameter()
+			{
+				name = paramName,
+				valueType = VRCExpressionParameters.ValueType.Bool,
+				saved = save,
+				networkSynced = true,
+				defaultValue = val ? 1 : 0,
+			});			
 
 		return layer.BoolParameter(paramName);
 	}
@@ -539,16 +774,21 @@ public class AnimatorWizard : MonoBehaviour
 public class AnimatorGeneratorEditor : Editor
 {
 	private SerializedProperty assetContainer;
-	private SerializedProperty fxMask, gestureMask, lMask, rMask;
+	private SerializedProperty fxMask, EyeLeftMask, EyeRightMask, gestureMask, lMask, rMask;
 
 	private SerializedProperty handPoses;
-	private SerializedProperty createShapePreferences, createColorCustomization, createFaceTracking;
+	private SerializedProperty createShapePreferences, createColorCustomization, createFaceTracking, createOSCsmooth, createEyeTracking;
 
+	private SerializedProperty localSmoothness, remoteSmoothness;
+	
 	private SerializedProperty shapeSliderPrefix, shapeTogglesPrefix, mouthPrefix, browPrefix, ftPrefix;
 
 	private SerializedProperty primaryColor0, primaryColor1, secondColor0, secondColor1;
 
 	private SerializedProperty mouthShapeNames, browShapeNames;
+
+	private SerializedProperty maxEyeMotionValue;
+	private SerializedProperty EyeLookDown, EyeLookLeft, EyeLookLeftDown, EyeLookLeftUp, EyeLookNeutral, EyeLookRight, EyeLookRightDown, EyeLookRightUp, EyeLookUp;
 
 	private SerializedProperty ftShapes, ftDualShapes;
 
@@ -560,6 +800,8 @@ public class AnimatorGeneratorEditor : Editor
 		
 		assetContainer = serializedObject.FindProperty("assetContainer");
 		fxMask = serializedObject.FindProperty("fxMask");
+		EyeLeftMask = serializedObject.FindProperty("EyeLeftMask");
+		EyeRightMask = serializedObject.FindProperty("EyeRightMask");
 		gestureMask = serializedObject.FindProperty("gestureMask");
 		lMask = serializedObject.FindProperty("lMask");
 		rMask = serializedObject.FindProperty("rMask");
@@ -568,6 +810,7 @@ public class AnimatorGeneratorEditor : Editor
 
 		createShapePreferences = serializedObject.FindProperty("createShapePreferences");
 		createColorCustomization = serializedObject.FindProperty("createColorCustomization");
+		createEyeTracking = serializedObject.FindProperty("createEyeTracking");
 		createFaceTracking = serializedObject.FindProperty("createFaceTracking");
 
 		shapeSliderPrefix = serializedObject.FindProperty("shapeSliderPrefix");
@@ -584,6 +827,21 @@ public class AnimatorGeneratorEditor : Editor
 
 		mouthShapeNames = serializedObject.FindProperty("mouthShapeNames");
 		browShapeNames = serializedObject.FindProperty("browShapeNames");
+
+		createOSCsmooth = serializedObject.FindProperty("createOSCsmooth");
+		localSmoothness = serializedObject.FindProperty("localSmoothness");
+		remoteSmoothness = serializedObject.FindProperty("remoteSmoothness");
+
+		maxEyeMotionValue = serializedObject.FindProperty("maxEyeMotionValue");
+        EyeLookDown = serializedObject.FindProperty("EyeLookDown");
+		EyeLookLeft = serializedObject.FindProperty("EyeLookLeft");
+		EyeLookLeftDown = serializedObject.FindProperty("EyeLookLeftDown");
+		EyeLookLeftUp = serializedObject.FindProperty("EyeLookLeftUp");
+		EyeLookNeutral = serializedObject.FindProperty("EyeLookNeutral");
+		EyeLookRight = serializedObject.FindProperty("EyeLookRight");
+		EyeLookRightDown = serializedObject.FindProperty("EyeLookRightDown");
+		EyeLookRightUp = serializedObject.FindProperty("EyeLookRightUp");
+		EyeLookUp = serializedObject.FindProperty("EyeLookUp");
 
 		ftShapes = serializedObject.FindProperty("ftShapes");
 		ftDualShapes = serializedObject.FindProperty("ftDualShapes");
@@ -621,6 +879,11 @@ public class AnimatorGeneratorEditor : Editor
 		GUILayout.Label("Avatar animator masks", headerStyle);
 		EditorGUILayout.PropertyField(fxMask);
 		EditorGUILayout.PropertyField(gestureMask);
+		if (wizard.createEyeTracking)
+		{	
+			EditorGUILayout.PropertyField(EyeLeftMask);
+			EditorGUILayout.PropertyField(EyeRightMask);
+		}
 		EditorGUILayout.PropertyField(lMask);
 		EditorGUILayout.PropertyField(rMask);
 		
@@ -630,7 +893,7 @@ public class AnimatorGeneratorEditor : Editor
 
 		GUILayout.Label("Facial expressions", headerStyle);
 		GUILayout.Label("Brow and mouth blendshapes controlled by left and right hands." +
-		                "Array index maps to hand gesture parameter. Array length should be 8!");
+		                "\nArray index maps to hand gesture parameter. Array length should be 8!");
 		EditorGUILayout.PropertyField(mouthPrefix);
 		EditorGUILayout.PropertyField(mouthShapeNames);
 		GUILayout.Space(20);
@@ -639,16 +902,17 @@ public class AnimatorGeneratorEditor : Editor
 		
 		GUILayout.Label("Animator creation flags", headerStyle);
 		GUILayout.Label("Choose what parts of the animator are generated. " +
-		                "Disabling features saves VRC parameter budget!");
+		                "\nDisabling features saves VRC parameter budget!");
 		EditorGUILayout.PropertyField(createShapePreferences);
 		EditorGUILayout.PropertyField(createColorCustomization);
+		EditorGUILayout.PropertyField(createEyeTracking);
 		EditorGUILayout.PropertyField(createFaceTracking);
 		
 		if (wizard.createShapePreferences)
 		{
 			GUILayout.Label("Preference prefixes", headerStyle);
 			GUILayout.Label(
-				"Animator wizard will automatically create VRC parameters for blendshapes with these prefixes");
+				"\nAnimator wizard will automatically create VRC parameters for blendshapes with these prefixes");
 			EditorGUILayout.PropertyField(shapeSliderPrefix);
 			EditorGUILayout.PropertyField(shapeTogglesPrefix);
 		}
@@ -663,10 +927,47 @@ public class AnimatorGeneratorEditor : Editor
 			EditorGUILayout.PropertyField(secondColor1);
 		}
 
+		// EyeTracking
+		if (wizard.createEyeTracking)
+			{		
+				GUILayout.Label("EyeTracking (Simplified Eye Parameters). [WIP]", headerStyle);
+				GUILayout.Label("Animator wizard will create EyeTracking with these animations.");
+				if(!wizard.createFaceTracking)
+				{
+					GUILayout.Space(10);
+					EditorGUILayout.PropertyField(ftPrefix);
+				}
+				GUILayout.Space(10);
+				EditorGUILayout.PropertyField(maxEyeMotionValue);
+				GUILayout.Space(10);
+				GUILayout.Label("Eye Poses");
+				GUILayout.Space(10);
+				EditorGUILayout.PropertyField(EyeLookDown);
+				EditorGUILayout.PropertyField(EyeLookLeft);
+				EditorGUILayout.PropertyField(EyeLookLeftDown);
+				EditorGUILayout.PropertyField(EyeLookLeftUp);
+				EditorGUILayout.PropertyField(EyeLookNeutral);
+				EditorGUILayout.PropertyField(EyeLookRight);
+				EditorGUILayout.PropertyField(EyeLookRightDown);
+				EditorGUILayout.PropertyField(EyeLookRightUp);
+				EditorGUILayout.PropertyField(EyeLookUp);
+				GUILayout.Space(10);
+			}
+
 		if (wizard.createFaceTracking)
 		{
 			GUILayout.Label("VRCFaceTracking (Universal Shapes) settings", headerStyle);
 			EditorGUILayout.PropertyField(ftPrefix);
+			GUILayout.Space(10);
+			GUILayout.Label("OSC smooth is needed to fix Face Tracking params," +
+			 "as without it animation is choppy and jerky, \nas if it's lacking FPS");
+			GUILayout.Space(10);
+			EditorGUILayout.PropertyField(createOSCsmooth);
+			if(wizard.createOSCsmooth)
+			{
+			EditorGUILayout.PropertyField(localSmoothness);
+			EditorGUILayout.PropertyField(remoteSmoothness);
+			}
 			GUILayout.Space(10);
 			GUILayout.Label("Single shapes controlled by a float parameter");
 			EditorGUILayout.PropertyField(ftShapes);
