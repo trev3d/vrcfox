@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: menu top
   m_EditorClassIdentifier: 
+  Parameters: {fileID: 11400000, guid: 9765ee41bce474b45a4a3d7a0e334283, type: 2}
   controls:
   - name: <b>Shape Preferences
     icon: {fileID: 2800000, guid: b025d70713d18004ba5bf25c1c369599, type: 3}
@@ -35,11 +36,11 @@ MonoBehaviour:
     labels: []
   - name: <b><color=green>Face Tracking
     icon: {fileID: 2800000, guid: 22b59c0bbb8b6274aaf79a64ceb2c5f4, type: 3}
-    type: 102
+    type: 103
     parameter:
-      name: v2/enabled
+      name: 
     value: 1
     style: 0
-    subMenu: {fileID: 0}
+    subMenu: {fileID: 11400000, guid: 9b56a89f1d4c78645bbd27ef3d217ce1, type: 2}
     subParameters: []
     labels: []
