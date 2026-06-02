@@ -1,7 +1,20 @@
 {
   "dependencies": {
+    "com.strakacher21.animatorwizard": {
+      "version": "https://github.com/strakacher21/AnimatorWizard.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.vrchat.avatars": "3.10.3",
+        "dev.hai-vr.animator-as-code.v1": "1.1.0",
+        "dev.hai-vr.animator-as-code.v1.vrchat": "1.1.0",
+        "dev.hai-vr.animator-as-code.v1.vrchat-destructive-workflow": "1.1.0",
+        "dev.vrlabs.av3manager": "3.0.0"
+      },
+      "hash": "69b9c3f2c63f8e7cc6d23617172024348d228ce0"
+    },
     "com.unity.ai.navigation": {
-      "version": "1.1.5",
+      "version": "1.1.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -25,8 +38,8 @@
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.4",
-        "com.unity.modules.unityanalytics": "1.0.0",
-        "com.unity.nuget.mono-cecil": "1.11.4"
+        "com.unity.nuget.mono-cecil": "1.11.4",
+        "com.unity.modules.unityanalytics": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -38,7 +51,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.28",
+      "version": "3.0.40",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -47,11 +60,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.22",
+      "version": "2.0.27",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.9"
+        "com.unity.test-framework": "1.1.33"
       },
       "url": "https://packages.unity.com"
     },
@@ -104,7 +117,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.6",
+      "version": "3.0.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -113,13 +126,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.7.6",
+      "version": "1.7.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.director": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -148,9 +161,9 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.subsystems": "1.0.0",
         "com.unity.modules.vr": "1.0.0",
         "com.unity.modules.xr": "1.0.0",
+        "com.unity.modules.subsystems": "1.0.0",
         "com.unity.xr.legacyinputhelpers": "2.1.7"
       },
       "url": "https://packages.unity.com"
@@ -182,7 +195,8 @@
         "com.unity.timeline": "1.7.6",
         "com.unity.xr.management": "4.3.3",
         "com.unity.xr.oculus": "4.0.0",
-        "com.unity.postprocessing": "3.2.2"
+        "com.unity.postprocessing": "3.2.2",
+        "com.unity.ugui": "1.0.0"
       }
     },
     "com.vrchat.core.vpm-resolver": {
@@ -193,35 +207,23 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       }
     },
-    "com.vrmc.gltf": {
-      "version": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.113.0",
+    "dev.hai-vr.animator-as-code.v1": {
+      "version": "file:dev.hai-vr.animator-as-code.v1",
       "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.vrmc.vrmshaders": "0.113.0",
-        "com.unity.modules.animation": "1.0.0"
-      },
-      "hash": "01659457d8f0db619c97356c684682a472bb6dd1"
+      "source": "embedded",
+      "dependencies": {}
     },
-    "com.vrmc.univrm": {
-      "version": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.113.0",
+    "dev.hai-vr.animator-as-code.v1.vrchat": {
+      "version": "file:dev.hai-vr.animator-as-code.v1.vrchat",
       "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.vrmc.vrmshaders": "0.113.0",
-        "com.vrmc.gltf": "0.113.0",
-        "com.unity.ugui": "1.0.0"
-      },
-      "hash": "01659457d8f0db619c97356c684682a472bb6dd1"
+      "source": "embedded",
+      "dependencies": {}
     },
-    "com.vrmc.vrmshaders": {
-      "version": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.113.0",
+    "dev.hai-vr.animator-as-code.v1.vrchat-destructive-workflow": {
+      "version": "file:dev.hai-vr.animator-as-code.v1.vrchat-destructive-workflow",
       "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.modules.imageconversion": "1.0.0"
-      },
-      "hash": "01659457d8f0db619c97356c684682a472bb6dd1"
+      "source": "embedded",
+      "dependencies": {}
     },
     "dev.vrlabs.av3manager": {
       "version": "file:dev.vrlabs.av3manager",

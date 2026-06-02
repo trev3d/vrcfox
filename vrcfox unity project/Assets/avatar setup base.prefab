@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4518591562910165926}
   - component: {fileID: 7746804780396034587}
+  - component: {fileID: 3089064156769383688}
   - component: {fileID: 8116406995935481988}
-  - component: {fileID: 5824838411998035675}
+  - component: {fileID: 6413712765106864611}
   m_Layer: 0
   m_Name: avatar setup base
   m_TagString: Untagged
@@ -27,14 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4518591562910165925}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4125291122502178208}
-  - {fileID: 4518591563850499182}
-  - {fileID: 3953077789111464083}
+  - {fileID: 7633047454085108511}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &7746804780396034587
@@ -53,10 +53,13 @@ MonoBehaviour:
     favourite: {fileID: 0}
     initialPose: 0
     userIndex: 0
+    cullingDistance: 0
+    isOnFriendsList: 0
+    simulateCulling: 0
     loadStored: 0
     isRemote: 0
     vrMode: 0
---- !u!114 &8116406995935481988
+--- !u!114 &3089064156769383688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,44 +68,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 4518591562910165925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3d8784fab18d24c80d9291d424261f, type: 3}
+  m_Script: {fileID: 11500000, guid: 596ea5619628d5a4cbf2567f60f659a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thumbnailTexture: {fileID: 2800000, guid: 36ccfa0960f18234d89c19053cc06c94, type: 3}
---- !u!114 &5824838411998035675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4518591562910165925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fef40173b344a40bf1466cc9c93393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  createClothCustomization: 0
+  ClothSyncParamsOptimizedAlgorithm: 1
+  ClothTogglesPrefix: cloth/
+  ClothGroups:
+  - layerName: cloth_upper_body
+    clothEntries:
+    - clothName: coat
+      invertAnimation: 0
+    - clothName: coat_v2
+      invertAnimation: 0
+    - clothName: T-shirt
+      invertAnimation: 0
+  - layerName: cloth_lower_body
+    clothEntries:
+    - clothName: jeans
+      invertAnimation: 0
+    - clothName: pants
+      invertAnimation: 0
+    - clothName: shorts
+      invertAnimation: 0
+  - layerName: cloth_foot
+    clothEntries:
+    - clothName: shoes
+      invertAnimation: 0
+    - clothName: boots
+      invertAnimation: 0
+    - clothName: slaps
+      invertAnimation: 0
+  createColorCustomization: 1
+  ColorProfiles:
+  - name: Body
+    primaryColor0: {fileID: 7400000, guid: 8421033fab3bd4941a54cc533287898b, type: 2}
+    primaryColor1: {fileID: 7400000, guid: 1ee5d60bcc1f77a47b1e79f2944139e3, type: 2}
+    secondColor0: {fileID: 7400000, guid: de7942e8683b2d34ea22c50b83f37f9b, type: 2}
+    secondColor1: {fileID: 7400000, guid: b7ba98e9f6ffbba43a2ed420efb56037, type: 2}
+  createParamsCompressor: 1
+  compressedParamEntries: []
   assetContainer: {fileID: 9100000, guid: a33c5817a0ccd554595fad701f7d25e6, type: 2}
   fxMask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
-  gestureMask: {fileID: 31900000, guid: 2c544c8b584d741bdb884b8f910e8b64, type: 2}
-  lMask: {fileID: 31900000, guid: 2ea11c35275506a4fbf628a11c068a8e, type: 2}
-  rMask: {fileID: 31900000, guid: 00b67f2d2f7eba8438148317288155d8, type: 2}
-  handPoses:
-  - {fileID: 7400000, guid: 17f6811ad8fbaec4ba758c0e9d4bc63e, type: 2}
-  - {fileID: 7400000, guid: 9716ac2dc262b524193365c552868456, type: 2}
-  - {fileID: 7400000, guid: 2c53e22680d6f644d8f67bf16fc29e04, type: 2}
-  - {fileID: 7400000, guid: 159b856034800bb4ea0319b1ce4fd8c7, type: 2}
-  - {fileID: 7400000, guid: 2262c43a626a1664cb4a56f5c791c215, type: 2}
-  - {fileID: 7400000, guid: 21778a9afd428014e9d0e351ad5a1c40, type: 2}
-  - {fileID: 7400000, guid: 17e549f94f6d25f4da19e77f85918ec1, type: 2}
-  - {fileID: 7400000, guid: be1b6b943c973cc44ba8ca84a47f3273, type: 2}
-  createShapePreferences: 1
-  shapeSliderPrefix: pref/slider/
-  shapeTogglesPrefix: pref/toggle/
-  createColorCustomization: 1
-  primaryColor0: {fileID: 7400000, guid: 8421033fab3bd4941a54cc533287898b, type: 2}
-  primaryColor1: {fileID: 7400000, guid: 1ee5d60bcc1f77a47b1e79f2944139e3, type: 2}
-  secondColor0: {fileID: 7400000, guid: de7942e8683b2d34ea22c50b83f37f9b, type: 2}
-  secondColor1: {fileID: 7400000, guid: b7ba98e9f6ffbba43a2ed420efb56037, type: 2}
+  saveVRCExpressionParameters: 1
+  SystemName: vrcfox
+  shapePreferenceSliderPrefix: pref/slider/
+  shapePreferenceTogglesPrefix: pref/toggle/
+  FullFaceTrackingPrefix: v2/
+  GestureExpressionsBlockParamNames:
+  - AFK
+  createFacialExpressionsControl: 0
+  expTrackName: ExpressionTrackingActive
   mouthPrefix: exp/mouth/
   mouthShapeNames:
   - basis
@@ -123,221 +139,245 @@ MonoBehaviour:
   - worried
   - curious
   - down
+  createEyeTracking: 1
+  UseSameEyeAnimationsForBothEyes: 1
+  maxEyeMotionValue: 0.5
+  EyeLeftMask: {fileID: 31900000, guid: 45644a7b3d70e534bbd071d3e9e44f06, type: 2}
+  EyeRightMask: {fileID: 31900000, guid: 2582de0dc419e5940b571a39c532e553, type: 2}
+  LeftEyePoses:
+  - {fileID: 7400000, guid: 5c80576ab27dbd945877b5f3cef4507d, type: 2}
+  - {fileID: 7400000, guid: d4e664513d9ec844fa13b7defc63e1df, type: 2}
+  - {fileID: 7400000, guid: 08552aea481b1c24fb830ce5d7a3f39c, type: 2}
+  - {fileID: 7400000, guid: 8fbba8befe3f2764ba7a1d911e196e73, type: 2}
+  - {fileID: 7400000, guid: cf51b81e7c22ab741a2342c0dbb50eba, type: 2}
+  - {fileID: 7400000, guid: 5c469e0ce68cf7244934d72de20ea51f, type: 2}
+  - {fileID: 7400000, guid: 9454406d93cb2b04b8193062f8dd7b54, type: 2}
+  - {fileID: 7400000, guid: e383d2ff279d482468b62334cb6f3286, type: 2}
+  - {fileID: 7400000, guid: b55cc826f3f832b4ebcd42f54f7eca2d, type: 2}
+  RightEyePoses: []
+  EyeTrackingBlockParamNames:
+  - AFK
+  createFaceToggle: 0
+  FaceToggleNames: []
+  FaceToggleBlockParamNames:
+  - FaceToggleActive
+  - contact/confuse
+  - AFK
   createFaceTracking: 1
-  ftPrefix: v2/
-  ftShapes:
-  - BrowDownLeft
-  - BrowUpLeft
-  - JawOpen
-  - LipFunnel
-  - LipPucker
-  - MouthClosed
-  - MouthStretch
-  - MouthUpperUpLeft
-  - MouthLowerDownLeft
-  - MouthRaiserLower
-  ftDualShapes:
+  MirrorFTparams: 0
+  createFTLipSyncControl: 0
+  lipSyncName: LipSyncTrackingActive
+  FaceTrackingBlockParamNames:
+  - AFK
+  SingleFtShapes:
+  - shapeName: JawOpen
+    leftAndRightShapes: 0
+  - shapeName: LipFunnel
+    leftAndRightShapes: 0
+  - shapeName: LipPucker
+    leftAndRightShapes: 0
+  - shapeName: MouthClosed
+    leftAndRightShapes: 0
+  - shapeName: MouthUpperUp
+    leftAndRightShapes: 1
+  - shapeName: MouthLowerDown
+    leftAndRightShapes: 1
+  - shapeName: MouthStretch
+    leftAndRightShapes: 0
+  - shapeName: MouthRaiserLower
+    leftAndRightShapes: 0
+  DualFtShapes:
   - paramName: SmileSad
     minShapeName: MouthSad
     maxShapeName: MouthSmile
     minValue: -1
     neutralValue: 0
     maxValue: 1
+    leftAndRightShapes: 0
+  - paramName: BrowExpression
+    minShapeName: BrowDown
+    maxShapeName: BrowUp
+    minValue: -1
+    neutralValue: 0
+    maxValue: 1
+    leftAndRightShapes: 1
   - paramName: JawX
     minShapeName: JawLeft
     maxShapeName: JawRight
     minValue: -1
     neutralValue: 0
     maxValue: 1
-  - paramName: BrowExpressionLeft
-    minShapeName: BrowDown
-    maxShapeName: BrowUp
+    leftAndRightShapes: 0
+  - paramName: MouthX
+    minShapeName: MouthLeft
+    maxShapeName: MouthRight
     minValue: -1
     neutralValue: 0
     maxValue: 1
-  - paramName: EyeLidLeft
+    leftAndRightShapes: 0
+  - paramName: EyeLid
     minShapeName: EyeClosed
     maxShapeName: EyeWide
     minValue: 0
-    neutralValue: 0.7
+    neutralValue: 0.75
     maxValue: 1
---- !u!1 &4518591563850499180
-GameObject:
+    leftAndRightShapes: 1
+  gestureMask: {fileID: 31900000, guid: 2c544c8b584d741bdb884b8f910e8b64, type: 2}
+  GestureLeftMask: {fileID: 31900000, guid: ee1051356e14f8141b499385836b02bf, type: 2}
+  GestureRightMask: {fileID: 31900000, guid: 9b02b84ec14cb9941acd896d4a23bb4c, type: 2}
+  UseSameHandAnimationsForBothHands: 0
+  LeftHandPoses:
+  - {fileID: 7400000, guid: 17f6811ad8fbaec4ba758c0e9d4bc63e, type: 2}
+  - {fileID: 7400000, guid: 9716ac2dc262b524193365c552868456, type: 2}
+  - {fileID: 7400000, guid: 2c53e22680d6f644d8f67bf16fc29e04, type: 2}
+  - {fileID: 7400000, guid: 159b856034800bb4ea0319b1ce4fd8c7, type: 2}
+  - {fileID: 7400000, guid: 3aa497f16b019ee4cbfa4e0a5cd5f98c, type: 2}
+  - {fileID: 7400000, guid: 21778a9afd428014e9d0e351ad5a1c40, type: 2}
+  - {fileID: 7400000, guid: 17e549f94f6d25f4da19e77f85918ec1, type: 2}
+  - {fileID: 7400000, guid: be1b6b943c973cc44ba8ca84a47f3273, type: 2}
+  RightHandPoses:
+  - {fileID: 7400000, guid: 17f6811ad8fbaec4ba758c0e9d4bc63e, type: 2}
+  - {fileID: 7400000, guid: 9716ac2dc262b524193365c552868456, type: 2}
+  - {fileID: 7400000, guid: 2c53e22680d6f644d8f67bf16fc29e04, type: 2}
+  - {fileID: 7400000, guid: 159b856034800bb4ea0319b1ce4fd8c7, type: 2}
+  - {fileID: 7400000, guid: 2262c43a626a1664cb4a56f5c791c215, type: 2}
+  - {fileID: 7400000, guid: d5884289633c17040b3337766473e5f4, type: 2}
+  - {fileID: 7400000, guid: 17e549f94f6d25f4da19e77f85918ec1, type: 2}
+  - {fileID: 7400000, guid: be1b6b943c973cc44ba8ca84a47f3273, type: 2}
+  createOSCsmooth: 1
+  localSmoothness: 0.1
+  remoteSmoothness: 0.7
+  createShapePreferences: 1
+  shapePreferencePrefix: pref/body/
+  shapePreferences:
+  - blendShapeName: ears
+    useBool: 0
+    useFloat: 1
+    lastMode: 1
+  - blendShapeName: fluff
+    useBool: 0
+    useFloat: 1
+    lastMode: 1
+  - blendShapeName: lashes
+    useBool: 1
+    useFloat: 0
+    lastMode: 0
+  - blendShapeName: breasts
+    useBool: 1
+    useFloat: 0
+    lastMode: 0
+  - blendShapeName: thighs
+    useBool: 0
+    useFloat: 1
+    lastMode: 1
+  - blendShapeName: torso
+    useBool: 0
+    useFloat: 1
+    lastMode: 1
+  - blendShapeName: arms
+    useBool: 0
+    useFloat: 1
+    lastMode: 1
+--- !u!114 &8116406995935481988
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4518591563850499182}
-  - component: {fileID: 4518591563850499181}
-  m_Layer: 0
-  m_Name: world light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4518591563850499182
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4518591563850499180}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4518591562910165926}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!108 &4518591563850499181
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4518591563850499180}
+  m_GameObject: {fileID: 4518591562910165925}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!1 &6015295557628580880
-GameObject:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3d8784fab18d24c80d9291d424261f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thumbnailTexture: {fileID: 2800000, guid: 36ccfa0960f18234d89c19053cc06c94, type: 3}
+--- !u!114 &6413712765106864611
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3953077789111464083}
-  - component: {fileID: 792404093090772296}
-  - component: {fileID: 5804019201931860764}
-  m_Layer: 0
-  m_Name: head focus cube (not part of avatar!)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3953077789111464083
-Transform:
+  m_GameObject: {fileID: 4518591562910165925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0722284fee9817b45ac70aa8393037e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 643071a0c38b8154faff349944519215, type: 2}
+--- !u!1001 &556617311820632454
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015295557628580880}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000029802322, y: 1.0048592e-14, z: -1.2705494e-21, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6648, z: -0.0054}
-  m_LocalScale: {x: 0.20055, y: 0.20055, z: 0.20055}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4518591562910165926}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &792404093090772296
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4518591562910165926}
+    m_Modifications:
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763360036365467511, guid: 031673f440f29154b80e9d792c9ef030,
+        type: 3}
+      propertyPath: m_Name
+      value: Scene objects (not part of avatar!)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 031673f440f29154b80e9d792c9ef030, type: 3}
+--- !u!4 &7633047454085108511 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7950973515276452505, guid: 031673f440f29154b80e9d792c9ef030,
+    type: 3}
+  m_PrefabInstance: {fileID: 556617311820632454}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015295557628580880}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5804019201931860764
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015295557628580880}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &4518591563733791307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,6 +426,36 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 9.178313e-16
       objectReference: {fileID: 0}
+    - target: {fileID: -2148987090184050607, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -66.353
+      objectReference: {fileID: 0}
+    - target: {fileID: -2148987090184050607, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.152
+      objectReference: {fileID: 0}
+    - target: {fileID: -2148987090184050607, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 900553702386996346, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -66.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 900553702386996346, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.152
+      objectReference: {fileID: 0}
+    - target: {fileID: 900553702386996346, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.002
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       propertyPath: m_Icon
@@ -398,27 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 58
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[4]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[5]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[47]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1630794972795428178, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[53]
+      propertyPath: m_BlendShapeWeights.Array.data[6]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2341331241534080449, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -441,10 +491,25 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -9.178362e-16
       objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+    - target: {fileID: 3293609344252918582, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293609344252918582, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.0010070801
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433569009731278871, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433569009731278871, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.0010070801
       objectReference: {fileID: 0}
     - target: {fileID: 7596732024113559598, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
@@ -518,6 +583,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4518591563733791311}
+    - targetCorrespondingSourceObject: {fileID: 1427564092133216371, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4404085760381599679}
     - targetCorrespondingSourceObject: {fileID: 1256660736965721556, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
         type: 3}
       insertIndex: -1
@@ -585,10 +654,11 @@ MonoBehaviour:
   foldout_grabpose: 1
   foldout_options: 1
   foldout_gizmos: 0
-  version: 0
+  version: 1
   integrationType: 0
   rootTransform: {fileID: 0}
   ignoreTransforms: []
+  ignoreOtherPhysBones: 0
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
   pull: 0.5
@@ -612,14 +682,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravity: 0
+  gravity: 1
   gravityCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravityFalloff: 0
+  gravityFalloff: 1
   gravityFalloffCurve:
     serializedVersion: 2
     m_Curve: []
@@ -638,6 +708,7 @@ MonoBehaviour:
   collisionFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   radius: 0.001
   radiusCurve:
     serializedVersion: 2
@@ -685,10 +756,12 @@ MonoBehaviour:
   grabFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   allowPosing: 0
   poseFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   snapToHand: 0
   grabMovement: 0.5
   maxStretch: 0
@@ -756,6 +829,7 @@ MonoBehaviour:
   position: {x: 0, y: 0.002, z: -0.0002}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   bonesAsSpheres: 0
+  globalCollisionFlags: 0
 --- !u!4 &1307256826819938939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3211361471223265328, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -788,10 +862,11 @@ MonoBehaviour:
   foldout_grabpose: 1
   foldout_options: 1
   foldout_gizmos: 0
-  version: 0
+  version: 1
   integrationType: 0
   rootTransform: {fileID: 0}
   ignoreTransforms: []
+  ignoreOtherPhysBones: 0
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
   pull: 0.2
@@ -815,14 +890,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravity: 0
+  gravity: 1
   gravityCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravityFalloff: 0
+  gravityFalloff: 1
   gravityFalloffCurve:
     serializedVersion: 2
     m_Curve: []
@@ -841,6 +916,7 @@ MonoBehaviour:
   collisionFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   radius: 0.0006
   radiusCurve:
     serializedVersion: 2
@@ -887,10 +963,12 @@ MonoBehaviour:
   grabFilter:
     allowSelf: 1
     allowOthers: 1
-  allowPosing: 1
+    contentTypes: -1
+  allowPosing: 0
   poseFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   snapToHand: 0
   grabMovement: 0.5
   maxStretch: 0
@@ -952,10 +1030,11 @@ MonoBehaviour:
   foldout_grabpose: 1
   foldout_options: 1
   foldout_gizmos: 0
-  version: 0
+  version: 1
   integrationType: 0
   rootTransform: {fileID: 0}
   ignoreTransforms: []
+  ignoreOtherPhysBones: 0
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
   pull: 0.5
@@ -979,14 +1058,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravity: 0
+  gravity: 1
   gravityCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravityFalloff: 0
+  gravityFalloff: 1
   gravityFalloffCurve:
     serializedVersion: 2
     m_Curve: []
@@ -1005,6 +1084,7 @@ MonoBehaviour:
   collisionFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   radius: 0.001
   radiusCurve:
     serializedVersion: 2
@@ -1052,10 +1132,12 @@ MonoBehaviour:
   grabFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   allowPosing: 0
   poseFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   snapToHand: 0
   grabMovement: 0.5
   maxStretch: 0
@@ -1129,6 +1211,7 @@ MonoBehaviour:
   position: {x: 0, y: 0.003, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   bonesAsSpheres: 0
+  globalCollisionFlags: 0
 --- !u!1 &2636341343699458907 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1883464989273762064, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -1155,10 +1238,11 @@ MonoBehaviour:
   foldout_grabpose: 1
   foldout_options: 1
   foldout_gizmos: 0
-  version: 0
+  version: 1
   integrationType: 0
   rootTransform: {fileID: 0}
   ignoreTransforms: []
+  ignoreOtherPhysBones: 0
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
   pull: 0.8
@@ -1208,6 +1292,7 @@ MonoBehaviour:
   collisionFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   radius: 0.0005
   radiusCurve:
     serializedVersion: 2
@@ -1254,10 +1339,12 @@ MonoBehaviour:
   grabFilter:
     allowSelf: 1
     allowOthers: 1
-  allowPosing: 1
+    contentTypes: -1
+  allowPosing: 2
   poseFilter:
     allowSelf: 1
-    allowOthers: 1
+    allowOthers: 0
+    contentTypes: -1
   snapToHand: 0
   grabMovement: 0.5
   maxStretch: 0
@@ -1313,10 +1400,11 @@ MonoBehaviour:
   foldout_grabpose: 1
   foldout_options: 1
   foldout_gizmos: 0
-  version: 0
+  version: 1
   integrationType: 0
   rootTransform: {fileID: 4204831885325142320}
   ignoreTransforms: []
+  ignoreOtherPhysBones: 0
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
   pull: 0.2
@@ -1340,14 +1428,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravity: 0
+  gravity: 1
   gravityCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravityFalloff: 0
+  gravityFalloff: 1
   gravityFalloffCurve:
     serializedVersion: 2
     m_Curve: []
@@ -1366,6 +1454,7 @@ MonoBehaviour:
   collisionFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   radius: 0.001
   radiusCurve:
     serializedVersion: 2
@@ -1376,6 +1465,7 @@ MonoBehaviour:
   colliders:
   - {fileID: 4518591563733791377}
   - {fileID: 4518591563733791376}
+  - {fileID: 4404085760381599679}
   limitType: 0
   maxAngleX: 90
   maxAngleXCurve:
@@ -1414,10 +1504,12 @@ MonoBehaviour:
   grabFilter:
     allowSelf: 1
     allowOthers: 1
-  allowPosing: 0
+    contentTypes: -1
+  allowPosing: 2
   poseFilter:
     allowSelf: 1
-    allowOthers: 1
+    allowOthers: 0
+    contentTypes: -1
   snapToHand: 0
   grabMovement: 1
   maxStretch: 0
@@ -1453,6 +1545,33 @@ SkinnedMeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 4518591563733791307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3277207571942466104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1427564092133216371, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
+    type: 3}
+  m_PrefabInstance: {fileID: 4518591563733791307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4404085760381599679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277207571942466104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631200402, guid: 2a2c05204084d904aa4945ccff20d8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootTransform: {fileID: 0}
+  shapeType: 2
+  insideBounds: 0
+  radius: 0.5
+  height: 2
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+  bonesAsSpheres: 0
+  globalCollisionFlags: 0
 --- !u!1 &3442383294063726495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1256660736965721556, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -1479,10 +1598,11 @@ MonoBehaviour:
   foldout_grabpose: 1
   foldout_options: 1
   foldout_gizmos: 0
-  version: 0
+  version: 1
   integrationType: 0
   rootTransform: {fileID: 0}
   ignoreTransforms: []
+  ignoreOtherPhysBones: 0
   endpointPosition: {x: 0, y: 0, z: 0}
   multiChildType: 0
   pull: 0.8
@@ -1532,6 +1652,7 @@ MonoBehaviour:
   collisionFilter:
     allowSelf: 1
     allowOthers: 1
+    contentTypes: -1
   radius: 0.0005
   radiusCurve:
     serializedVersion: 2
@@ -1578,10 +1699,12 @@ MonoBehaviour:
   grabFilter:
     allowSelf: 1
     allowOthers: 1
-  allowPosing: 1
+    contentTypes: -1
+  allowPosing: 2
   poseFilter:
     allowSelf: 1
-    allowOthers: 1
+    allowOthers: 0
+    contentTypes: -1
   snapToHand: 0
   grabMovement: 0.5
   maxStretch: 0
@@ -1631,10 +1754,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchedFromSDKPipeline: 0
   completedSDKPipeline: 1
-  blueprintId: avtr_935bce4d-b613-4658-8f0c-057c62b4eb41
+  blueprintId: 
   contentType: 0
   assetBundleUnityVersion: 
-  fallbackStatus: 3
+  fallbackStatus: 1
 --- !u!114 &4518591563733791311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1648,7 +1771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
-  ViewPosition: {x: 0, y: 1.620182, z: 0.04}
+  ViewPosition: {x: 0, y: 1.62, z: 0.04}
   Animations: 0
   ScaleIPD: 1
   lipSync: 3
@@ -1702,12 +1825,12 @@ MonoBehaviour:
       right: {x: 0.1564345, y: 0, z: 0, w: 0.98768836}
     eyesLookingLeft:
       linked: 1
-      left: {x: 0, y: -0.08715574, z: 0, w: 0.9961947}
-      right: {x: 0, y: -0.08715574, z: 0, w: 0.9961947}
+      left: {x: 0, y: -0.104528464, z: 0, w: 0.9945219}
+      right: {x: 0, y: -0.104528464, z: 0, w: 0.9945219}
     eyesLookingRight:
       linked: 1
-      left: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
-      right: {x: 0, y: 0.08715569, z: 0, w: 0.9961947}
+      left: {x: 0, y: 0.104528464, z: 0, w: 0.9945219}
+      right: {x: 0, y: 0.104528464, z: 0, w: 0.9945219}
     eyelidType: 2
     upperLeftEyelid: {fileID: 0}
     upperRightEyelid: {fileID: 0}
@@ -1750,22 +1873,24 @@ MonoBehaviour:
         left: {x: 0, y: 0, z: 0, w: 0}
         right: {x: 0, y: 0, z: 0, w: 0}
     eyelidsSkinnedMesh: {fileID: 2888210841022967577}
-    eyelidsBlendshapes: 04000000050000002f000000
+    eyelidsBlendshapes: 040000000500000006000000
   customizeAnimationLayers: 1
   baseAnimationLayers:
   - isEnabled: 0
     type: 0
-    animatorController: {fileID: 0}
+    animatorController: {fileID: 9100000, guid: 9027fe25496c30d44b4be1cf23be2d3e,
+      type: 2}
     mask: {fileID: 0}
-    isDefault: 1
+    isDefault: 0
   - isEnabled: 0
     type: 2
-    animatorController: {fileID: 0}
+    animatorController: {fileID: 9100000, guid: 40d175596b5ae7a45bd5a496dcc4f741,
+      type: 2}
     mask: {fileID: 0}
-    isDefault: 1
+    isDefault: 0
   - isEnabled: 0
     type: 3
-    animatorController: {fileID: 9100000, guid: 4df7674ab600e184f943a422fd71c343,
+    animatorController: {fileID: 9100000, guid: 5a98d29e949755040ab314fc5951aa8d,
       type: 2}
     mask: {fileID: 31900000, guid: 2c544c8b584d741bdb884b8f910e8b64, type: 2}
     isDefault: 0
@@ -1776,7 +1901,7 @@ MonoBehaviour:
     isDefault: 1
   - isEnabled: 0
     type: 5
-    animatorController: {fileID: 9100000, guid: e670d4102b561d543b6c3c18b8cf1e77,
+    animatorController: {fileID: 9100000, guid: af4f201717cccf142abca2909cef76cd,
       type: 2}
     mask: {fileID: 31900000, guid: a2a2b3490f538480bbd472b54282c586, type: 2}
     isDefault: 0
@@ -1870,15 +1995,19 @@ MonoBehaviour:
     name: face tracking on
   - hash: -1099298580
     name: master tree
+  - hash: 1666853253
+    name: OSCmooth_Local
+  - hash: -378687850
+    name: OSCmooth_Net
   autoFootsteps: 1
   autoLocomotion: 1
   collider_head:
     isMirrored: 1
     state: 0
     transform: {fileID: 2190328866278626262}
-    radius: 0.0010869071
+    radius: 0.0010671971
     height: 0
-    position: {x: 1.7087026e-16, y: 0.000488062, z: -7.9853646e-10}
+    position: {x: -2.0816682e-17, y: 0.00048713226, z: -8.603821e-10}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_torso:
     isMirrored: 1
@@ -1892,7 +2021,7 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 4501929368008885926}
-    radius: 0.0009340424
+    radius: 0.00093264587
     height: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1900,7 +2029,7 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 7463764811984273122}
-    radius: 0.0009340425
+    radius: 0.0009326454
     height: 0
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1908,80 +2037,80 @@ MonoBehaviour:
     isMirrored: 1
     state: 0
     transform: {fileID: 7139539231766666650}
-    radius: 0.00021541539
-    height: 0.00086166157
-    position: {x: 0.0000056112804, y: 0.0007323393, z: -0.000008807957}
-    rotation: {x: 0.70271754, y: 0, z: 0.010797761, w: 0.711387}
+    radius: 0.00021317325
+    height: 0.000852693
+    position: {x: 0.000005558676, y: 0.0007247164, z: -0.000008707302}
+    rotation: {x: 0.7027244, y: 0, z: 0.010668052, w: 0.71138215}
   collider_handL:
     isMirrored: 1
     state: 0
     transform: {fileID: 2261384790746344247}
-    radius: 0.00021541509
-    height: 0.00086166034
-    position: {x: -0.000005610445, y: 0.0007323376, z: -0.000008808218}
-    rotation: {x: 0.7027289, y: 0, z: -0.010156617, w: 0.71138525}
+    radius: 0.00021317309
+    height: 0.00085269235
+    position: {x: -0.0000055567602, y: 0.0007247173, z: -0.000008706838}
+    rotation: {x: 0.7027362, y: 0, z: -0.010036166, w: 0.7113797}
   collider_fingerIndexL:
     isMirrored: 1
     state: 0
     transform: {fileID: 5058986137564077941}
-    radius: 0.0000892512
-    height: 0.00044625602
+    radius: 0.00008863785
+    height: 0.0004431892
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 863149670287924931}
-    radius: 0.00010595559
-    height: 0.0005297779
+    radius: 0.000105339575
+    height: 0.0005266979
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingL:
     isMirrored: 1
     state: 0
     transform: {fileID: 1307256826819938939}
-    radius: 0.00008580992
-    height: 0.0004290496
+    radius: 0.00008536116
+    height: 0.00042680578
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleL:
     isMirrored: 1
     state: 0
     transform: {fileID: 5297654841438442311}
-    radius: 0.00006848273
-    height: 0.00034241367
+    radius: 0.00006814721
+    height: 0.00034073606
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerIndexR:
     isMirrored: 1
     state: 0
     transform: {fileID: 9129358847584808649}
-    radius: 0.00008925176
-    height: 0.00044625878
+    radius: 0.000088638146
+    height: 0.00044319071
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerMiddleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 471629325672706193}
-    radius: 0.000105954816
-    height: 0.00052977406
+    radius: 0.00010533968
+    height: 0.00052669836
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerRingR:
     isMirrored: 1
     state: 0
     transform: {fileID: 7771433182525227463}
-    radius: 0.00008580974
-    height: 0.0004290487
+    radius: 0.00008536048
+    height: 0.0004268024
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   collider_fingerLittleR:
     isMirrored: 1
     state: 0
     transform: {fileID: 8331676728929821151}
-    radius: 0.000068482965
-    height: 0.00034241483
+    radius: 0.00006814731
+    height: 0.00034073653
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &4125291122502178208 stripped
@@ -2040,6 +2169,7 @@ MonoBehaviour:
   position: {x: 0, y: 0.003, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   bonesAsSpheres: 0
+  globalCollisionFlags: 0
 --- !u!4 &7139539231766666650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6746953046552948689, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,
@@ -2078,6 +2208,7 @@ MonoBehaviour:
   position: {x: 0, y: 0.002, z: -0.0002}
   rotation: {x: 0, y: 0, z: 0, w: 1}
   bonesAsSpheres: 0
+  globalCollisionFlags: 0
 --- !u!4 &7771433182525227463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6155556853262873484, guid: d4bf82d2ccd2e46e2b24a85ff543f3af,

@@ -1,0 +1,3 @@
+[submodule "vrcfox blender project/scripts/Blender-auto-fbx-export"]
+	path = vrcfox blender project/scripts/Blender-auto-fbx-export
+	url = https://github.com/strakacher21/Blender-auto-fbx-export.git
